@@ -185,7 +185,7 @@ function NodeJsIcon() {
 function ExpressJsIcon() {
   return (
     <span className="select-none font-sans text-sm font-medium tracking-widest">
-      Express
+      ex
     </span>
   );
 }
