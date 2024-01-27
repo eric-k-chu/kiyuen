@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const HackerText = memo(
-  ({ text = "ERIC CHU", cycles = 1, dynamic = true }: Props) => {
+  ({ text = "ERIC CHU", cycles = 3, dynamic = true }: Props) => {
     const [textValue, setTextValue] = useState(text);
     const [cyclesValue, setCyclesValue] = useState(cycles);
     const [animLockout, setAnimLockout] = useState(false);
