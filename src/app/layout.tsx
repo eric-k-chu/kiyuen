@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Raleway } from "next/font/google";
+import { Nova_Mono } from "next/font/google";
 import "./globals.css";
 
-const raleway = Raleway({ subsets: ["latin"] });
+const nova = Nova_Mono({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Eric Chu",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={raleway.className}>
+      <body className={nova.className}>
         <main className="min-h-screen overflow-y-auto">{children}</main>
       </body>
     </html>
