@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nova.className}>
-        <main className="min-h-screen overflow-y-auto">{children}</main>
+        <main className="relative min-h-screen overflow-y-auto">
+          {children}
+        </main>
       </body>
     </html>
   );
