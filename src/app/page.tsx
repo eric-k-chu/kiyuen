@@ -7,6 +7,7 @@ import {
   Navbar,
   Primary,
   Projects,
+  Tech,
 } from "@/components";
 
 export default function Home() {
@@ -19,6 +20,10 @@ export default function Home() {
           <About />
         </AnchorSection>
       </section>
+
+      <AnchorSection id="tech">
+        <Tech />
+      </AnchorSection>
 
       <AnchorSection id="projects">
         <Projects />
