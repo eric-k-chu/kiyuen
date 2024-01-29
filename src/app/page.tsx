@@ -15,11 +15,10 @@ export default function Home() {
     <>
       <Navbar />
       <Primary />
-      <section className="bg-gradient-to-t from-zinc-900 from-90% to-zinc-950 pt-20">
-        <AnchorSection id="about">
-          <About />
-        </AnchorSection>
-      </section>
+
+      <AnchorSection id="about">
+        <About />
+      </AnchorSection>
 
       <AnchorSection id="tech">
         <Tech />

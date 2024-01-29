@@ -9,13 +9,14 @@ export function Primary() {
   const langs = ["TypeScript", "C++", "C#"];
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-around bg-zinc-950">
-      <div className="flex w-[440px] flex-col items-center gap-y-6">
+    <div className="relative flex min-h-screen w-full items-center justify-around overflow-hidden">
+      <div className="absolute inset-0 bg-[url(/image/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+      <div className="relative flex w-[440px] flex-col items-center gap-y-6">
         <HackerText />
         <div className="flex w-full items-center justify-evenly font-sans font-semibold tracking-wider">
           {langs.map((n, i) => (
             <button
-              className={`border-b-2 p-2 hover:bg-white/10 ${lang === i ? "text-primary-blue border-b-primary-blue rounded-t-md" : "rounded-md border-b-transparent text-white"}`}
+              className={`border-b-2 p-2 hover:bg-white/10 ${lang === i ? "rounded-t-md border-b-primary-blue text-primary-blue" : "rounded-md border-b-transparent text-white"}`}
               key={n}
               onClick={() => setLang(i)}
             >

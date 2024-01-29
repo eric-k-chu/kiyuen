@@ -1,6 +1,6 @@
 export function Navbar() {
   return (
-    <nav className="fixed top-0 flex w-full items-center justify-between bg-zinc-900/90 px-12 py-6 backdrop-blur-sm">
+    <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-zinc-900/90 px-12 py-6 backdrop-blur-sm">
       <h1 className="text-xl font-medium">朱</h1>
       <nav className="flex items-center gap-x-8 font-sans text-xl font-semibold tracking-wider">
         <a
