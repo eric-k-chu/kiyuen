@@ -8,8 +8,8 @@ export function AnchorSection({
   children: ReactNode;
 }) {
   return (
-    <a id={id} className="mx-auto block max-w-7xl py-20 font-sans">
-      {children}
+    <a id={id} className="block font-sans even:bg-zinc-800">
+      <div className="mx-auto max-w-7xl py-20">{children}</div>
     </a>
   );
 }
