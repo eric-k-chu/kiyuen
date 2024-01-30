@@ -5,7 +5,7 @@ import "./globals.css";
 const nova = Nova_Mono({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-  title: "Eric Chu",
+  title: "Eric Chu Portfolio",
   description: "My Personal Portfolio Site",
 };
 
