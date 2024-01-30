@@ -31,7 +31,21 @@ export function Projects() {
     <>
       <h1 className="text-5xl font-semibold">Projects</h1>
       <div className="flex items-center justify-between py-4">
-        <button onClick={prev}>PREV</button>
+        <button onClick={prev}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1}
+            className="size-8 stroke-neutral-500 hover:stroke-neutral-400"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+        </button>
         <div className="relative flex h-[400px] w-full items-center justify-center">
           <Card
             position="left"
@@ -53,7 +67,21 @@ export function Projects() {
             next={next}
           />
         </div>
-        <button onClick={next}>NEXT</button>
+        <button onClick={next}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1}
+            className="size-8 stroke-neutral-500 hover:stroke-neutral-400"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+        </button>
       </div>
     </>
   );
@@ -113,7 +141,7 @@ function Card(props: CardProps) {
   }
 
   return (
-    <div className="absolute z-[3] flex h-[400px] w-[700px] items-end rounded-xl after:absolute after:z-[4] after:size-full after:rounded-xl after:bg-black/20">
+    <div className="absolute z-[3] flex h-[400px] w-[700px] items-end rounded-xl shadow-md after:absolute after:z-[4] after:size-full after:rounded-xl after:bg-black/20">
       <Image
         src={props.project.path}
         alt={props.project.name}
