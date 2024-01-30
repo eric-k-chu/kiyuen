@@ -2,18 +2,51 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Github } from ".";
 
 interface Project {
   name: string;
   path: string;
+  desc: string;
+  gh: string;
+  live?: string;
 }
 
 const PROJECTS: Project[] = [
-  { name: "Project S", path: "/image/projects.png" },
-  { name: "Geo Run", path: "/image/georun.png" },
-  { name: "Castle", path: "/image/castle.png" },
-  { name: "Artus", path: "/image/artus.png" },
-  { name: "Castle v2", path: "/image/castle2.png" },
+  {
+    name: "Project S",
+    path: "/image/projects.png",
+    desc: "A 2.5D action platformer",
+    gh: "https://github.com/eric-k-chu/Project-S",
+  },
+  {
+    name: "Geo Run",
+    path: "/image/georun.png",
+    desc: "A 2.5D endless runner",
+    gh: "https://github.com/eric-k-chu/Geo-Run",
+    live: "https://eric-k-chu.github.io/Geo-Run-Host/",
+  },
+  {
+    name: "Castle",
+    path: "/image/castle.png",
+    desc: "A Chess.com statistics site.",
+    gh: "https://github.com/eric-k-chu/Castle",
+    live: "https://eric-k-chu.github.io/Castle/",
+  },
+  {
+    name: "Artus",
+    path: "/image/artus.png",
+    desc: "A full-stack video hosting web app.",
+    gh: "https://github.com/eric-k-chu/Artus",
+    live: "http://artus-dev.us-west-1.elasticbeanstalk.com/",
+  },
+  {
+    name: "Castle v2",
+    path: "/image/castle2.png",
+    desc: "A Chess.com statistics site with Next.js",
+    gh: "https://github.com/eric-k-chu/Castle-v2",
+    live: "https://castle2.vercel.app/",
+  },
 ];
 
 export function Projects() {
@@ -141,7 +174,7 @@ function Card(props: CardProps) {
   }
 
   return (
-    <div className="absolute z-[3] flex h-[400px] w-[700px] items-end rounded-xl shadow-md after:absolute after:z-[4] after:size-full after:rounded-xl after:bg-black/20">
+    <div className="absolute z-[3] flex h-[400px] w-[700px] items-end rounded-xl shadow-md after:absolute after:z-[4] after:size-full after:rounded-xl after:bg-black/40">
       <Image
         src={props.project.path}
         alt={props.project.name}
@@ -150,11 +183,33 @@ function Card(props: CardProps) {
         unoptimized
         className="absolute size-full rounded-xl object-cover"
       />
-      <div className="z-[5] p-8">
-        <h1 className="rounded-md bg-primary-blue px-2 py-1 text-4xl font-semibold">
+      <div className="z-[5] space-y-4 p-8">
+        <h1 className="w-fit rounded-md bg-primary-blue px-2 py-1 text-4xl font-semibold">
           {props.project.name}
         </h1>
-        <h1 className="">{props.project.name}</h1>
+        <h2 className="text-xl font-semibold">{props.project.desc}</h2>
+        <div className="flex items-center gap-x-4">
+          <a target="_blank" href={props.project.gh}>
+            <Image
+              src="/image/github.svg"
+              alt="github"
+              width={0}
+              height={0}
+              className="size-12"
+            />
+          </a>
+          {props.project.live && (
+            <a target="_blank" href={props.project.live}>
+              <Image
+                src="/image/link.svg"
+                alt="live site"
+                width={0}
+                height={0}
+                className="size-10"
+              />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
