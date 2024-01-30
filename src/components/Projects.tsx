@@ -21,7 +21,7 @@ export function Projects() {
       <div className="flex items-center justify-between py-4">
         <button onClick={prev}>PREV</button>
         <div className="relative h-[400px] w-[1000px]">
-          <div className=" absolute z-[2] flex h-[400px] w-[500px] translate-x-[50%] items-center justify-center bg-red-400">
+          <div className="absolute z-[2] flex h-[400px] w-[500px] translate-x-[50%] items-center justify-center bg-red-400">
             <h1>{arr[selected]}</h1>
           </div>
           <div
