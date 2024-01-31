@@ -19,7 +19,7 @@ export function Projects() {
             key={n.name}
           >
             <div
-              className={`absolute z-[2] size-full rounded-xl transition-colors duration-300 ease-in-out ${selected === n ? "bg-black/10" : "bg-black/60"}`}
+              className={`absolute z-[2] size-full rounded-xl transition-colors duration-300 ease-in-out ${selected === n ? "cursor-default bg-black/10" : "cursor-pointer bg-black/60"}`}
               onClick={() => setSelected(n)}
             />
             <Image
