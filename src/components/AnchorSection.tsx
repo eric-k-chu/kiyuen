@@ -9,7 +9,7 @@ export function AnchorSection({
 }) {
   return (
     <section id={id} className="block font-sans even:bg-zinc-800">
-      <div className="mx-auto max-w-7xl py-20">{children}</div>
+      <div className="mx-auto max-w-7xl px-4 py-20">{children}</div>
     </section>
   );
 }
