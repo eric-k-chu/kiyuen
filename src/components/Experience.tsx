@@ -19,11 +19,13 @@ function Experiences() {
         <div className="group relative z-[1]" key={JSON.stringify(n)}>
           <div className="size-10 rounded-full bg-red-400 lg:size-12" />
           <div className="absolute left-20 top-0 w-56 space-y-2 rounded-md bg-neutral-700 py-4 pl-4 sm:w-64 md:left-auto md:w-[18rem] md:group-odd:right-20 md:group-even:left-20 lg:w-96">
-            <h1 className="text-lg font-semibold lg:text-2xl">{n.title}</h1>
-            <h2 className="text-sm font-medium lg:text-lg">{n.company}</h2>
-            <h2 className="block text-sm font-medium md:hidden lg:text-lg">
-              {n.date}
+            <h1 className="text-base font-semibold md:text-lg lg:text-2xl">
+              {n.title}
+            </h1>
+            <h2 className="text-xs font-medium md:text-sm lg:text-lg">
+              {n.company}
             </h2>
+            <h2 className="block text-xs font-medium md:hidden">{n.date}</h2>
           </div>
           <h2 className="absolute top-2 hidden w-96 text-sm font-semibold text-neutral-400 group-odd:left-20 group-odd:text-left group-even:right-20 group-even:text-right md:block lg:text-lg">
             {n.date}
