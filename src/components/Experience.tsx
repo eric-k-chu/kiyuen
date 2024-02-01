@@ -16,13 +16,16 @@ function Experiences() {
   return (
     <>
       {EXPERIENCE.map((n) => (
-        <div className="group relative z-[1]" key={JSON.stringify(n)}>
-          <div className="size-12 rounded-full bg-red-400" />
-          <div className="absolute top-0 h-fit w-96 space-y-2 rounded-md bg-neutral-700 py-4 pl-4 group-odd:right-20 group-even:left-20">
-            <h1 className="text-2xl font-semibold">{n.title}</h1>
-            <h2 className="text-lg font-medium">{n.company}</h2>
+        <div
+          className="group relative z-[1] hidden md:block"
+          key={JSON.stringify(n)}
+        >
+          <div className="size-10 rounded-full bg-red-400 lg:size-12" />
+          <div className="absolute top-0 w-[18rem] space-y-2 rounded-md bg-neutral-700 py-4 pl-4 group-odd:right-20 group-even:left-20 lg:w-96">
+            <h1 className="text-lg font-semibold lg:text-2xl">{n.title}</h1>
+            <h2 className="text-sm font-medium lg:text-lg">{n.company}</h2>
           </div>
-          <h2 className="absolute top-2 w-96 text-lg font-semibold text-neutral-400 group-odd:left-20 group-odd:text-left group-even:right-20 group-even:text-right">
+          <h2 className="absolute top-2 w-96 text-sm font-semibold text-neutral-400 group-odd:left-20 group-odd:text-left group-even:right-20 group-even:text-right lg:text-lg">
             {n.date}
           </h2>
         </div>
