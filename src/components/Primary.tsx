@@ -16,7 +16,7 @@ export function Primary() {
         <div className="flex w-full items-center justify-evenly font-sans font-semibold tracking-wider">
           {langs.map((n, i) => (
             <button
-              className={`border-b-2 p-2 hover:bg-white/10 ${lang === i ? "rounded-t-md border-b-primary-blue text-primary-blue" : "rounded-md border-b-transparent text-white"}`}
+              className={`border-b-2 p-2 text-sm hover:bg-white/10 md:text-base ${lang === i ? "rounded-t-md border-b-primary-blue text-primary-blue" : "rounded-md border-b-transparent text-white"}`}
               key={n}
               onClick={() => setLang(i)}
             >
@@ -26,7 +26,7 @@ export function Primary() {
         </div>
         <Code index={lang} />
       </div>
-      <div className="z-[1] h-[400px] w-[600px] rounded-md bg-red-400" />
+      <div className="z-[1] hidden h-[250px] w-[350px] rounded-md bg-red-400 md:block" />
     </div>
   );
 }
@@ -36,7 +36,7 @@ function Code({ index }: { index: number }) {
 
   if (index === 0) {
     return (
-      <code className="text-medium space-x-2 rounded-md bg-zinc-800 px-4 py-4">
+      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">let</span>
         <span>title =</span>
         <span className="text-[#CAA48F]">
@@ -48,7 +48,7 @@ function Code({ index }: { index: number }) {
 
   if (index === 1) {
     return (
-      <code className="text-medium space-x-2 rounded-md bg-zinc-800 px-4 py-4">
+      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">
           char<span className="text-white">*</span>
         </span>
@@ -61,7 +61,7 @@ function Code({ index }: { index: number }) {
   }
 
   return (
-    <code className="text-medium space-x-2 rounded-md bg-zinc-800 px-4 py-4">
+    <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
       <span className="text-[#5C98D0]">string</span>
       <span>title =</span>
       <span className="text-[#CAA48F]">
