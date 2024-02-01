@@ -32,9 +32,11 @@ function Experiences() {
             <h2 className="text-xs font-medium md:text-sm lg:text-lg">
               {n.company}
             </h2>
-            <h2 className="block text-xs font-medium md:hidden">{n.date}</h2>
+            <h2 className="block text-xs font-medium uppercase md:hidden">
+              {n.date}
+            </h2>
           </div>
-          <h2 className="absolute top-2 hidden w-96 text-sm font-semibold text-neutral-400 group-odd:left-20 group-odd:text-left group-even:right-20 group-even:text-right md:block lg:text-lg">
+          <h2 className="absolute top-2 hidden w-96 text-sm font-semibold uppercase text-neutral-400 group-odd:left-20 group-odd:text-left group-even:right-20 group-even:text-right md:block lg:text-lg">
             {n.date}
           </h2>
         </div>

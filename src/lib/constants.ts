@@ -67,7 +67,7 @@ export const EXPERIENCE: Experience[] = [
   {
     title: "B.S in Computer Science",
     company: "California State University Fullerton",
-    date: "Dec 2023 - Present",
+    date: "Aug 2018 - Aug 2022",
     icon: "/image/csuf.svg",
   },
 ];
