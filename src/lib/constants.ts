@@ -57,7 +57,7 @@ export const EXPERIENCE: Experience[] = [
     date: "Dec 2023 - Present",
   },
   {
-    title: "Full-Stack Web Dev Bootcamp",
+    title: "Web Dev Bootcamp",
     company: "Learning Fuze",
     date: "Aug 2023 - Dec 2023",
   },
