@@ -15,6 +15,7 @@ const config: Config = {
       },
       colors: {
         "primary-blue": "#5C98D0",
+        "primary-orange": "#EDA021",
       },
     },
   },
