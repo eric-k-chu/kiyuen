@@ -12,10 +12,10 @@ export function Projects() {
   return (
     <>
       <h1 className="text-5xl font-semibold">Projects</h1>
-      <motion.div className="flex items-center justify-center gap-x-8 py-4">
+      <motion.div className="my-4 flex flex-col items-center gap-8 lg:flex-row lg:justify-center">
         {PROJECTS.map((n) => (
           <div
-            className={`relative h-[400px] transition-all duration-300 ease-in-out ${selected === n ? "w-[500px]" : "w-[150px]"}`}
+            className={`relative w-full transition-all duration-300 ease-in-out lg:h-[400px] ${selected === n ? "h-[500px] lg:w-[500px]" : "h-[150px] lg:w-[150px]"}`}
             key={n.name}
           >
             <div
@@ -32,7 +32,7 @@ export function Projects() {
               className="absolute z-[1] size-full rounded-xl object-cover"
             />
             <h1
-              className={`absolute bottom-3 right-3 z-[3] -rotate-180 text-4xl font-semibold transition-opacity duration-300 ease-in-out [writing-mode:vertical-rl] ${selected === n ? "opacity-0" : "opacity-100"}`}
+              className={`absolute bottom-3 left-3 z-[3] text-2xl font-semibold transition-opacity duration-300 ease-in-out lg:left-auto lg:right-3 lg:-rotate-180 lg:text-4xl lg:[writing-mode:vertical-rl] ${selected === n ? "opacity-0" : "opacity-100"}`}
             >
               {n.name}
             </h1>
@@ -40,10 +40,12 @@ export function Projects() {
               className={`absolute bottom-0 left-0 z-[3] w-full space-y-2 rounded-b-xl bg-gradient-to-t from-black/80 to-transparent transition-opacity duration-300 ease-in-out ${selected === n ? "opacity-100 delay-200" : "pointer-events-none opacity-0 delay-0"}`}
             >
               <div className="p-3">
-                <h1 className="w-fit rounded-md bg-primary-blue p-1 text-4xl font-semibold">
+                <h1 className="w-fit rounded-md bg-primary-blue p-1 text-2xl font-semibold lg:text-4xl">
                   {n.name}
                 </h1>
-                <h1 className="text-2xl font-semibold">{n.desc}</h1>
+                <h1 className="text-base font-semibold md:text-lg lg:text-2xl">
+                  {n.desc}
+                </h1>
                 <div className="flex items-center gap-x-4">
                   <a target="_blank" href={n.gh}>
                     <Github />
