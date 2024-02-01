@@ -38,7 +38,7 @@ function Code({ index }: { index: number }) {
     return (
       <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">let</span>
-        <span>title =</span>
+        <span>title &#61;</span>
         <span className="text-[#CAA48F]">
           &quot;{title}&quot;<span className="text-white">&#59;</span>
         </span>
@@ -52,7 +52,7 @@ function Code({ index }: { index: number }) {
         <span className="text-[#5C98D0]">
           char<span className="text-white">*</span>
         </span>
-        <span>title =</span>
+        <span>title &#61;</span>
         <span className="text-[#CAA48F]">
           &quot;{title}&quot;<span className="text-white">&#59;</span>
         </span>
@@ -63,7 +63,7 @@ function Code({ index }: { index: number }) {
   return (
     <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
       <span className="text-[#5C98D0]">string</span>
-      <span>title =</span>
+      <span>title &#61;</span>
       <span className="text-[#CAA48F]">
         &quot;{title}&quot;<span className="text-white">&#59;</span>
       </span>
