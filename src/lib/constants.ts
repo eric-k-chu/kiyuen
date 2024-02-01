@@ -43,3 +43,27 @@ export const PROJECTS: Project[] = [
     gh: "https://github.com/eric-k-chu/Project-S",
   },
 ];
+
+interface Experience {
+  title: string;
+  company: string;
+  date: string;
+}
+
+export const EXPERIENCE: Experience[] = [
+  {
+    title: "Teaching Assistant",
+    company: "Learning Fuze",
+    date: "Dec 2023 - Present",
+  },
+  {
+    title: "Full-Stack Web Dev Bootcamp",
+    company: "Learning Fuze",
+    date: "Aug 2023 - Dec 2023",
+  },
+  {
+    title: "B.S in Computer Science",
+    company: "California State University Fullerton",
+    date: "Dec 2023 - Present",
+  },
+];
