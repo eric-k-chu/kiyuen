@@ -1,4 +1,5 @@
 import { EXPERIENCE } from "@/lib/constants";
+import Image from "next/image";
 
 export function Experience() {
   return (
@@ -17,7 +18,13 @@ function Experiences() {
     <>
       {EXPERIENCE.map((n) => (
         <div className="group relative z-[1]" key={JSON.stringify(n)}>
-          <div className="size-10 rounded-full bg-red-400 lg:size-12" />
+          <Image
+            className="size-10 rounded-full border-4 border-white bg-white lg:size-12"
+            src={n.icon}
+            alt={`${n.company} icon`}
+            width={0}
+            height={0}
+          />
           <div className="absolute left-20 top-0 w-56 space-y-2 rounded-md bg-neutral-700 py-4 pl-4 sm:w-64 md:left-auto md:w-[18rem] md:group-odd:right-20 md:group-even:left-20 lg:w-96">
             <h1 className="text-base font-semibold md:text-lg lg:text-2xl">
               {n.title}

@@ -48,6 +48,7 @@ interface Experience {
   title: string;
   company: string;
   date: string;
+  icon: string;
 }
 
 export const EXPERIENCE: Experience[] = [
@@ -55,15 +56,18 @@ export const EXPERIENCE: Experience[] = [
     title: "Teaching Assistant",
     company: "Learning Fuze",
     date: "Dec 2023 - Present",
+    icon: "/image/lfz.svg",
   },
   {
     title: "Web Dev Bootcamp",
     company: "Learning Fuze",
     date: "Aug 2023 - Dec 2023",
+    icon: "/image/lfz.svg",
   },
   {
     title: "B.S in Computer Science",
     company: "California State University Fullerton",
     date: "Dec 2023 - Present",
+    icon: "/image/csuf.svg",
   },
 ];
