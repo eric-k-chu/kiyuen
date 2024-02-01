@@ -4,8 +4,8 @@ import Image from "next/image";
 export function Experience() {
   return (
     <>
-      <h1 className="text-5xl font-semibold">Experience</h1>
-      <div className="relative my-4 flex min-h-[30rem] flex-col items-start justify-around gap-y-20 md:items-center">
+      <h1 className="text-5xl font-semibold uppercase">Experience</h1>
+      <div className="relative my-4 flex min-h-[30rem] flex-col items-start justify-around gap-y-20 font-sans md:items-center">
         <TimelineLine />
         <Experiences />
       </div>

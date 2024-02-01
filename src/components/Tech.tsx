@@ -14,8 +14,8 @@ export function Tech() {
   ];
   return (
     <>
-      <h1 className="text-5xl font-semibold">Tech Stack</h1>
-      <div className="flex flex-wrap items-center gap-6 py-4">
+      <h1 className="text-5xl font-semibold uppercase">Tech Stack</h1>
+      <div className="my-4 flex flex-wrap items-center gap-6 font-sans">
         {techs.map((n) => (
           <div
             className="flex h-[40px] items-center gap-2 rounded-md bg-zinc-700 px-2 py-1"

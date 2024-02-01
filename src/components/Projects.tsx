@@ -1,7 +1,6 @@
 "use client";
 
 import { PROJECTS } from "@/lib/constants";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { Github } from ".";
@@ -11,8 +10,8 @@ export function Projects() {
 
   return (
     <>
-      <h1 className="text-5xl font-semibold">Projects</h1>
-      <motion.div className="my-4 flex flex-col items-center gap-8 lg:flex-row lg:justify-center">
+      <h1 className="text-5xl font-semibold uppercase">Projects</h1>
+      <div className="my-4 flex flex-col items-center gap-8 font-sans lg:flex-row lg:justify-center">
         {PROJECTS.map((n) => (
           <div
             className={`relative w-full transition-all duration-300 ease-in-out lg:h-[400px] ${selected === n ? "h-[500px] lg:w-[500px]" : "h-[150px] lg:w-[150px]"}`}
@@ -66,7 +65,7 @@ export function Projects() {
             </div>
           </div>
         ))}
-      </motion.div>
+      </div>
     </>
   );
 }
