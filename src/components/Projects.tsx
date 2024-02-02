@@ -36,7 +36,7 @@ export function Projects() {
               {n.name}
             </h1>
             <div
-              className={`absolute bottom-0 left-0 z-[3] w-full space-y-2 rounded-b-xl bg-gradient-to-t from-black/80 to-transparent transition-opacity duration-300 ease-in-out ${selected === n ? "opacity-100 delay-200" : "pointer-events-none opacity-0 delay-0"}`}
+              className={`absolute bottom-0 left-0 z-[3] w-full space-y-2 rounded-b-xl bg-gradient-to-t from-black/80 to-transparent transition-opacity ease-in-out ${selected === n ? "opacity-100 delay-200 duration-300" : "pointer-events-none opacity-0 delay-0 duration-75"}`}
             >
               <div className="space-y-2 p-3">
                 <h1 className="w-fit rounded-md bg-primary-blue p-1 text-2xl font-semibold lg:text-4xl">
