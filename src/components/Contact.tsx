@@ -1,4 +1,6 @@
 export function Contact() {
+  console.log(process.env.EMAIL_SERVICE);
+  console.log(process.env.EMAIL_TEMPLATE);
   return (
     <>
       <h1 className="font-mono text-5xl font-semibold uppercase">Contact</h1>
