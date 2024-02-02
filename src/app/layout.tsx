@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
-import { Nova_Mono } from "next/font/google";
+import { Inter, Nova_Mono } from "next/font/google";
 import "./globals.css";
 
-const nova = Nova_Mono({ subsets: ["latin"], weight: "400" });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const nova = Nova_Mono({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-nova-mono",
+});
 
 export const metadata: Metadata = {
   title: "Eric Chu Portfolio",
@@ -16,8 +27,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={nova.className}>
-        <main className="relative min-h-screen overflow-y-auto">
+      <body className={`${inter.variable} ${nova.variable}`}>
+        <main className="relative min-h-screen overflow-y-auto font-sans">
           {children}
         </main>
       </body>

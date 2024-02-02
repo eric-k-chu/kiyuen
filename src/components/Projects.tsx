@@ -10,8 +10,8 @@ export function Projects() {
 
   return (
     <>
-      <h1 className="text-5xl font-semibold uppercase">Projects</h1>
-      <div className="my-4 flex flex-col items-center gap-8 font-sans lg:flex-row lg:justify-center">
+      <h1 className="font-mono text-5xl font-semibold uppercase">Projects</h1>
+      <div className="my-4 flex flex-col items-center gap-8 lg:flex-row lg:justify-center">
         {PROJECTS.map((n) => (
           <div
             className={`relative w-full transition-all duration-300 ease-in-out lg:h-[400px] ${selected === n ? "h-[500px] lg:w-[500px]" : "h-[150px] lg:w-[150px]"}`}
@@ -38,7 +38,7 @@ export function Projects() {
             <div
               className={`absolute bottom-0 left-0 z-[3] w-full space-y-2 rounded-b-xl bg-gradient-to-t from-black/80 to-transparent transition-opacity duration-300 ease-in-out ${selected === n ? "opacity-100 delay-200" : "pointer-events-none opacity-0 delay-0"}`}
             >
-              <div className="p-3">
+              <div className="space-y-2 p-3">
                 <h1 className="w-fit rounded-md bg-primary-blue p-1 text-2xl font-semibold lg:text-4xl">
                   {n.name}
                 </h1>

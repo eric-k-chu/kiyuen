@@ -1,7 +1,7 @@
 export function Contact() {
   return (
     <>
-      <h1 className="text-center text-4xl font-semibold">Contact</h1>
+      <h1 className="font-mono text-5xl font-semibold uppercase">Contact</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu
         neque viverra, ullamcorper mauris vel, pellentesque eros. Fusce ac

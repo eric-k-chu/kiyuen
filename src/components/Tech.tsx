@@ -14,8 +14,8 @@ export function Tech() {
   ];
   return (
     <>
-      <h1 className="text-5xl font-semibold uppercase">Tech Stack</h1>
-      <div className="my-4 flex flex-wrap items-center gap-6 font-sans">
+      <h1 className="font-mono text-5xl font-semibold uppercase">Tech Stack</h1>
+      <div className="my-4 flex flex-wrap items-center gap-6">
         {techs.map((n) => (
           <div
             className="flex h-[40px] items-center gap-2 rounded-md bg-zinc-700 px-2 py-1"
@@ -168,7 +168,7 @@ function NodeJsIcon() {
 
 function ExpressJsIcon() {
   return (
-    <span className="select-none font-sans text-base font-medium tracking-widest">
+    <span className="select-none text-base font-medium tracking-widest">
       ex
     </span>
   );

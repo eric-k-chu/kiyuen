@@ -17,6 +17,10 @@ const config: Config = {
         "primary-blue": "#5C98D0",
         "primary-orange": "#EDA021",
       },
+      fontFamily: {
+        sans: [`var(--font-inter)`],
+        mono: ["var(--font-nova-mono)"],
+      },
     },
   },
   plugins: [],

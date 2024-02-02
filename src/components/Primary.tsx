@@ -13,7 +13,7 @@ export function Primary() {
       <div className="absolute inset-0 bg-[url(/image/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
       <div className="z-[1] flex w-[440px] flex-col items-center gap-y-6">
         <HackerText />
-        <div className="flex w-full items-center justify-evenly font-sans font-semibold tracking-wider">
+        <div className="flex w-full items-center justify-evenly font-semibold tracking-wider">
           {langs.map((n, i) => (
             <button
               className={`border-b-2 p-2 text-sm hover:bg-white/10 md:text-base ${lang === i ? "rounded-t-md border-b-primary-blue text-primary-blue" : "rounded-md border-b-transparent text-white"}`}
@@ -36,7 +36,7 @@ function Code({ index }: { index: number }) {
 
   if (index === 0) {
     return (
-      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
+      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 font-sans text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">let</span>
         <span>title &#61;</span>
         <span className="text-[#CAA48F]">
@@ -48,7 +48,7 @@ function Code({ index }: { index: number }) {
 
   if (index === 1) {
     return (
-      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
+      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 font-sans text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">
           char<span className="text-white">*</span>
         </span>
@@ -61,7 +61,7 @@ function Code({ index }: { index: number }) {
   }
 
   return (
-    <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
+    <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 font-sans text-xs sm:text-sm md:text-base">
       <span className="text-[#5C98D0]">string</span>
       <span>title &#61;</span>
       <span className="text-[#CAA48F]">
