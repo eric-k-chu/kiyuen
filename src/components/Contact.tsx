@@ -1,62 +1,147 @@
+"use client";
+
+import { ChangeEvent, FormEvent, useReducer } from "react";
+import emailjs from "@emailjs/browser";
+
+type EmailFormAction =
+  | { type: "CHANGE_NAME"; payload: string }
+  | { type: "CHANGE_EMAIL"; payload: string }
+  | { type: "CHANGE_MESSAGE"; payload: string }
+  | { type: "RESET_FORM" };
+
+interface EmailFormState {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const INIT_STATE: EmailFormState = {
+  name: "",
+  email: "",
+  message: "",
+};
+
+function reducer(
+  state: EmailFormState,
+  action: EmailFormAction,
+): EmailFormState {
+  switch (action.type) {
+    case "CHANGE_NAME":
+      return { ...state, name: action.payload };
+    case "CHANGE_EMAIL":
+      return { ...state, email: action.payload };
+    case "CHANGE_MESSAGE":
+      return { ...state, message: action.payload };
+    case "RESET_FORM":
+      return INIT_STATE;
+    default:
+      return state;
+  }
+}
+
 export function Contact() {
-  console.log(process.env.EMAIL_SERVICE);
-  console.log(process.env.EMAIL_TEMPLATE);
+  const [state, dispatch] = useReducer(reducer, INIT_STATE);
+
+  function handleChange(
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    type: "NAME" | "EMAIL" | "MESSAGE",
+  ): void {
+    dispatch({
+      type: `CHANGE_${type}`,
+      payload: e.currentTarget.value,
+    });
+  }
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>): void {
+    e.preventDefault();
+
+    if (
+      state.name.length < 1 ||
+      state.email.length < 1 ||
+      state.message.length < 1
+    ) {
+      alert("Name, email, or message cannot be empty!.");
+      return;
+    }
+
+    if (
+      !process.env.NEXT_PUBLIC_EMAIL_SERVICE ||
+      !process.env.NEXT_PUBLIC_EMAIL_TEMPLATE ||
+      !process.env.NEXT_PUBLIC_EMAIL_PK
+    ) {
+      console.log(process.env.NEXT_PUBLIC_EMAIL_SERVICE);
+      console.log(process.env.NEXT_PUBLIC_EMAIL_TEMPLATE);
+      console.log(process.env.NEXT_PUBLIC_EMAIL_PK);
+      alert("Internal Server Error.");
+      return;
+    }
+
+    const templateParams = {
+      from_name: state.name,
+      from_email: state.email,
+      to_name: "Eric Chu",
+      message: state.message,
+    };
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAIL_PK,
+      )
+      .then(() => {
+        alert("Email sent successfully!");
+        dispatch({
+          type: "RESET_FORM",
+        });
+      })
+      .catch(() => {
+        alert("An unexpected error occured with sending an email.");
+      });
+  }
+
   return (
     <>
       <h1 className="font-mono text-5xl font-semibold uppercase">Contact</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu
-        neque viverra, ullamcorper mauris vel, pellentesque eros. Fusce ac
-        porttitor sem, in tempus lorem. Pellentesque et lectus sed dui cursus
-        tempus. Vestibulum viverra, est ac varius molestie, mauris elit dapibus
-        tortor, eu egestas elit erat nec nibh. Vivamus accumsan dictum ante.
-        Nunc tempor mi sit amet velit fringilla vehicula ac sed massa. Vivamus
-        facilisis sem eros, laoreet finibus felis venenatis eu. Vivamus
-        consectetur ante lectus, eget molestie mi maximus non. Sed sit amet quam
-        leo. Donec a lacus eu nisi vestibulum vulputate quis eu ex. Maecenas
-        pretium id purus ut ornare. In venenatis elit eget nibh egestas
-        faucibus. Pellentesque egestas metus erat, cursus suscipit metus
-        scelerisque in. Maecenas blandit eu nibh eu fringilla. Aenean blandit
-        sagittis ligula lobortis malesuada. Suspendisse ornare sodales nibh,
-        vitae luctus tortor viverra nec. Sed maximus aliquam felis, sit amet
-        fermentum massa fermentum a. Proin ac ullamcorper elit. Sed convallis
-        porttitor nisi non pharetra. Nunc eget enim eget mi accumsan scelerisque
-        quis eget lacus. Phasellus imperdiet ligula in egestas condimentum. Ut
-        scelerisque, urna rhoncus finibus congue, lorem tellus bibendum ligula,
-        at blandit ex quam ut erat. Ut lacinia quis nisl eget fermentum.
-        Pellentesque non purus nisi. Duis eget enim nisl. Sed blandit sit amet
-        velit in elementum. Nulla ut gravida tellus. Mauris at tortor auctor mi
-        faucibus elementum id id nulla. Donec gravida est et pellentesque
-        blandit. Aenean id commodo sapien. Quisque eget urna hendrerit, pharetra
-        odio vel, pretium ex. Nullam semper, eros vel placerat tincidunt, ante
-        sapien rhoncus libero, vitae placerat augue mi eget enim. Class aptent
-        taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-        himenaeos. Maecenas volutpat eu lacus vitae elementum. Fusce at augue
-        nunc. Suspendisse at lacus et elit venenatis aliquet non eu diam. Sed
-        laoreet elit ac elit vehicula, vel maximus quam accumsan. Etiam sed
-        sollicitudin eros, eget feugiat ipsum. Fusce ac hendrerit est.
-        Vestibulum id ligula et mi varius porta et sit amet metus. Vivamus ut
-        quam volutpat sapien dapibus molestie. Quisque volutpat, ipsum at mattis
-        imperdiet, erat ligula tempus magna, eu commodo velit eros ut enim.
-        Nulla gravida ipsum vel eros aliquet, sed iaculis dolor pharetra. Donec
-        laoreet turpis at orci efficitur dictum. Vestibulum pellentesque laoreet
-        nisi sed lacinia. Phasellus sapien dolor, varius ut eleifend ut, lacinia
-        ut ex. Nullam elementum justo eget justo congue, vel dictum lacus
-        sodales. In pellentesque leo elit, at fermentum erat tempor non.
-        Praesent vel augue egestas, placerat lectus eget, fermentum neque.
-        Integer ac odio nec nisi mattis interdum. Morbi in dolor facilisis arcu
-        consequat ultrices. Nam id erat hendrerit, malesuada erat nec, pulvinar
-        tellus. Suspendisse quis sapien sed tellus ultricies tempor blandit quis
-        sem. Fusce non nulla quis mauris ornare varius. Proin eu blandit arcu,
-        eget placerat dolor. Praesent laoreet felis quam, a feugiat neque
-        imperdiet ut. In vitae felis at turpis dapibus viverra. Sed ante ligula,
-        tempor eget tristique porttitor, elementum vel felis. Donec mollis
-        lacinia metus vel pulvinar. Nullam cursus lacus convallis justo egestas
-        pretium. Cras a sem lectus. Vestibulum nec quam vel purus volutpat
-        placerat vel at mauris. Duis eget augue purus. Sed rhoncus dolor sed
-        vestibulum pharetra. In porta non nibh et aliquam. Aliquam erat
-        volutpat.{" "}
-      </p>
+      <form
+        className="mx-auto my-4 flex w-full max-w-[600px] flex-col items-center justify-center gap-8 rounded-md bg-zinc-700 p-8"
+        onSubmit={handleSubmit}
+      >
+        <label className="w-full text-xl font-semibold">
+          Name:
+          <input
+            type="text"
+            className="my-2 w-full rounded-md bg-zinc-800 px-2 text-base font-normal leading-8"
+            value={state.name}
+            onChange={(e) => handleChange(e, "NAME")}
+          />
+        </label>
+        <label className="w-full text-xl font-semibold">
+          Email:
+          <input
+            type="text"
+            className="my-2 w-full rounded-md bg-zinc-800 px-2  text-base font-normal leading-8"
+            value={state.email}
+            onChange={(e) => handleChange(e, "EMAIL")}
+          />
+        </label>
+        <label className="w-full text-xl font-semibold">
+          Message:
+          <textarea
+            rows={15}
+            className="my-2 w-full resize-none rounded-md bg-zinc-800 p-2 text-base font-normal"
+            value={state.message}
+            onChange={(e) => handleChange(e, "MESSAGE")}
+          />
+        </label>
+        <button
+          type="submit"
+          className="w-full scale-100 rounded-md bg-primary-blue p-2 text-lg font-semibold uppercase transition-transform duration-150 ease-in-out hover:scale-105"
+        >
+          Send
+        </button>
+      </form>
     </>
   );
 }
