@@ -36,7 +36,7 @@ function Code({ index }: { index: number }) {
 
   if (index === 0) {
     return (
-      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 font-sans text-xs sm:text-sm md:text-base">
+      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">let</span>
         <span>title &#61;</span>
         <span className="text-[#CAA48F]">
@@ -48,7 +48,7 @@ function Code({ index }: { index: number }) {
 
   if (index === 1) {
     return (
-      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 font-sans text-xs sm:text-sm md:text-base">
+      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">
           char<span className="text-white">*</span>
         </span>
@@ -61,7 +61,7 @@ function Code({ index }: { index: number }) {
   }
 
   return (
-    <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 font-sans text-xs sm:text-sm md:text-base">
+    <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
       <span className="text-[#5C98D0]">string</span>
       <span>title &#61;</span>
       <span className="text-[#CAA48F]">

@@ -100,7 +100,7 @@ export function Contact() {
 
   return (
     <>
-      <h1 className="font-mono text-5xl font-semibold uppercase">Contact</h1>
+      <h1 className="font-nova text-5xl font-semibold uppercase">Contact</h1>
       <form
         className="mx-auto my-4 flex w-full max-w-[600px] flex-col items-center justify-center gap-8 rounded-md bg-zinc-700 p-8"
         onSubmit={handleSubmit}

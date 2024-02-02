@@ -9,7 +9,7 @@ export function Navbar() {
     <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-zinc-900/90 px-12 py-6 backdrop-blur-sm">
       <h1 className="text-xl font-medium">{"朱"}</h1>
       <MobileMenu />
-      <nav className="hidden items-center gap-x-4 font-mono text-xl font-semibold tracking-wider md:flex">
+      <nav className="font-nova hidden items-center gap-x-4 text-xl font-semibold tracking-wider md:flex">
         {PAGE_LINKS.map((n, i) => (
           <Fragment key={n.name}>
             <a

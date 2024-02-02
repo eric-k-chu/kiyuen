@@ -84,7 +84,7 @@ export const HackerText = memo(
 
     return (
       <h1
-        className="text-center font-mono text-4xl font-semibold tracking-wider sm:text-5xl md:text-6xl"
+        className="font-nova text-center text-4xl font-semibold tracking-wider sm:text-5xl md:text-6xl"
         onMouseOver={handleMouseOver}
       >
         {textValue}

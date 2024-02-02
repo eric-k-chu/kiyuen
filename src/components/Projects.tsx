@@ -10,7 +10,7 @@ export function Projects() {
 
   return (
     <>
-      <h1 className="font-mono text-5xl font-semibold uppercase">Projects</h1>
+      <h1 className="font-nova text-5xl font-semibold uppercase">Projects</h1>
       <div className="my-4 flex flex-col items-center gap-8 lg:flex-row lg:justify-center">
         {PROJECTS.map((n) => (
           <div

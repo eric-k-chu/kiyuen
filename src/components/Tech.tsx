@@ -14,7 +14,7 @@ export function Tech() {
   ];
   return (
     <>
-      <h1 className="font-mono text-5xl font-semibold uppercase">Tech Stack</h1>
+      <h1 className="font-nova text-5xl font-semibold uppercase">Tech Stack</h1>
       <div className="my-4 flex flex-wrap items-center gap-6">
         {techs.map((n) => (
           <div

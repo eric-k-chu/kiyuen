@@ -19,7 +19,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: [`var(--font-inter)`],
-        mono: ["var(--font-nova-mono)"],
+        nova: ["var(--font-nova-mono)"],
       },
     },
   },
