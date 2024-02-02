@@ -7,7 +7,9 @@ export function Content() {
   return (
     <>
       {PAGE_LINKS.map((n) => (
-        <AnchorSection id={n.name}>{n.section}</AnchorSection>
+        <AnchorSection id={n.name} key={n.name}>
+          {n.section}
+        </AnchorSection>
       ))}
     </>
   );
