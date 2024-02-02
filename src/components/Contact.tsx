@@ -69,9 +69,6 @@ export function Contact() {
       !process.env.NEXT_PUBLIC_EMAIL_TEMPLATE ||
       !process.env.NEXT_PUBLIC_EMAIL_PK
     ) {
-      console.log(process.env.NEXT_PUBLIC_EMAIL_SERVICE);
-      console.log(process.env.NEXT_PUBLIC_EMAIL_TEMPLATE);
-      console.log(process.env.NEXT_PUBLIC_EMAIL_PK);
       alert("Internal Server Error.");
       return;
     }
