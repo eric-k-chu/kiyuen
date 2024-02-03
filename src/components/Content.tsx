@@ -2,33 +2,21 @@
 
 import { SECTIONS } from "@/lib/sections";
 import { About, AnchorSection, Contact, Experience, Projects, Tech } from ".";
-import { useCallback } from "react";
 
 export function Content() {
-  const getSection = useCallback(
-    (name: (typeof SECTIONS)[number]) => {
-      switch (name) {
-        case "about":
-          return <About />;
-        case "tech":
-          return <Tech />;
-        case "projects":
-          return <Projects />;
-        case "experience":
-          return <Experience />;
-        case "contact":
-          return <Contact />;
-        default:
-          return <></>;
-      }
-    },
-    [SECTIONS],
-  );
+  const sections: { name: (typeof SECTIONS)[number]; content: JSX.Element }[] =
+    [
+      { name: "about", content: <About /> },
+      { name: "tech", content: <Tech /> },
+      { name: "projects", content: <Projects /> },
+      { name: "experience", content: <Experience /> },
+      { name: "contact", content: <Contact /> },
+    ];
   return (
     <>
-      {SECTIONS.map((n) => (
-        <AnchorSection id={n} key={n}>
-          {getSection(n)}
+      {sections.map((n) => (
+        <AnchorSection id={n.name} key={n.name}>
+          {n.content}
         </AnchorSection>
       ))}
     </>

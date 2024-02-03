@@ -15,10 +15,10 @@ export function Tech() {
   return (
     <>
       <SectionHeader text="Tech Stack" />
-      <div className="my-4 flex flex-wrap items-center gap-6">
+      <div className="my-4 flex flex-wrap items-center justify-center gap-6">
         {techs.map((n) => (
           <div
-            className="flex h-[40px] items-center gap-2 rounded-md bg-zinc-700 px-2 py-1"
+            className="flex h-[40px] items-center gap-2 rounded-md bg-zinc-900 px-2 py-1"
             key={n.name}
           >
             {n.icon}
