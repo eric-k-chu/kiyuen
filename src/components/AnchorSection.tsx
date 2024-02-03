@@ -8,7 +8,7 @@ export function AnchorSection({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="block even:bg-zinc-800">
+    <section id={id} className="even:bg-zinc-800">
       <div className="mx-auto max-w-7xl px-4 py-20">{children}</div>
     </section>
   );
