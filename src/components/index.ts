@@ -11,3 +11,4 @@ export * from "./Experience";
 export * from "./Contact";
 export * from "./Tech";
 export * from "./Content";
+export * from "./Hero3D";

@@ -9,7 +9,7 @@ export function Navbar() {
     <nav className="fixed top-0 z-10 flex w-full items-center justify-between bg-zinc-900/90 px-12 py-6 backdrop-blur-sm">
       <h1 className="text-xl font-medium">{"朱"}</h1>
       <MobileMenu />
-      <nav className="font-nova hidden items-center gap-x-4 text-xl font-semibold tracking-wider md:flex">
+      <nav className="hidden items-center gap-x-4 font-nova text-xl font-semibold tracking-wider md:flex">
         {PAGE_LINKS.map((n, i) => (
           <Fragment key={n.name}>
             <a
@@ -52,7 +52,7 @@ function MobileMenu() {
         className={`fixed inset-0 flex min-h-screen w-screen items-center justify-end transition-all duration-300 ease-in-out ${isOpen ? "bg-zinc-900/25 backdrop-blur-md" : "pointer-events-none bg-transparent"}`}
       >
         <nav
-          className={`flex size-full flex-col gap-y-8 p-8 text-xl font-semibold tracking-wider transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+          className={`flex size-full flex-col gap-y-8 p-8 text-xl font-semibold tracking-wider transition-all duration-300 ease-in-out ${isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
         >
           <button onClick={() => setIsOpen(false)}>
             <svg
