@@ -1,57 +1,71 @@
 import Image from "next/image";
 import { SectionHeader } from ".";
+import { ReactNode } from "react";
 
 export function About() {
   return (
     <>
       <SectionHeader text="About" />
-      <div className="space-y-8">
-        <p className="my-4 text-lg sm:text-xl md:text-2xl">
-          Building is something I&#39;ve always been passionate about&#46; From
-          building Legos to theory-crafting a Path of Exile build to designing a
-          web app&#44; it&#39;s been my primary drive for becoming a software
-          developer&#46;
-        </p>
-        <div className="flex w-full items-center justify-around">
-          <Interests
-            name="Web Development"
-            path="/image/web.svg"
-            color="blue"
-          />
-          <Interests
-            name="Game Development"
-            path="/image/controller.svg"
-            color="orange"
-          />
-        </div>
+      <div className="my-4 flex flex-col items-center gap-8 text-lg sm:text-xl md:flex-row md:justify-evenly md:text-2xl">
+        <Card>
+          <CardContent header="Web Development">
+            <p className="text-base md:text-lg">
+              Started my Web Development Journey in 2023! I am fascinated by the
+              different technologies and tools available for web developers.
+            </p>
+          </CardContent>
+          <CardContent>
+            <Image
+              src="/image/web.svg"
+              alt="web development"
+              width={0}
+              height={0}
+              className="m-auto h-32 w-auto md:h-40"
+            />
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent header="Game Development">
+            <p className="text-base md:text-lg">
+              Love the complexity and technicality that comes with game
+              development. I hope to further increase my skills in the coming
+              years!
+            </p>
+          </CardContent>
+          <CardContent>
+            <Image
+              src="/image/controller.svg"
+              alt="game development"
+              width={0}
+              height={0}
+              className="m-auto h-32 w-auto md:h-40"
+            />
+          </CardContent>
+        </Card>
       </div>
     </>
   );
 }
 
-function Interests({
-  name,
-  path,
-  color,
-}: {
-  name: string;
-  path: string;
-  color: "blue" | "orange";
-}) {
+type CardProps = {
+  children: ReactNode;
+};
+
+function Card({ children }: CardProps) {
   return (
-    <div className="flex flex-col items-center">
-      <Image
-        src={path}
-        alt={name}
-        width={0}
-        height={0}
-        className="h-16 w-auto sm:h-24 md:h-32 lg:h-40"
-      />
-      <h2
-        className={`font-nova text-base font-semibold sm:text-lg md:text-xl lg:text-2xl ${color === "blue" ? "text-primary-blue" : "text-primary-orange"}`}
-      >
-        {name}
-      </h2>
+    <div className="flex w-full items-center rounded-md bg-zinc-800 p-6 md:w-1/2">
+      {children}
+    </div>
+  );
+}
+
+function CardContent({ header, children }: CardProps & { header?: string }) {
+  return (
+    <div className="w-1/2">
+      {header && (
+        <h1 className="text-xl font-semibold md:text-2xl">{header}</h1>
+      )}
+      <div className="mt-4">{children}</div>
     </div>
   );
 }

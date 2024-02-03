@@ -36,7 +36,6 @@ export function Primary() {
           <a
             href="#contact"
             className="rounded-md bg-white px-4 py-2 text-center text-lg font-semibold text-black hover:bg-white/90"
-            rounded-md
             rel="noopener"
           >
             Contact Me

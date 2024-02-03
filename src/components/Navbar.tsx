@@ -1,7 +1,6 @@
 "use client";
 
-// must have use client if importing an object with a JSX property
-import { PAGE_LINKS } from "@/lib/sections";
+import { SECTIONS } from "@/lib/sections";
 import { useState, Fragment } from "react";
 
 export function Navbar() {
@@ -10,16 +9,16 @@ export function Navbar() {
       <h1 className="text-xl font-medium">{"朱"}</h1>
       <MobileMenu />
       <nav className="hidden items-center gap-x-4 font-nova text-xl font-semibold tracking-wider md:flex">
-        {PAGE_LINKS.map((n, i) => (
-          <Fragment key={n.name}>
+        {SECTIONS.map((n, i) => (
+          <Fragment key={n}>
             <a
-              href={`#${n.name}`}
+              href={`#${n}`}
               rel="noopener"
               className="border-b-2 border-b-transparent uppercase text-zinc-500 transition-colors duration-150 ease-in-out hover:border-b-primary-blue hover:text-white"
             >
-              {n.name}
+              {n}
             </a>
-            {i < PAGE_LINKS.length - 1 && (
+            {i < SECTIONS.length - 1 && (
               <span className="font-medium">&#47;</span>
             )}
           </Fragment>
@@ -69,15 +68,15 @@ function MobileMenu() {
               />
             </svg>
           </button>
-          {PAGE_LINKS.map((n) => (
+          {SECTIONS.map((n) => (
             <a
-              href={`#${n.name}`}
-              key={n.name}
+              href={`#${n}`}
+              key={n}
               rel="noopener"
               onClick={() => setIsOpen(false)}
               className="w-fit border-b-2 border-b-transparent uppercase transition-colors duration-150 ease-in-out hover:border-b-primary-blue"
             >
-              {n.name}
+              {n}
             </a>
           ))}
         </nav>
