@@ -1,7 +1,7 @@
-export function Github() {
+export function Github({ className }: { className?: string }) {
   return (
     <svg
-      className="size-8 fill-white"
+      className={className || "size-8 fill-white"}
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >

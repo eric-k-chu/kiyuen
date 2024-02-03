@@ -10,19 +10,18 @@ export function Tech() {
     { icon: <TailwindIcon />, name: "TailwindCSS" },
     { icon: <AwsBeanstalkIcon />, name: "AWS Elastic Beanstalk" },
     { icon: <VercelIcon />, name: "Vercel" },
-    { icon: <Github />, name: "Github" },
+    { icon: <GitIcon />, name: "Git" },
   ];
   return (
     <>
       <SectionHeader text="Tech Stack" />
-      <div className="my-4 flex flex-wrap items-center justify-center gap-6">
+      <div className="my-4 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
         {techs.map((n) => (
-          <div
-            className="flex h-[40px] items-center gap-2 rounded-md bg-zinc-900 px-2 py-1"
-            key={n.name}
-          >
-            {n.icon}
-            <h3 className="text-xl">{n.name}</h3>
+          <div className="flex items-center gap-8" key={n.name}>
+            <div className="h-16 min-h-16 w-16 min-w-16 rounded-full bg-zinc-700 p-2">
+              {n.icon}
+            </div>
+            <h3 className="text-xl font-semibold sm:text-lg">{n.name}</h3>
           </div>
         ))}
       </div>
@@ -33,7 +32,7 @@ export function Tech() {
 function ReactIcon() {
   return (
     <svg
-      className="size-8"
+      className="size-full"
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -55,16 +54,12 @@ function ReactIcon() {
 function NextJsIcon() {
   return (
     <svg
-      className="size-8"
+      className="size-full"
       viewBox="0 0 24 24"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#a)">
-        <path
-          d="M11.214.006c-.052.005-.216.022-.364.033-3.408.308-6.6 2.147-8.624 4.974a11.88 11.88 0 0 0-2.118 5.243c-.096.66-.108.854-.108 1.748s.012 1.089.108 1.748c.652 4.507 3.86 8.293 8.209 9.696.779.251 1.6.422 2.533.526.364.04 1.936.04 2.3 0 1.611-.179 2.977-.578 4.323-1.265.207-.105.247-.134.219-.157a211.64 211.64 0 0 1-1.955-2.62l-1.919-2.593-2.404-3.559a342.499 342.499 0 0 0-2.422-3.556c-.009-.003-.018 1.578-.023 3.51-.007 3.38-.01 3.516-.052 3.596a.426.426 0 0 1-.206.213c-.075.038-.14.045-.495.045H7.81l-.108-.068a.44.44 0 0 1-.157-.172l-.05-.105.005-4.704.007-4.706.073-.092a.644.644 0 0 1 .174-.143c.096-.047.133-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 2 2.895 4.362l4.734 7.172 1.9 2.878.097-.063a12.318 12.318 0 0 0 2.465-2.163 11.947 11.947 0 0 0 2.825-6.135c.096-.66.108-.854.108-1.748s-.012-1.088-.108-1.748C23.24 5.75 20.032 1.963 15.683.56a12.6 12.6 0 0 0-2.498-.523c-.226-.024-1.776-.05-1.97-.03Zm4.913 7.26a.473.473 0 0 1 .237.276c.018.06.023 1.365.018 4.305l-.007 4.218-.743-1.14-.746-1.14v-3.066c0-1.983.009-3.097.023-3.151a.478.478 0 0 1 .232-.296c.097-.05.132-.054.5-.054.347 0 .408.005.486.047Z"
-          fill="#000"
-        />
+        <path d="M11.214.006c-.052.005-.216.022-.364.033-3.408.308-6.6 2.147-8.624 4.974a11.88 11.88 0 0 0-2.118 5.243c-.096.66-.108.854-.108 1.748s.012 1.089.108 1.748c.652 4.507 3.86 8.293 8.209 9.696.779.251 1.6.422 2.533.526.364.04 1.936.04 2.3 0 1.611-.179 2.977-.578 4.323-1.265.207-.105.247-.134.219-.157a211.64 211.64 0 0 1-1.955-2.62l-1.919-2.593-2.404-3.559a342.499 342.499 0 0 0-2.422-3.556c-.009-.003-.018 1.578-.023 3.51-.007 3.38-.01 3.516-.052 3.596a.426.426 0 0 1-.206.213c-.075.038-.14.045-.495.045H7.81l-.108-.068a.44.44 0 0 1-.157-.172l-.05-.105.005-4.704.007-4.706.073-.092a.644.644 0 0 1 .174-.143c.096-.047.133-.051.54-.051.478 0 .558.018.682.154.035.038 1.337 2 2.895 4.362l4.734 7.172 1.9 2.878.097-.063a12.318 12.318 0 0 0 2.465-2.163 11.947 11.947 0 0 0 2.825-6.135c.096-.66.108-.854.108-1.748s-.012-1.088-.108-1.748C23.24 5.75 20.032 1.963 15.683.56a12.6 12.6 0 0 0-2.498-.523c-.226-.024-1.776-.05-1.97-.03Zm4.913 7.26a.473.473 0 0 1 .237.276c.018.06.023 1.365.018 4.305l-.007 4.218-.743-1.14-.746-1.14v-3.066c0-1.983.009-3.097.023-3.151a.478.478 0 0 1 .232-.296c.097-.05.132-.054.5-.054.347 0 .408.005.486.047Z" />
       </g>
       <defs>
         <clipPath id="a">
@@ -79,7 +74,7 @@ function NodeJsIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-8 w-auto"
+      className="size-full"
       version="1.2"
       viewBox="0 0 442.37 270.929"
     >
@@ -168,16 +163,20 @@ function NodeJsIcon() {
 
 function ExpressJsIcon() {
   return (
-    <span className="select-none text-base font-medium tracking-widest">
-      ex
-    </span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className="size-full fill-white"
+    >
+      <path d="M32 24.795c-1.164.296-1.884.013-2.53-.957l-4.594-6.356-.664-.88-5.365 7.257c-.613.873-1.256 1.253-2.4.944l6.87-9.222-6.396-8.33c1.1-.214 1.86-.105 2.535.88l4.765 6.435 4.8-6.4c.615-.873 1.276-1.205 2.38-.883l-2.48 3.288-3.36 4.375c-.4.5-.345.842.023 1.325L32 24.795zM.008 15.427l.562-2.764C2.1 7.193 8.37 4.92 12.694 8.3c2.527 1.988 3.155 4.8 3.03 7.95H1.48c-.214 5.67 3.867 9.092 9.07 7.346 1.825-.613 2.9-2.042 3.438-3.83.273-.896.725-1.036 1.567-.78-.43 2.236-1.4 4.104-3.45 5.273-3.063 1.75-7.435 1.184-9.735-1.248C1 21.6.434 19.812.18 17.9c-.04-.316-.12-.617-.18-.92q.008-.776.008-1.552zm1.498-.38h12.872c-.084-4.1-2.637-7.012-6.126-7.037-3.83-.03-6.58 2.813-6.746 7.037z" />
+    </svg>
   );
 }
 
 function PostgresqlIcon() {
   return (
     <svg
-      className="size-7"
+      className="size-full"
       viewBox="-4 0 264 264"
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid"
@@ -205,7 +204,7 @@ function TailwindIcon() {
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 54 33"
-      className="size-8"
+      className="size-full"
     >
       <g clipPath="url(#prefix__clip0)">
         <path
@@ -227,7 +226,7 @@ function TailwindIcon() {
 function AwsBeanstalkIcon() {
   return (
     <svg
-      className="size-8"
+      className="size-full"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 80 80"
     >
@@ -249,7 +248,7 @@ function AwsBeanstalkIcon() {
 function VercelIcon() {
   return (
     <svg
-      className="size-6"
+      className="size-full"
       data-testid="geist-icon"
       fill="none"
       height="24"
@@ -269,6 +268,21 @@ function VercelIcon() {
         stroke="currentColor"
         strokeWidth="1.5"
       />
+    </svg>
+  );
+}
+
+function GitIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="size-full"
+      viewBox="0 0 48 48"
+    >
+      <path
+        fill="#F4511E"
+        d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z"
+      ></path>
     </svg>
   );
 }
