@@ -1,8 +1,7 @@
 "use client";
 
-import { Hero3D } from ".";
-import { HackerText } from "./HackerText";
 import { useState } from "react";
+import { HackerText } from "./HackerText";
 
 export function Primary() {
   const [lang, setLang] = useState(0);
@@ -10,7 +9,7 @@ export function Primary() {
   const langs = ["TypeScript", "C++", "C#"];
 
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden md:flex-row md:justify-around">
+    <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-[url(/image/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
       <div className="z-[1] flex w-[440px] flex-col items-center gap-y-6">
         <HackerText />
@@ -27,7 +26,6 @@ export function Primary() {
         </div>
         <Code index={lang} />
       </div>
-      <Hero3D />
     </div>
   );
 }

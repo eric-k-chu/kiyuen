@@ -102,14 +102,14 @@ export function Contact() {
     <>
       <h1 className="font-nova text-5xl font-semibold uppercase">Contact</h1>
       <form
-        className="mx-auto my-4 flex w-full max-w-[600px] flex-col items-center justify-center gap-8 rounded-md bg-zinc-700 p-8"
+        className="mx-auto my-4 flex w-full max-w-[600px] flex-col items-center justify-center gap-8 rounded-md bg-zinc-800 p-8"
         onSubmit={handleSubmit}
       >
         <label className="w-full text-xl font-semibold">
           Name:
           <input
             type="text"
-            className="my-2 w-full rounded-md bg-zinc-800 px-2 text-base font-normal leading-8"
+            className="my-2 w-full rounded-md bg-zinc-900 px-2 text-base font-normal leading-8"
             value={state.name}
             onChange={(e) => handleChange(e, "NAME")}
           />
@@ -118,7 +118,7 @@ export function Contact() {
           Email:
           <input
             type="text"
-            className="my-2 w-full rounded-md bg-zinc-800 px-2  text-base font-normal leading-8"
+            className="my-2 w-full rounded-md bg-zinc-900 px-2  text-base font-normal leading-8"
             value={state.email}
             onChange={(e) => handleChange(e, "EMAIL")}
           />
@@ -127,14 +127,14 @@ export function Contact() {
           Message:
           <textarea
             rows={15}
-            className="my-2 w-full resize-none rounded-md bg-zinc-800 p-2 text-base font-normal"
+            className="my-2 w-full resize-none rounded-md bg-zinc-900 p-2 text-base font-normal"
             value={state.message}
             onChange={(e) => handleChange(e, "MESSAGE")}
           />
         </label>
         <button
           type="submit"
-          className="w-full scale-100 rounded-md bg-primary-blue p-2 text-lg font-semibold uppercase transition-transform duration-150 ease-in-out hover:scale-105"
+          className="w-full rounded-md bg-primary-blue p-2 text-lg font-semibold uppercase transition-colors duration-150 ease-in-out hover:bg-primary-blue/90"
         >
           Send
         </button>
