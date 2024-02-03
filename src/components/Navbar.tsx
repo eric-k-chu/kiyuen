@@ -15,7 +15,7 @@ export function Navbar() {
             <a
               href={`#${n.name}`}
               rel="noopener"
-              className="border-b-2 border-b-transparent uppercase transition-colors duration-150 ease-in-out hover:border-b-primary-blue"
+              className="border-b-2 border-b-transparent uppercase text-zinc-500 transition-colors duration-150 ease-in-out hover:border-b-primary-blue hover:text-white"
             >
               {n.name}
             </a>
