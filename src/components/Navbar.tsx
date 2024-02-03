@@ -1,7 +1,5 @@
-"use client";
-
 import { SECTIONS } from "@/lib/sections";
-import { useState, Fragment } from "react";
+import { Fragment } from "react";
 
 export function Navbar() {
   return (
