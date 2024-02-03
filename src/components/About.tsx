@@ -1,9 +1,10 @@
 import Image from "next/image";
+import { SectionHeader } from ".";
 
 export function About() {
   return (
     <>
-      <h1 className="font-nova text-5xl font-semibold uppercase">About</h1>
+      <SectionHeader text="About" />
       <div className="space-y-8">
         <p className="my-4 text-lg sm:text-xl md:text-2xl">
           Building is something I&#39;ve always been passionate about&#46; From

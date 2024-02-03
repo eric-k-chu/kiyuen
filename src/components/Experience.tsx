@@ -1,10 +1,11 @@
 import { EXPERIENCE } from "@/lib/constants";
 import Image from "next/image";
+import { SectionHeader } from ".";
 
 export function Experience() {
   return (
     <>
-      <h1 className="font-nova text-5xl font-semibold uppercase">Experience</h1>
+      <SectionHeader text="Experience" />
       <div className="relative my-4 flex min-h-[30rem] flex-col items-start justify-around gap-y-20 md:items-center">
         <TimelineLine />
         <Experiences />

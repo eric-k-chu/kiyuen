@@ -3,14 +3,14 @@
 import { PROJECTS } from "@/lib/constants";
 import Image from "next/image";
 import { useState } from "react";
-import { Github } from ".";
+import { Github, SectionHeader } from ".";
 
 export function Projects() {
   const [selected, setSelected] = useState(PROJECTS[0]);
 
   return (
     <>
-      <h1 className="font-nova text-5xl font-semibold uppercase">Projects</h1>
+      <SectionHeader text="Projects" />
       <div className="my-4 flex flex-col items-center gap-8 lg:flex-row lg:justify-center">
         {PROJECTS.map((n) => (
           <div

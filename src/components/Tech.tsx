@@ -1,4 +1,4 @@
-import { Github } from ".";
+import { Github, SectionHeader } from ".";
 
 export function Tech() {
   const techs = [
@@ -14,7 +14,7 @@ export function Tech() {
   ];
   return (
     <>
-      <h1 className="font-nova text-5xl font-semibold uppercase">Tech Stack</h1>
+      <SectionHeader text="Tech Stack" />
       <div className="my-4 flex flex-wrap items-center gap-6">
         {techs.map((n) => (
           <div

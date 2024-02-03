@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, useReducer } from "react";
 import emailjs from "@emailjs/browser";
+import { SectionHeader } from ".";
 
 type EmailFormAction =
   | { type: "CHANGE_NAME"; payload: string }
@@ -100,7 +101,7 @@ export function Contact() {
 
   return (
     <>
-      <h1 className="font-nova text-5xl font-semibold uppercase">Contact</h1>
+      <SectionHeader text="Contact" />
       <form
         className="mx-auto my-4 flex w-full max-w-[600px] flex-col items-center justify-center gap-8 rounded-md bg-zinc-800 p-8"
         onSubmit={handleSubmit}
