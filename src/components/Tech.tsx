@@ -1,4 +1,4 @@
-import { Github, SectionHeader } from ".";
+import { SectionHeader } from ".";
 
 export function Tech() {
   const techs = [
