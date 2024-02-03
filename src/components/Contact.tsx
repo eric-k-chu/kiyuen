@@ -103,14 +103,14 @@ export function Contact() {
     <>
       <SectionHeader text="Contact" />
       <form
-        className="mx-auto my-4 flex w-full max-w-[600px] flex-col items-center justify-center gap-8 rounded-md bg-zinc-800 p-8"
+        className="mx-auto my-4 flex w-full max-w-[600px] flex-col items-center justify-center gap-8 rounded-lg bg-zinc-800 p-8"
         onSubmit={handleSubmit}
       >
         <label className="w-full text-xl font-semibold">
           Name:
           <input
             type="text"
-            className="my-2 w-full rounded-md bg-zinc-900 px-2 text-base font-normal leading-8"
+            className="my-2 w-full rounded-lg bg-zinc-900 px-2 text-base font-normal leading-8"
             value={state.name}
             onChange={(e) => handleChange(e, "NAME")}
           />
@@ -119,7 +119,7 @@ export function Contact() {
           Email:
           <input
             type="text"
-            className="my-2 w-full rounded-md bg-zinc-900 px-2  text-base font-normal leading-8"
+            className="my-2 w-full rounded-lg bg-zinc-900 px-2  text-base font-normal leading-8"
             value={state.email}
             onChange={(e) => handleChange(e, "EMAIL")}
           />
@@ -128,14 +128,14 @@ export function Contact() {
           Message:
           <textarea
             rows={15}
-            className="my-2 w-full resize-none rounded-md bg-zinc-900 p-2 text-base font-normal"
+            className="my-2 w-full resize-none rounded-lg bg-zinc-900 p-2 text-base font-normal"
             value={state.message}
             onChange={(e) => handleChange(e, "MESSAGE")}
           />
         </label>
         <button
           type="submit"
-          className="w-full rounded-md bg-primary-blue p-2 text-lg font-semibold uppercase transition-colors duration-150 ease-in-out hover:bg-primary-blue/90"
+          className="w-full rounded-lg bg-primary-blue p-2 text-lg font-semibold uppercase text-black transition-colors duration-150 ease-in-out hover:bg-primary-blue/90"
         >
           Send
         </button>

@@ -16,7 +16,7 @@ export function Primary() {
         <div className="flex w-full items-center justify-evenly font-semibold tracking-wider">
           {langs.map((n, i) => (
             <button
-              className={`border-b-2 p-2 text-sm hover:bg-white/10 md:text-base ${lang === i ? "rounded-t-md border-b-primary-blue text-primary-blue" : "rounded-md border-b-transparent text-white"}`}
+              className={`border-b-2 p-2 text-sm hover:bg-white/10 md:text-base ${lang === i ? "rounded-t-md border-b-primary-blue text-primary-blue" : "rounded-lg border-b-transparent text-white"}`}
               key={n}
               onClick={() => setLang(i)}
             >
@@ -28,14 +28,14 @@ export function Primary() {
         <div className="flex w-full justify-evenly">
           <a
             download="eric_chu_resume.pdf"
-            className="rounded-md bg-white px-4 py-2 text-center text-lg font-semibold text-black hover:bg-white/90"
+            className="rounded-lg bg-white px-4 py-2 text-center text-lg font-semibold text-black hover:bg-white/90"
             href="/eric_chu_resume.pdf"
           >
             Resume
           </a>
           <a
             href="#contact"
-            className="rounded-md bg-white px-4 py-2 text-center text-lg font-semibold text-black hover:bg-white/90"
+            className="rounded-lg bg-white px-4 py-2 text-center text-lg font-semibold text-black hover:bg-white/90"
             rel="noopener"
           >
             Contact Me
@@ -51,7 +51,7 @@ function Code({ index }: { index: number }) {
 
   if (index === 0) {
     return (
-      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
+      <code className="space-x-2 rounded-lg bg-zinc-700 px-4 py-4 text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">let</span>
         <span>title &#61;</span>
         <span className="text-[#CAA48F]">
@@ -63,7 +63,7 @@ function Code({ index }: { index: number }) {
 
   if (index === 1) {
     return (
-      <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
+      <code className="space-x-2 rounded-lg bg-zinc-700 px-4 py-4 text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">
           char<span className="text-white">*</span>
         </span>
@@ -76,7 +76,7 @@ function Code({ index }: { index: number }) {
   }
 
   return (
-    <code className="space-x-2 rounded-md bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
+    <code className="space-x-2 rounded-lg bg-zinc-700 px-4 py-4 text-xs sm:text-sm md:text-base">
       <span className="text-[#5C98D0]">string</span>
       <span>title &#61;</span>
       <span className="text-[#CAA48F]">

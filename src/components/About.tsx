@@ -53,7 +53,7 @@ type CardProps = {
 
 function Card({ children }: CardProps) {
   return (
-    <div className="flex w-full items-center rounded-md bg-zinc-800 p-6 md:w-1/2">
+    <div className="flex w-full items-center rounded-lg bg-zinc-800 p-6 md:w-1/2">
       {children}
     </div>
   );

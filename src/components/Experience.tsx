@@ -26,7 +26,7 @@ function Experiences() {
             width={0}
             height={0}
           />
-          <div className="absolute left-20 top-0 w-56 space-y-2 rounded-md bg-neutral-700 py-4 pl-4 shadow-md shadow-primary-orange sm:w-64 md:left-auto md:w-[18rem] md:group-odd:right-20 md:group-even:left-20 lg:w-96">
+          <div className="absolute left-20 top-0 w-56 space-y-2 rounded-lg bg-neutral-700 py-4 pl-4 shadow-md shadow-primary-orange sm:w-64 md:left-auto md:w-[18rem] md:group-odd:right-20 md:group-even:left-20 lg:w-96">
             <h1 className="text-base font-semibold text-primary-orange md:text-lg lg:text-2xl">
               {n.title}
             </h1>
@@ -49,7 +49,7 @@ function Experiences() {
 function TimelineLine() {
   return (
     <>
-      <div className="absolute left-4 z-0 h-[30rem] w-2 rounded-md bg-gradient-to-t from-transparent via-primary-blue to-transparent md:left-auto" />
+      <div className="absolute left-4 z-0 h-[30rem] w-2 rounded-lg bg-gradient-to-t from-transparent via-primary-blue to-transparent md:left-auto" />
     </>
   );
 }
