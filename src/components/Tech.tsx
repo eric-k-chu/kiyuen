@@ -17,11 +17,11 @@ export function Tech() {
       <SectionHeader text="Tech Stack" />
       <div className="my-4 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
         {techs.map((n) => (
-          <div className="flex items-center gap-8" key={n.name}>
-            <div className="h-16 min-h-16 w-16 min-w-16 rounded-full bg-zinc-700 p-2">
+          <div className="flex items-center gap-4" key={n.name}>
+            <div className="h-16 min-h-16 w-16 min-w-16 rounded-full bg-zinc-800 p-2">
               {n.icon}
             </div>
-            <h3 className="text-xl font-semibold sm:text-lg">{n.name}</h3>
+            <h3 className="text-xl font-semibold">{n.name}</h3>
           </div>
         ))}
       </div>

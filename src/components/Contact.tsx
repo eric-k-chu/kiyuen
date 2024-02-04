@@ -89,13 +89,13 @@ export function Contact() {
         process.env.NEXT_PUBLIC_EMAIL_PK,
       )
       .then(() => {
-        alert("Email sent successfully!");
+        alert("Email sent successfully");
         dispatch({
           type: "RESET_FORM",
         });
       })
       .catch(() => {
-        alert("An unexpected error occured with sending an email.");
+        alert("An unexpected error occured with sending an email");
       });
   }
 
@@ -106,29 +106,29 @@ export function Contact() {
         className="mx-auto my-4 flex w-full max-w-[600px] flex-col items-center justify-center gap-8 rounded-lg bg-zinc-800 p-8"
         onSubmit={handleSubmit}
       >
-        <label className="w-full text-xl font-semibold">
+        <label className="w-full text-base font-semibold sm:text-lg">
           Name:
           <input
             type="text"
-            className="my-2 w-full rounded-lg bg-zinc-900 px-2 text-base font-normal leading-8"
+            className="my-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-2 text-base font-normal leading-8"
             value={state.name}
             onChange={(e) => handleChange(e, "NAME")}
           />
         </label>
-        <label className="w-full text-xl font-semibold">
+        <label className="w-full text-base font-semibold sm:text-lg">
           Email:
           <input
             type="text"
-            className="my-2 w-full rounded-lg bg-zinc-900 px-2  text-base font-normal leading-8"
+            className="my-2 w-full rounded-lg border border-zinc-700 bg-zinc-900 px-2  text-base font-normal leading-8"
             value={state.email}
             onChange={(e) => handleChange(e, "EMAIL")}
           />
         </label>
-        <label className="w-full text-xl font-semibold">
+        <label className="w-full text-base font-semibold sm:text-lg">
           Message:
           <textarea
-            rows={15}
-            className="my-2 w-full resize-none rounded-lg bg-zinc-900 p-2 text-base font-normal"
+            rows={12}
+            className="my-2 w-full resize-none rounded-lg border border-zinc-700 bg-zinc-900 p-2 text-base font-normal"
             value={state.message}
             onChange={(e) => handleChange(e, "MESSAGE")}
           />

@@ -9,9 +9,10 @@ export function About() {
       <div className="my-4 flex flex-col items-center gap-8 text-lg sm:text-xl md:flex-row md:justify-evenly md:text-2xl">
         <Card>
           <CardContent header="Web Development">
-            <p className="text-base md:text-lg">
-              Started my Web Development Journey in 2023! I am fascinated by the
-              different technologies and tools available for web developers.
+            <p className="text-base">
+              Started my Web Development Journey in 2023. I've been fascinated
+              with how many different technologies there available to us web
+              developers.
             </p>
           </CardContent>
           <CardContent>
@@ -26,10 +27,9 @@ export function About() {
         </Card>
         <Card>
           <CardContent header="Game Development">
-            <p className="text-base md:text-lg">
-              Love the complexity and technicality that comes with game
-              development. I hope to further increase my skills in the coming
-              years!
+            <p className="text-base">
+              I've always been interested in the complexity and technicality of
+              games. Developing a game from scratch is just so exciting!
             </p>
           </CardContent>
           <CardContent>
@@ -53,7 +53,7 @@ type CardProps = {
 
 function Card({ children }: CardProps) {
   return (
-    <div className="flex w-full items-center rounded-lg bg-zinc-800 p-6 md:w-1/2">
+    <div className="flex min-h-[250px] w-full items-center rounded-lg bg-zinc-800 p-6 md:w-1/2">
       {children}
     </div>
   );

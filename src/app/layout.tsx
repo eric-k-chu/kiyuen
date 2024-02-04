@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, Nova_Mono } from "next/font/google";
+import { Nova_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const roboto = Roboto({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-roboto",
+  weight: "400",
 });
 
 const nova = Nova_Mono({
@@ -27,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${nova.variable}`}>
+      <body className={`${roboto.variable} ${nova.variable}`}>
         <main className="relative min-h-screen overflow-y-auto font-sans">
           {children}
         </main>

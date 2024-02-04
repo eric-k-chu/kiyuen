@@ -15,7 +15,7 @@ export function Navbar() {
               {n}
             </a>
             {i < SECTIONS.length - 1 && (
-              <span className="text-zinc-500">|</span>
+              <span className="text-primary-blue">|</span>
             )}
           </Fragment>
         ))}

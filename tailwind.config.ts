@@ -16,9 +16,13 @@ const config: Config = {
       colors: {
         "primary-blue": "#50E6F0",
         "primary-orange": "#F0904F",
+        "alt-blue": "#282C34",
+        "grad-blue": "#9ED4DC",
+        "grad-purple": "#C9A6F5",
+        "primary-navy": "#1E1E2E",
       },
       fontFamily: {
-        sans: [`var(--font-inter)`],
+        sans: [`var(--font-roboto)`],
         nova: ["var(--font-nova-mono)"],
       },
     },

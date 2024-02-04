@@ -23,7 +23,9 @@ export function Primary() {
             </button>
           ))}
         </div>
-        <Code lang={lang} />
+        <code className="bg-alt-blue space-x-2 rounded-lg px-4 py-4 text-xs sm:text-sm md:text-base">
+          <Code lang={lang} />
+        </code>
         <div className="flex w-full justify-evenly">
           <a
             download="eric_chu_resume.pdf"
@@ -37,7 +39,7 @@ export function Primary() {
             className="rounded-lg bg-white px-4 py-2 text-center text-lg font-semibold text-black hover:bg-white/90"
             rel="noopener"
           >
-            Contact Me
+            Contact
           </a>
         </div>
       </div>
@@ -50,19 +52,19 @@ function Code({ lang }: { lang: (typeof LANGS)[number] }) {
 
   if (lang === "TypeScript") {
     return (
-      <code className="space-x-2 rounded-lg bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
+      <>
         <span className="text-[#5C98D0]">let</span>
         <span>title &#61;</span>
         <span className="text-[#CAA48F]">
           &quot;{title}&quot;<span className="text-white">&#59;</span>
         </span>
-      </code>
+      </>
     );
   }
 
   if (lang === "C++") {
     return (
-      <code className="space-x-2 rounded-lg bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
+      <>
         <span className="text-[#5C98D0]">
           char<span className="text-white">*</span>
         </span>
@@ -70,17 +72,17 @@ function Code({ lang }: { lang: (typeof LANGS)[number] }) {
         <span className="text-[#CAA48F]">
           &quot;{title}&quot;<span className="text-white">&#59;</span>
         </span>
-      </code>
+      </>
     );
   }
 
   return (
-    <code className="space-x-2 rounded-lg bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
+    <>
       <span className="text-[#5C98D0]">string</span>
       <span>title &#61;</span>
       <span className="text-[#CAA48F]">
         &quot;{title}&quot;<span className="text-white">&#59;</span>
       </span>
-    </code>
+    </>
   );
 }
