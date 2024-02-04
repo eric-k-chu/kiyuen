@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { HackerText } from "./HackerText";
+import { LANGS } from "@/lib/constants";
 
 export function Primary() {
-  const [lang, setLang] = useState(0);
-
-  const langs = ["TypeScript", "C++", "C#"];
+  const [lang, setLang] = useState<(typeof LANGS)[number]>(LANGS[0]);
 
   return (
     <div className="relative flex min-h-screen w-full items-center justify-center overflow-hidden">
@@ -14,17 +13,17 @@ export function Primary() {
       <div className="z-[1] flex w-[440px] flex-col items-center gap-y-6">
         <HackerText />
         <div className="flex w-full items-center justify-evenly font-semibold tracking-wider">
-          {langs.map((n, i) => (
+          {LANGS.map((n) => (
             <button
-              className={`border-b-2 p-2 text-sm hover:bg-white/10 md:text-base ${lang === i ? "rounded-t-md border-b-primary-blue text-primary-blue" : "rounded-lg border-b-transparent text-white"}`}
+              className={`border-b-2 p-2 text-sm hover:bg-white/10 md:text-base ${lang === n ? "rounded-t-md border-b-primary-blue text-primary-blue" : "rounded-lg border-b-transparent text-white"}`}
               key={n}
-              onClick={() => setLang(i)}
+              onClick={() => setLang(n)}
             >
               {n}
             </button>
           ))}
         </div>
-        <Code index={lang} />
+        <Code lang={lang} />
         <div className="flex w-full justify-evenly">
           <a
             download="eric_chu_resume.pdf"
@@ -46,10 +45,10 @@ export function Primary() {
   );
 }
 
-function Code({ index }: { index: number }) {
+function Code({ lang }: { lang: (typeof LANGS)[number] }) {
   let title = "Full-Stack Software Engineer";
 
-  if (index === 0) {
+  if (lang === "TypeScript") {
     return (
       <code className="space-x-2 rounded-lg bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">let</span>
@@ -61,7 +60,7 @@ function Code({ index }: { index: number }) {
     );
   }
 
-  if (index === 1) {
+  if (lang === "C++") {
     return (
       <code className="space-x-2 rounded-lg bg-zinc-800 px-4 py-4 text-xs sm:text-sm md:text-base">
         <span className="text-[#5C98D0]">

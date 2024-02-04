@@ -71,3 +71,5 @@ export const EXPERIENCE: Experience[] = [
     icon: "/image/csuf.svg",
   },
 ];
+
+export const LANGS = ["TypeScript", "C++", "C#"] as const;
