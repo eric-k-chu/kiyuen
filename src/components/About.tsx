@@ -10,9 +10,9 @@ export function About() {
         <Card>
           <CardContent header="Web Development">
             <p className="text-base">
-              Started my Web Development Journey in 2023. I've been fascinated
-              with how many different technologies there available to us web
-              developers.
+              Started my Web Development Journey in 2023. I&apos;ve been
+              fascinated with how many different technologies there available to
+              us web developers.
             </p>
           </CardContent>
           <CardContent>
@@ -28,8 +28,9 @@ export function About() {
         <Card>
           <CardContent header="Game Development">
             <p className="text-base">
-              I've always been interested in the complexity and technicality of
-              games. Developing a game from scratch is just so exciting!
+              I&apos;ve always been interested in the complexity and
+              technicality of games. Developing a game from scratch is just so
+              exciting!
             </p>
           </CardContent>
           <CardContent>
