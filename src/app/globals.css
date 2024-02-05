@@ -10,3 +10,9 @@
 * {
   min-width: 0;
 }
+
+@layer components {
+  .text-gradient-primary {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+}

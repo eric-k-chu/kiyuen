@@ -5,7 +5,7 @@ import { SectionHeader } from ".";
 export function Experience() {
   return (
     <>
-      <SectionHeader text="Experience" />
+      <SectionHeader text="Experience" black />
       <div className="relative my-4 flex min-h-[30rem] flex-col items-start justify-around gap-y-20 md:items-center">
         <TimelineLine />
         <Experiences />

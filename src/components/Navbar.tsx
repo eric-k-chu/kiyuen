@@ -15,7 +15,7 @@ export function Navbar() {
               {n}
             </a>
             {i < SECTIONS.length - 1 && (
-              <span className="text-primary-blue">|</span>
+              <span className="text-gradient-primary font-black">|</span>
             )}
           </Fragment>
         ))}

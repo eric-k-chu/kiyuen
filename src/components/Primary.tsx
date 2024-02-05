@@ -29,14 +29,14 @@ export function Primary() {
         <div className="flex w-full justify-evenly">
           <a
             download="eric_chu_resume.pdf"
-            className="rounded-lg bg-gradient-to-br from-grad-blue to-grad-purple px-4 py-2 text-center text-lg font-semibold text-black"
+            className="bg-gradient-primary rounded-lg px-4 py-2 text-center text-lg font-semibold text-black"
             href="/eric_chu_resume.pdf"
           >
             Resume
           </a>
           <a
             href="#contact"
-            className="rounded-lg bg-gradient-to-br from-grad-blue to-grad-purple px-4 py-2 text-center text-lg font-semibold text-black"
+            className="bg-gradient-primary rounded-lg px-4 py-2 text-center text-lg font-semibold text-black"
             rel="noopener"
           >
             Contact
