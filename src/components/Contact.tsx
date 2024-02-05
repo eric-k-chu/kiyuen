@@ -135,7 +135,7 @@ export function Contact() {
         </label>
         <button
           type="submit"
-          className="w-full rounded-lg bg-primary-blue p-2 text-lg font-semibold uppercase text-black transition-colors duration-150 ease-in-out hover:bg-primary-blue/90"
+          className="w-full rounded-lg bg-gradient-to-br from-grad-blue to-grad-purple p-2 text-lg font-semibold uppercase text-black transition-colors duration-150 ease-in-out"
         >
           Send
         </button>

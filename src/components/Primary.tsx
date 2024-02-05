@@ -23,20 +23,20 @@ export function Primary() {
             </button>
           ))}
         </div>
-        <code className="bg-alt-blue space-x-2 rounded-lg px-4 py-4 text-xs sm:text-sm md:text-base">
+        <code className="space-x-2 rounded-lg bg-alt-blue px-4 py-4 text-xs sm:text-sm md:text-base">
           <Code lang={lang} />
         </code>
         <div className="flex w-full justify-evenly">
           <a
             download="eric_chu_resume.pdf"
-            className="rounded-lg bg-white px-4 py-2 text-center text-lg font-semibold text-black hover:bg-white/90"
+            className="rounded-lg bg-gradient-to-br from-grad-blue to-grad-purple px-4 py-2 text-center text-lg font-semibold text-black"
             href="/eric_chu_resume.pdf"
           >
             Resume
           </a>
           <a
             href="#contact"
-            className="rounded-lg bg-white px-4 py-2 text-center text-lg font-semibold text-black hover:bg-white/90"
+            className="rounded-lg bg-gradient-to-br from-grad-blue to-grad-purple px-4 py-2 text-center text-lg font-semibold text-black"
             rel="noopener"
           >
             Contact

@@ -39,7 +39,7 @@ export function Projects() {
               className={`absolute bottom-0 left-0 z-[3] w-full space-y-2 rounded-b-xl bg-gradient-to-t from-black/80 to-transparent transition-opacity ease-in-out ${selected === n ? "opacity-100 delay-200 duration-300" : "pointer-events-none opacity-0 delay-0 duration-75"}`}
             >
               <div className="space-y-2 p-3">
-                <h1 className="w-fit rounded-lg bg-primary-blue px-4 py-2 text-2xl font-semibold text-black lg:text-4xl">
+                <h1 className="w-fit rounded-lg bg-gradient-to-br from-grad-blue to-grad-purple px-4 py-2 text-2xl font-semibold text-black lg:text-4xl">
                   {n.name}
                 </h1>
                 <h1 className="text-base font-semibold md:text-lg lg:text-2xl">
