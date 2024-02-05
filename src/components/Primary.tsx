@@ -14,13 +14,17 @@ export function Primary() {
         <HackerText />
         <div className="flex w-full items-center justify-evenly font-semibold tracking-wider">
           {LANGS.map((n) => (
-            <button
-              className={`border-b-2 p-2 text-sm hover:bg-white/10 md:text-base ${lang === n ? "rounded-t-md border-b-primary-blue text-primary-blue" : "rounded-lg border-b-transparent text-white"}`}
+            <div
               key={n}
-              onClick={() => setLang(n)}
+              className={`hover:bg-white/10 ${lang === n ? "rounded-t-lg" : "rounded-lg"}`}
             >
-              {n}
-            </button>
+              <button
+                className={`border-b-2 p-2 text-sm font-black md:text-base ${lang === n ? "text-gradient-primary" : "border-b-transparent text-zinc-400"}`}
+                onClick={() => setLang(n)}
+              >
+                {n}
+              </button>
+            </div>
           ))}
         </div>
         <code className="space-x-2 rounded-lg bg-alt-blue px-4 py-4 text-xs sm:text-sm md:text-base">

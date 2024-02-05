@@ -10,7 +10,7 @@ export function Navbar() {
             <a
               href={`#${n}`}
               rel="noopener"
-              className="border-b-2 border-b-transparent font-nova text-sm uppercase text-zinc-400 transition-colors duration-300 ease-in-out hover:border-b-primary-blue hover:text-zinc-50 sm:text-base"
+              className="hover:text-gradient-primary bg-transparent font-nova text-xs font-black uppercase text-zinc-400 sm:text-sm"
             >
               {n}
             </a>
