@@ -33,14 +33,14 @@ export function Primary() {
         <div className="flex w-full justify-evenly">
           <a
             download="eric_chu_resume.pdf"
-            className="bg-gradient-primary rounded-lg px-4 py-2 text-center text-lg font-semibold text-black"
+            className="rounded-lg bg-gradient-primary px-4 py-2 text-center text-lg font-semibold text-black"
             href="/eric_chu_resume.pdf"
           >
             Resume
           </a>
           <a
             href="#contact"
-            className="bg-gradient-primary rounded-lg px-4 py-2 text-center text-lg font-semibold text-black"
+            className="rounded-lg bg-gradient-primary px-4 py-2 text-center text-lg font-semibold text-black"
             rel="noopener"
           >
             Contact
@@ -66,13 +66,11 @@ function Code({ lang }: { lang: (typeof LANGS)[number] }) {
     );
   }
 
-  if (lang === "C++") {
+  if (lang === "Go") {
     return (
       <>
-        <span className="text-[#5C98D0]">
-          char<span className="text-white">*</span>
-        </span>
-        <span>title &#61;</span>
+        <span className="text-[#5C98D0]">title</span>
+        <span>&#58;&#61;</span>
         <span className="text-[#CAA48F]">
           &quot;{title}&quot;<span className="text-white">&#59;</span>
         </span>

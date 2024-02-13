@@ -72,4 +72,4 @@ export const EXPERIENCE: Experience[] = [
   },
 ];
 
-export const LANGS = ["TypeScript", "C++", "C#"] as const;
+export const LANGS = ["TypeScript", "Go", "C#"] as const;
