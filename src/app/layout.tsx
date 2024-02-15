@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Raleway, Roboto } from "next/font/google";
+import { Nova_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -9,7 +9,7 @@ const roboto = Roboto({
   weight: "400",
 });
 
-const raleway = Raleway({
+const nova = Nova_Mono({
   subsets: ["latin"],
   weight: "400",
   display: "swap",
@@ -28,8 +28,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${roboto.variable} ${raleway.variable}`}>
-        <main className="relative min-h-screen overflow-y-auto font-sans">
+      <body className={`${roboto.variable} ${nova.variable}`}>
+        <main className="font-roboto relative min-h-screen overflow-y-auto">
           {children}
         </main>
       </body>

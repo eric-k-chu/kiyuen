@@ -24,7 +24,7 @@ const config: Config = {
         "primary-navy": "#1E1E2E",
       },
       fontFamily: {
-        sans: [`var(--font-roboto)`],
+        roboto: [`var(--font-roboto)`],
         nova: ["var(--font-nova-mono)"],
       },
     },
