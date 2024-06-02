@@ -1,16 +1,19 @@
+import { JumpLink } from './JumpLink'
+import { NavDrawer } from './NavDrawer'
 import { ThemeToggle } from './ThemeToggle'
 
 export function NavBar(): React.ReactElement {
   return (
-    <nav className='fixed top-0 z-10 flex w-screen items-center justify-between border-b bg-background p-4'>
+    <div className='fixed top-0 z-10 flex w-screen items-center justify-between border-b bg-background p-3 sm:p-4'>
       <h1>Logo</h1>
-      <div className='flex items-center gap-x-4'>
-        <a>About</a>
-        <a>Experience</a>
-        <a>Projects</a>
-        <a>Contact</a>
-        <ThemeToggle />
-      </div>
-    </nav>
+      <nav className='hidden items-center gap-x-4 sm:flex'>
+        <JumpLink href='#about'>About</JumpLink>
+        <JumpLink href='#experience'>Experience</JumpLink>
+        <JumpLink href='#projects'>Projects</JumpLink>
+        <JumpLink href='#contact'>Contact</JumpLink>
+      </nav>
+      <ThemeToggle className='hidden sm:inline-flex' />
+      <NavDrawer />
+    </div>
   )
 }

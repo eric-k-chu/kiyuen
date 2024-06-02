@@ -1,4 +1,6 @@
+export * from './JumpLink'
 export * from './NavBar'
+export * from './NavDrawer'
 export * from './ParticleBackground'
 export * from './ThemeToggle'
 export * from './providers/AppProvider'
