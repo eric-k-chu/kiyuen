@@ -19,7 +19,7 @@ async function addShadcnComponent(): Promise<void> {
 
   if (isAlreadyExported(exports, component)) return
 
-  const exportStatement = `export * from "./${component}";\n`
+  const exportStatement = `export * from './${component}';\n`
   await appendFile(indexPath, exportStatement, 'utf-8')
   logger.success(`Exported ${component} from components/ui`)
 }
