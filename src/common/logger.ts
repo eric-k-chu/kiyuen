@@ -4,6 +4,9 @@ const YELLOW = '\x1b[33m'
 const BLUE = '\x1b[34m'
 const RESET = '\x1b[0m'
 
+/**
+ * ANSI Logger, will not work in browser
+ */
 export class Logger {
   private m_name: string
   constructor(name: string) {
@@ -26,11 +29,7 @@ export class Logger {
     console.warn(this.m_name, message, ...optionalParams)
   }
 
-  private ansify(
-    color: Color,
-    message?: unknown,
-    ...optionalParams: unknown[]
-  ): string {
+  private ansify(color: Color, message?: unknown, ...optionalParams: unknown[]): string {
     const msg = `${message} ${optionalParams}`
     switch (color) {
       case 'red':
