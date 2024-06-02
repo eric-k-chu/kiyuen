@@ -1,7 +1,9 @@
+import { NavBar } from '@/components'
+
 export default function Home(): React.ReactElement {
   return (
-    <main>
-      <h1>Hello</h1>
+    <main className='flex min-h-screen items-center justify-center'>
+      <NavBar />
     </main>
   )
 }
