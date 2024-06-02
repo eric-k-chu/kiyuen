@@ -10,26 +10,26 @@ export class Logger {
     this.m_name = name
   }
 
-  public success(message?: any, ...optionalParams: any[]): void {
+  public success(message?: unknown, ...optionalParams: unknown[]): void {
     console.log(this.m_name, this.ansify('green', message, ...optionalParams))
   }
 
-  public error(message?: any, ...optionalParams: any[]): void {
+  public error(message?: unknown, ...optionalParams: unknown[]): void {
     console.error(this.m_name, this.ansify('red', message, ...optionalParams))
   }
 
-  public warn(message?: any, ...optionalParams: any[]): void {
+  public warn(message?: unknown, ...optionalParams: unknown[]): void {
     console.warn(this.m_name, this.ansify('yellow', message, ...optionalParams))
   }
 
-  public info(message?: any, ...optionalParams: any[]): void {
+  public info(message?: unknown, ...optionalParams: unknown[]): void {
     console.warn(this.m_name, message, ...optionalParams)
   }
 
   private ansify(
     color: Color,
-    message?: any,
-    ...optionalParams: any[]
+    message?: unknown,
+    ...optionalParams: unknown[]
   ): string {
     const msg = `${message} ${optionalParams}`
     switch (color) {
