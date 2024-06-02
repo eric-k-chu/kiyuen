@@ -1,3 +1,4 @@
+export * from './About'
 export * from './JumpLink'
 export * from './NavBar'
 export * from './NavDrawer'

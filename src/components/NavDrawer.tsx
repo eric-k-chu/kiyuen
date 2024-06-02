@@ -38,7 +38,7 @@ export function NavDrawer(): React.ReactElement {
         <SheetFooter className='mt-auto'>
           <a href='https://github.com/eric-k-chu' rel='noreferrer noopener' target='_blank'>
             <Image
-              className='dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert'
+              className='dark:invert'
               src='/github.svg'
               alt='GitHub Logo'
               width={24}
@@ -51,14 +51,7 @@ export function NavDrawer(): React.ReactElement {
             rel='noreferrer noopener'
             target='_blank'
           >
-            <Image
-              className='dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert'
-              src='/linkedin.svg'
-              alt='LinkedIn Logo'
-              width={24}
-              height={24}
-              priority
-            />
+            <Image src='/linkedin.svg' alt='LinkedIn Logo' width={24} height={24} priority />
           </a>
           <ThemeToggle className='ml-auto' />
         </SheetFooter>

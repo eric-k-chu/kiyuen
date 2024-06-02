@@ -5,3 +5,5 @@ export * from './sheet'
 export * from './badge'
 export * from './aspect-ratio'
 export * from './dropdown-menu';
+export * from './tooltip';
+export * from './avatar';
