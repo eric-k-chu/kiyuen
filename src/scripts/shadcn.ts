@@ -10,7 +10,7 @@ const logger = new Logger('scripts/shadcn')
 
 async function addShadcnComponent(): Promise<void> {
   const component = getShadcnComponent()
-  await cmd(`pnpm dlx shadcn-ui@latest add ${component}`)
+  await cmd(`pnpm dlx shadcn-ui@latest add ${component} --overwrite`)
   logger.success(`Added ${component} to components/ui`)
 
   const indexPath = resolve(import.meta.dirname, INDEX_PATH)
