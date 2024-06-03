@@ -6,7 +6,7 @@ export function NavIndicators(): React.ReactElement {
   return (
     <div className='fixed bottom-4 z-10 flex w-screen items-center justify-center'>
       {LINKS.map((_, index) => {
-        const className = current === index ? 'bg-gray-400' : 'bg-gray-300'
+        const className = current === index ? 'bg-primary' : 'bg-gray-300'
         return (
           <Button
             key={index}

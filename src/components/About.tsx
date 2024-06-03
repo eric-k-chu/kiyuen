@@ -1,27 +1,27 @@
+import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui'
 
 export function About(): React.ReactElement {
   return (
     <div className='flex flex-col-reverse items-center justify-center gap-8 sm:flex-row'>
-      <Card className='w-[300px]'>
+      <Card className='w-[320px]'>
         <CardHeader>
           <CardTitle>Eric Chu</CardTitle>
-          <CardDescription>Full-Stack Software Engineer</CardDescription>
+          <CardDescription>Chino, California</CardDescription>
         </CardHeader>
         <CardContent className='grid gap-4'>
-          <section className='flex items-center justify-between'>
-            <span className='text-muted-foreground'>Location</span>
-            <span>Chino, California</span>
-          </section>
-          <section className='flex items-center justify-between'>
-            <span className='text-muted-foreground'>Current Title</span>
-            <span>
-              SWE @{' '}
-              <a href='https://www.terros.com/' rel='noreferrer noopener' target='_blank'>
-                Terros
-              </a>
-            </span>
+          <section className='flex items-center gap-x-1.5 text-lg'>
+            <span>Software Engineer at</span>
+            <a
+              href='https://www.terros.com/'
+              rel='noreferrer noopener'
+              target='_blank'
+              className='flex items-center gap-x-2'
+            >
+              Terros
+              <ExternalLink size={16} />
+            </a>
           </section>
         </CardContent>
         <CardFooter className='items-center gap-x-6'>
