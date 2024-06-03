@@ -23,13 +23,14 @@ type CarouselContextProps = {
   api: ReturnType<typeof useEmblaCarousel>[1]
   scrollPrev: () => void
   scrollNext: () => void
+  scrollTo: (index: number) => void
   canScrollPrev: boolean
   canScrollNext: boolean
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
-function useCarousel(): CarouselContextProps {
+export function useCarousel(): CarouselContextProps {
   const context = React.useContext(CarouselContext)
 
   if (!context) {
@@ -69,6 +70,13 @@ const Carousel = React.forwardRef<
   const scrollNext = React.useCallback(() => {
     api?.scrollNext()
   }, [api])
+
+  const scrollTo = React.useCallback(
+    (index: number) => {
+      api?.scrollTo(index)
+    },
+    [api]
+  )
 
   const handleKeyDown = React.useCallback(
     (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -114,6 +122,7 @@ const Carousel = React.forwardRef<
         orientation: orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
         scrollPrev,
         scrollNext,
+        scrollTo,
         canScrollPrev,
         canScrollNext,
       }}

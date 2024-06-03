@@ -1,18 +1,23 @@
+'use client'
+
 import { Menu } from 'lucide-react'
 import Image from 'next/image'
 import { ThemeToggle } from './ThemeToggle'
 import {
   Button,
   Sheet,
+  SheetClose,
   SheetContent,
   SheetFooter,
   SheetHeader,
-  SheetLink,
   SheetTitle,
   SheetTrigger,
+  useCarousel,
 } from './ui'
 
 export function NavDrawer(): React.ReactElement {
+  const { scrollTo } = useCarousel()
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -30,10 +35,26 @@ export function NavDrawer(): React.ReactElement {
           <SheetTitle>Navigation</SheetTitle>
         </SheetHeader>
         <nav className='my-4 flex flex-col gap-y-4'>
-          <SheetLink href='#about'>About</SheetLink>
-          <SheetLink href='#experience'>Experience</SheetLink>
-          <SheetLink href='#projects'>Projects</SheetLink>
-          <SheetLink href='#contacts'>Contact</SheetLink>
+          <SheetClose asChild>
+            <Button variant='link' className='text-base' reader='About' onClick={() => scrollTo(0)}>
+              About
+            </Button>
+          </SheetClose>
+          <SheetClose asChild>
+            <Button variant='link' className='text-base' reader='About' onClick={() => scrollTo(1)}>
+              Experience
+            </Button>
+          </SheetClose>
+          <SheetClose asChild>
+            <Button variant='link' className='text-base' reader='About' onClick={() => scrollTo(2)}>
+              Projects
+            </Button>
+          </SheetClose>
+          <SheetClose asChild>
+            <Button variant='link' className='text-base' reader='About' onClick={() => scrollTo(3)}>
+              Contact
+            </Button>
+          </SheetClose>
         </nav>
         <SheetFooter className='mt-auto'>
           <a href='https://github.com/eric-k-chu' rel='noreferrer noopener' target='_blank'>

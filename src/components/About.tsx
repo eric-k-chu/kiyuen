@@ -39,9 +39,9 @@ export function About(): React.ReactElement {
   return (
     <div
       id='#about'
-      className='grid grid-cols-1 items-center justify-items-center gap-8 sm:grid-cols-2'
+      className='flex flex-col-reverse items-center justify-center gap-8 sm:flex-row'
     >
-      <Card className='order-last w-[300px] sm:order-first'>
+      <Card className='w-[300px]'>
         <CardHeader>
           <CardTitle>Eric Chu</CardTitle>
           <CardDescription>Full-Stack Software Engineer</CardDescription>

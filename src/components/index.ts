@@ -1,5 +1,6 @@
 export * from './About'
 export * from './JumpLink'
+export * from './MainCarousel'
 export * from './NavBar'
 export * from './NavDrawer'
 export * from './ParticleBackground'
