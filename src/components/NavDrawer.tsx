@@ -1,15 +1,16 @@
 'use client'
 
+import { LINKS } from '@/common'
 import { Menu } from 'lucide-react'
 import Image from 'next/image'
 import { ThemeToggle } from './ThemeToggle'
 import {
   Button,
   Sheet,
-  SheetClose,
   SheetContent,
   SheetFooter,
   SheetHeader,
+  SheetLink,
   SheetTitle,
   SheetTrigger,
   useCarousel,
@@ -35,26 +36,9 @@ export function NavDrawer(): React.ReactElement {
           <SheetTitle>Navigation</SheetTitle>
         </SheetHeader>
         <nav className='my-4 flex flex-col gap-y-4'>
-          <SheetClose asChild>
-            <Button variant='link' className='text-base' reader='About' onClick={() => scrollTo(0)}>
-              About
-            </Button>
-          </SheetClose>
-          <SheetClose asChild>
-            <Button variant='link' className='text-base' reader='About' onClick={() => scrollTo(1)}>
-              Experience
-            </Button>
-          </SheetClose>
-          <SheetClose asChild>
-            <Button variant='link' className='text-base' reader='About' onClick={() => scrollTo(2)}>
-              Projects
-            </Button>
-          </SheetClose>
-          <SheetClose asChild>
-            <Button variant='link' className='text-base' reader='About' onClick={() => scrollTo(3)}>
-              Contact
-            </Button>
-          </SheetClose>
+          {LINKS.map((link, index) => (
+            <SheetLink key={link} link={link} index={index} />
+          ))}
         </nav>
         <SheetFooter className='mt-auto'>
           <a href='https://github.com/eric-k-chu' rel='noreferrer noopener' target='_blank'>

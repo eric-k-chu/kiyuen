@@ -5,7 +5,7 @@ import * as SheetPrimitive from '@radix-ui/react-dialog'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { X } from 'lucide-react'
 import * as React from 'react'
-import { JumpLink, JumpLinkProps } from '../JumpLink'
+import { NavLink, NavLinkProps } from '../NavLink'
 
 const Sheet = SheetPrimitive.Root
 
@@ -110,15 +110,11 @@ const SheetDescription = React.forwardRef<
 ))
 SheetDescription.displayName = SheetPrimitive.Description.displayName
 
-const SheetLink = React.forwardRef<HTMLAnchorElement, JumpLinkProps>(
-  ({ className, href, ...props }, ref) => (
-    <SheetPrimitive.Close asChild>
-      <JumpLink ref={ref} href={href} {...props}>
-        {props.children}
-      </JumpLink>
-    </SheetPrimitive.Close>
-  )
-)
+const SheetLink = React.forwardRef<HTMLAnchorElement, NavLinkProps>(({ ...props }, ref) => (
+  <SheetPrimitive.Close asChild>
+    <NavLink {...props}>{props.link}</NavLink>
+  </SheetPrimitive.Close>
+))
 SheetLink.displayName = 'SheetLink'
 
 export {
