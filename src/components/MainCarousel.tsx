@@ -3,6 +3,7 @@
 import { About } from './About'
 import { Experience } from './Experience'
 import { NavBar } from './NavBar'
+import { NavIndicators } from './NavIndicators'
 import { Projects } from './Projects'
 import { Carousel, CarouselContent, CarouselItem } from './ui'
 
@@ -20,10 +21,8 @@ export function MainCarousel(): React.ReactElement {
         <CarouselItem className='w-full'>
           <Projects />
         </CarouselItem>
-        <CarouselItem className='w-full'>
-          <Projects />
-        </CarouselItem>
       </CarouselContent>
+      <NavIndicators />
     </Carousel>
   )
 }

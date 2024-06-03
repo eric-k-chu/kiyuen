@@ -2,7 +2,12 @@ import { Tech } from '@/common'
 import Image from 'next/image'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui'
 
-export function TechTooltip({ src, alt, invert }: Tech): React.ReactElement {
+export function TechTooltip({
+  src,
+  alt,
+  invert,
+  size = 24,
+}: Tech & { size?: number }): React.ReactElement {
   return (
     <TooltipProvider>
       <Tooltip>
@@ -10,8 +15,8 @@ export function TechTooltip({ src, alt, invert }: Tech): React.ReactElement {
           <Image
             src={src}
             alt={alt}
-            width={24}
-            height={24}
+            width={size}
+            height={size}
             className={invert ? 'dark:invert' : undefined}
           />
         </TooltipTrigger>

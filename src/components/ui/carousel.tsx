@@ -24,6 +24,7 @@ type CarouselContextProps = {
   scrollPrev: () => void
   scrollNext: () => void
   scrollTo: (index: number) => void
+  current: number
   canScrollPrev: boolean
   canScrollNext: boolean
 } & CarouselProps
@@ -123,6 +124,7 @@ const Carousel = React.forwardRef<
         scrollPrev,
         scrollNext,
         scrollTo,
+        current: api?.selectedScrollSnap() || 0,
         canScrollPrev,
         canScrollNext,
       }}

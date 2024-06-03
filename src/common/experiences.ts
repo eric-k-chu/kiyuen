@@ -1,4 +1,5 @@
 import {
+  AWS,
   AWS_DYNAMODB,
   AWS_LAMBDA,
   BLENDER,
@@ -66,6 +67,7 @@ export const TIMELINE: TimelineItem[] = [
           REACT,
           TYPESCRIPT,
           JAVASCRIPT,
+          AWS,
           POSTGRESQL,
           NODEJS,
           VITE,
@@ -89,6 +91,7 @@ export const TIMELINE: TimelineItem[] = [
           REACT,
           TYPESCRIPT,
           JAVASCRIPT,
+          AWS,
           POSTGRESQL,
           NODEJS,
           VITE,

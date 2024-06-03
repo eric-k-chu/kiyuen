@@ -34,12 +34,12 @@ function TimelineCard(props: TimelineItem & { last: boolean }): React.ReactEleme
                 {!isLast && (
                   <div
                     className='absolute left-0 ml-20 h-full -translate-x-1/2 translate-y-3 transform self-start bg-muted-foreground px-px'
-                    aria-hidden={true}
+                    aria-hidden
                   />
                 )}
                 <div
                   className='absolute left-0 ml-20 box-content size-2 -translate-x-1/2 transform rounded-full bg-primary'
-                  aria-hidden={true}
+                  aria-hidden
                 />
                 {isFirst && (
                   <p className='absolute left-0 inline-flex rounded-full bg-accent px-3 py-1 text-sm text-muted-foreground'>

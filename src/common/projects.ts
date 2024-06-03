@@ -6,7 +6,6 @@ import {
   GHPAGES,
   JAVASCRIPT,
   NEXTJS,
-  NODEJS,
   POSTGRESQL,
   REACT,
   SHADCN,
@@ -24,28 +23,32 @@ export type Project = {
   desc: string
   tech: Tech[]
   repo: string
+  img: string
   live?: string
 }
 
 export const PROJECTS: Project[] = [
   {
-    title: 'Portfolio Site',
+    title: 'Portfolio',
     desc: 'My personal portfolio site',
     tech: [NEXTJS, REACT, TAILWINDCSS, TYPESCRIPT, VERCEL, SHADCN, THREEJS],
     repo: 'https://github.com/eric-k-chu/kiyuen',
     live: 'https://kiyuen.vercel.app/',
+    img: '/image/portfolio.png',
   },
   {
     title: 'Castle 2.0',
     desc: 'Search Engine using Chess.com API',
     tech: [NEXTJS, REACT, TAILWINDCSS, TYPESCRIPT, VERCEL],
     repo: 'https://github.com/eric-k-chu/Castle-v2',
+    img: '/image/castle2.png',
   },
   {
     title: 'Artus',
-    desc: 'Short video form hosting platform',
-    tech: [REACT, TAILWINDCSS, VITE, TYPESCRIPT, AWS, NODEJS, EXPRESS, POSTGRESQL],
+    desc: 'Short form video hosting platform',
+    tech: [REACT, TAILWINDCSS, VITE, TYPESCRIPT, AWS, EXPRESS, POSTGRESQL],
     repo: 'https://github.com/eric-k-chu/Artus',
+    img: '/image/artus.png',
   },
   {
     title: 'Castle',
@@ -53,6 +56,7 @@ export const PROJECTS: Project[] = [
     tech: [JAVASCRIPT, GHPAGES],
     repo: 'https://github.com/eric-k-chu/Castle',
     live: 'https://eric-k-chu.github.io/Castle/',
+    img: '/image/castle.png',
   },
   {
     title: 'Geo Run',
@@ -60,11 +64,13 @@ export const PROJECTS: Project[] = [
     tech: [UNITY, CSHARP, GHPAGES, BLENDER],
     repo: 'https://github.com/eric-k-chu/Geo-Run',
     live: 'https://eric-k-chu.github.io/Geo-Run-Host/',
+    img: '/image/georun.png',
   },
   {
     title: 'Project S',
     desc: '2.5D Platformer',
     tech: [UNITY, CSHARP, BLENDER],
     repo: 'https://github.com/eric-k-chu/Project-S',
+    img: '/image/projects.png',
   },
 ]

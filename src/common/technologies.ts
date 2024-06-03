@@ -23,7 +23,7 @@ export const PNPM = buildTech('/pnpm.svg', 'pnpm')
 export const NPM = buildTech('/npm.svg', 'npm')
 export const SHADCN = buildTech('/shadcnui.svg', 'shadcn/ui', true)
 export const THREEJS = buildTech('/threejs.svg', 'Three.js', true)
-export const AWS = buildTech('/aws.svg', 'AWS')
+export const AWS = buildTech('/aws.svg', 'AWS', true)
 export const GITHUB = buildTech('/github.svg', 'GitHub', true)
 export const GHPAGES = buildTech('/ghpages.svg', 'GitHub Pages')
 
