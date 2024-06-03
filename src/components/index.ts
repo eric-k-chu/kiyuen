@@ -1,4 +1,5 @@
 export * from './About'
+export * from './Experience'
 export * from './MainCarousel'
 export * from './NavBar'
 export * from './NavDrawer'

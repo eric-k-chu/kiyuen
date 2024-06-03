@@ -1,14 +1,9 @@
-'use client'
-
 import { LINKS } from '@/common'
 import { NavDrawer } from './NavDrawer'
 import { NavLink } from './NavLink'
 import { ThemeToggle } from './ThemeToggle'
-import { useCarousel } from './ui'
 
 export function NavBar(): React.ReactElement {
-  const { scrollTo } = useCarousel()
-
   return (
     <div className='fixed top-0 z-10 flex w-screen items-center justify-between border-b bg-background p-3 sm:p-4'>
       <h1>Logo</h1>

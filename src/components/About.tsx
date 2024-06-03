@@ -1,46 +1,9 @@
 import Image from 'next/image'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from './ui'
-
-type Tech = {
-  src: string
-  alt: string
-  invert?: boolean
-}
-
-const techs: Tech[] = [
-  { src: '/nextdotjs.svg', alt: 'Next.js', invert: true },
-  { src: '/react.svg', alt: 'React' },
-  { src: '/sst.svg', alt: 'SST' },
-  { src: '/vercel.svg', alt: 'Vercel', invert: true },
-  { src: '/awslambda.svg', alt: 'AWS Lambda' },
-  { src: '/amazondynamodb.svg', alt: 'AWS DynamoDb' },
-  { src: '/postgresql.svg', alt: 'PostgreSQL' },
-  { src: '/typescript.svg', alt: 'TypeScript' },
-  { src: '/javascript.svg', alt: 'JavaScript' },
-  { src: '/nodejs.svg', alt: 'Node.js' },
-  { src: '/turborepo.svg', alt: 'Turborepo' },
-  { src: '/vite.svg', alt: 'Vite' },
-  { src: '/git.svg', alt: 'Git' },
-  { src: '/tailwindcss.svg', alt: 'Tailwind CSS' },
-]
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui'
 
 export function About(): React.ReactElement {
   return (
-    <div
-      id='#about'
-      className='flex flex-col-reverse items-center justify-center gap-8 sm:flex-row'
-    >
+    <div className='flex flex-col-reverse items-center justify-center gap-8 sm:flex-row'>
       <Card className='w-[300px]'>
         <CardHeader>
           <CardTitle>Eric Chu</CardTitle>
@@ -89,25 +52,5 @@ export function About(): React.ReactElement {
         height={0}
       />
     </div>
-  )
-}
-
-function TechTooltip({ tech }: { tech: Tech }): React.ReactElement {
-  const { src, alt, invert } = tech
-  return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Image
-            src={src}
-            alt={alt}
-            width={24}
-            height={24}
-            className={invert ? 'dark:invert' : undefined}
-          />
-        </TooltipTrigger>
-        <TooltipContent>{alt}</TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
   )
 }

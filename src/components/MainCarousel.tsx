@@ -1,6 +1,7 @@
 'use client'
 
 import { About } from './About'
+import { Experience } from './Experience'
 import { NavBar } from './NavBar'
 import { Carousel, CarouselContent, CarouselItem } from './ui'
 
@@ -12,8 +13,8 @@ export function MainCarousel(): React.ReactElement {
         <CarouselItem className='w-full'>
           <About />
         </CarouselItem>
-        <CarouselItem>
-          <p>Test</p>
+        <CarouselItem className='w-full'>
+          <Experience />
         </CarouselItem>
       </CarouselContent>
     </Carousel>
