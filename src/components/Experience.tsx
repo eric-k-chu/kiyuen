@@ -1,16 +1,6 @@
-import { TIMELINE, Tech, TimelineItem } from '@/common'
-import Image from 'next/image'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from './ui'
+import { TIMELINE, TimelineItem } from '@/common'
+import { TechTooltip } from './TechTooltip'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui'
 
 export function Experience(): React.ReactElement {
   return (
@@ -71,24 +61,5 @@ function TimelineCard(props: TimelineItem & { last: boolean }): React.ReactEleme
         )
       })}
     </>
-  )
-}
-
-function TechTooltip({ src, alt, invert }: Tech): React.ReactElement {
-  return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <Image
-            src={src}
-            alt={alt}
-            width={24}
-            height={24}
-            className={invert ? 'dark:invert' : undefined}
-          />
-        </TooltipTrigger>
-        <TooltipContent>{alt}</TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
   )
 }

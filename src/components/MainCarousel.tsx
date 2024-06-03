@@ -3,6 +3,7 @@
 import { About } from './About'
 import { Experience } from './Experience'
 import { NavBar } from './NavBar'
+import { Projects } from './Projects'
 import { Carousel, CarouselContent, CarouselItem } from './ui'
 
 export function MainCarousel(): React.ReactElement {
@@ -15,6 +16,12 @@ export function MainCarousel(): React.ReactElement {
         </CarouselItem>
         <CarouselItem className='w-full'>
           <Experience />
+        </CarouselItem>
+        <CarouselItem className='w-full'>
+          <Projects />
+        </CarouselItem>
+        <CarouselItem className='w-full'>
+          <Projects />
         </CarouselItem>
       </CarouselContent>
     </Carousel>
