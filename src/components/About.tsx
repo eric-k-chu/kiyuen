@@ -11,7 +11,7 @@ export function About(): React.ReactElement {
           <CardDescription>Chino, California</CardDescription>
         </CardHeader>
         <CardContent className='grid gap-4'>
-          <section className='flex items-center gap-x-1.5 text-lg'>
+          <section className='flex items-center gap-x-1.5'>
             <span>Software Engineer at</span>
             <a
               href='https://www.terros.com/'

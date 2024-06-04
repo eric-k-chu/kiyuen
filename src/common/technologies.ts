@@ -25,7 +25,7 @@ export const SHADCN = buildTech('/shadcnui.svg', 'shadcn/ui', true)
 export const THREEJS = buildTech('/threejs.svg', 'Three.js', true)
 export const AWS = buildTech('/aws.svg', 'AWS', true)
 export const GITHUB = buildTech('/github.svg', 'GitHub', true)
-export const GHPAGES = buildTech('/ghpages.svg', 'GitHub Pages')
+export const GHPAGES = buildTech('/ghpages.svg', 'GitHub Pages', true)
 
 export type Tech = {
   src: string

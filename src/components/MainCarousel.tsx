@@ -1,6 +1,7 @@
 'use client'
 
 import { About } from './About'
+import { Contact } from './Contact'
 import { Experience } from './Experience'
 import { NavBar } from './NavBar'
 import { NavIndicators } from './NavIndicators'
@@ -9,9 +10,9 @@ import { Carousel, CarouselContent, CarouselItem } from './ui'
 
 export function MainCarousel(): React.ReactElement {
   return (
-    <Carousel>
+    <Carousel className='flex h-full flex-col items-center justify-between gap-y-4'>
       <NavBar />
-      <CarouselContent className='flex h-screen w-screen items-center'>
+      <CarouselContent className='flex w-full basis-10/12 items-center'>
         <CarouselItem className='w-full'>
           <About />
         </CarouselItem>
@@ -20,6 +21,9 @@ export function MainCarousel(): React.ReactElement {
         </CarouselItem>
         <CarouselItem className='w-full'>
           <Projects />
+        </CarouselItem>
+        <CarouselItem className='w-full'>
+          <Contact />
         </CarouselItem>
       </CarouselContent>
       <NavIndicators />

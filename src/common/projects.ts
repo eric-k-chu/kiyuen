@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
     desc: 'My personal portfolio site',
     tech: [NEXTJS, REACT, TAILWINDCSS, TYPESCRIPT, VERCEL, SHADCN, THREEJS],
     repo: 'https://github.com/eric-k-chu/kiyuen',
-    live: 'https://kiyuen.vercel.app/',
+    live: 'https://www.kiyuen.dev',
     img: '/image/portfolio.png',
   },
   {

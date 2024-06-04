@@ -4,17 +4,19 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui'
 
 export function Experience(): React.ReactElement {
   return (
-    <Card className='mx-auto w-full max-w-3xl'>
-      <CardHeader>
-        <CardTitle>Experience</CardTitle>
-        <CardDescription>Education and Experience</CardDescription>
-      </CardHeader>
-      <CardContent>
-        {TIMELINE.map((tl, idx) => (
-          <TimelineCard key={tl.year} {...tl} last={idx === TIMELINE.length - 1} />
-        ))}
-      </CardContent>
-    </Card>
+    <section className='mx-auto w-full max-w-4xl'>
+      <Card className='h-[80vh] overflow-y-scroll'>
+        <CardHeader>
+          <CardTitle>Experience</CardTitle>
+          <CardDescription>Education and Experience</CardDescription>
+        </CardHeader>
+        <CardContent className='h-full'>
+          {TIMELINE.map((tl, idx) => (
+            <TimelineCard key={tl.year} {...tl} last={idx === TIMELINE.length - 1} />
+          ))}
+        </CardContent>
+      </Card>
+    </section>
   )
 }
 
