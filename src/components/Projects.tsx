@@ -1,17 +1,18 @@
 import { PROJECTS, Project } from '@/common'
 import Image from 'next/image'
+import { SectionContainer } from './SectionContainer'
 import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui'
 
 export function Projects(): React.ReactElement {
   return (
-    <section className='mx-auto flex w-full max-w-4xl items-center justify-center'>
+    <SectionContainer id='projects'>
       <div className='grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-3'>
         {PROJECTS.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
       </div>
-    </section>
+    </SectionContainer>
   )
 }
 

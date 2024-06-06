@@ -111,7 +111,7 @@ const SheetDescription = React.forwardRef<
 SheetDescription.displayName = SheetPrimitive.Description.displayName
 
 const SheetLink = React.forwardRef<HTMLAnchorElement, NavLinkProps>(({ ...props }, ref) => (
-  <SheetPrimitive.Close asChild>
+  <SheetPrimitive.Close>
     <NavLink {...props}>{props.link}</NavLink>
   </SheetPrimitive.Close>
 ))

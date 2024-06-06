@@ -1,28 +1,15 @@
 'use client'
 
-import { Link, cn } from '@/common'
-import { Button, useCarousel } from './ui'
+import { Link, toId } from '@/common'
 
 export type NavLinkProps = {
   link: Link
-  index: number
 }
 
-export function NavLink({ link, index }: NavLinkProps): React.ReactElement {
-  const { scrollTo, current } = useCarousel()
-  const className = current === index ? 'max-w-full' : 'max-w-0'
+export function NavLink({ link }: NavLinkProps): React.ReactElement {
   return (
-    <Button
-      variant='link'
-      className='inline-flex flex-col items-center hover:no-underline'
-      reader={link}
-      onClick={() => scrollTo(index)}
-    >
+    <a href={toId(link)} className='inline-flex flex-col items-center uppercase hover:no-underline'>
       {link}
-      <span
-        aria-hidden
-        className={cn('block h-0.5 w-full bg-primary transition-all ease-in-out', className)}
-      />
-    </Button>
+    </a>
   )
 }

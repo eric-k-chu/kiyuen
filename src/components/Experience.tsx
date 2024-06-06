@@ -1,22 +1,23 @@
 import { TIMELINE, TimelineItem } from '@/common'
+import { SectionContainer } from './SectionContainer'
 import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui'
 
 export function Experience(): React.ReactElement {
   return (
-    <section className='mx-auto w-full max-w-4xl'>
-      <Card className='h-[80vh] overflow-y-scroll'>
+    <SectionContainer id='experience' className=''>
+      <Card className='max-w-[320px] sm:max-w-4xl'>
         <CardHeader>
           <CardTitle>Experience</CardTitle>
           <CardDescription>Education and Experience</CardDescription>
         </CardHeader>
-        <CardContent className='h-full'>
+        <CardContent>
           {TIMELINE.map((tl, idx) => (
             <TimelineCard key={tl.year} {...tl} last={idx === TIMELINE.length - 1} />
           ))}
         </CardContent>
       </Card>
-    </section>
+    </SectionContainer>
   )
 }
 
@@ -29,31 +30,31 @@ function TimelineCard(props: TimelineItem & { last: boolean }): React.ReactEleme
         const isLast = last && idx === exp.length - 1
         const isFirst = idx === 0
         return (
-          <div className='relative py-4 pl-24' key={title + place}>
+          <div className='relative py-6 pl-[5rem] sm:pl-24' key={title + place}>
             <div className='pl-2'>
-              <p className='mb-2 text-base text-primary'>{place}</p>
+              <p className='mb-1 text-sm text-primary sm:text-base'>{place}</p>
               <section className='mb-3 flex items-center'>
                 {!isLast && (
                   <div
-                    className='absolute left-0 ml-20 h-full -translate-x-1/2 translate-y-3 transform self-start bg-muted-foreground px-px'
+                    className='absolute left-0 ml-[4.5rem] h-full -translate-x-1/2 translate-y-3 transform self-start bg-muted-foreground px-px sm:ml-20'
                     aria-hidden
                   />
                 )}
                 <div
-                  className='absolute left-0 ml-20 box-content size-2 -translate-x-1/2 transform rounded-full bg-primary'
+                  className='absolute left-0 ml-[4.5rem] box-content size-2 -translate-x-1/2 transform rounded-full bg-primary sm:ml-20'
                   aria-hidden
                 />
                 {isFirst && (
-                  <p className='absolute left-0 inline-flex rounded-full bg-accent px-3 py-1 text-sm text-muted-foreground'>
+                  <p className='absolute left-0 inline-flex rounded-full bg-accent px-3 py-1 text-xs text-muted-foreground sm:text-sm'>
                     {year}
                   </p>
                 )}
                 <div className='flex items-center gap-x-2'>
-                  <h4 className='text-xl font-semibold'>{title}</h4>
-                  <em className='text-sm text-muted-foreground'>{`${start} - ${end}`}</em>
+                  <h4 className='text-base font-semibold sm:text-lg'>{title}</h4>
+                  <i className='hidden text-sm text-muted-foreground sm:block'>{`${start} - ${end}`}</i>
                 </div>
               </section>
-              <section className='flex flex-wrap items-center gap-4 text-sm'>
+              <section className='flex flex-wrap items-center gap-2 text-sm sm:gap-4'>
                 {skills.map((tech) => (
                   <TechTooltip key={tech.alt + place + title + year} {...tech} />
                 ))}

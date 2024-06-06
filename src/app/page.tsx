@@ -1,10 +1,16 @@
-import { MainCarousel, ParticleBackground } from '@/components'
+import { About, Experience, Footer, NavBar, ParticleBackground, Projects } from '@/components'
 
 export default function Home(): React.ReactElement {
   return (
-    <main className='h-screen bg-secondary'>
+    <main className='bg-secondary'>
       <ParticleBackground />
-      <MainCarousel />
+      <NavBar />
+      <div className='flex h-screen flex-col items-center gap-40 sm:gap-0'>
+        <About />
+        <Experience />
+        <Projects />
+        <Footer />
+      </div>
     </main>
   )
 }

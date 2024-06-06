@@ -1,10 +1,12 @@
 import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
+import { SectionContainer } from './SectionContainer'
+import { GitHubLink, LinkedInLink } from './Socials'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui'
 
 export function About(): React.ReactElement {
   return (
-    <div className='flex flex-col-reverse items-center justify-center gap-8 sm:flex-row'>
+    <SectionContainer id='about' className='flex-col-reverse gap-8 sm:flex-row'>
       <Card className='w-[320px]'>
         <CardHeader>
           <CardTitle>Eric Chu</CardTitle>
@@ -25,23 +27,8 @@ export function About(): React.ReactElement {
           </section>
         </CardContent>
         <CardFooter className='items-center gap-x-6'>
-          <a href='https://github.com/eric-k-chu' rel='noreferrer noopener' target='_blank'>
-            <Image
-              className='dark:invert'
-              src='/github.svg'
-              alt='GitHub Logo'
-              width={24}
-              height={24}
-              priority
-            />
-          </a>
-          <a
-            href='https://www.linkedin.com/in/eric-k-chu/'
-            rel='noreferrer noopener'
-            target='_blank'
-          >
-            <Image src='/linkedin.svg' alt='LinkedIn Logo' width={24} height={24} priority />
-          </a>
+          <GitHubLink />
+          <LinkedInLink />
         </CardFooter>
       </Card>
       <Image
@@ -51,6 +38,6 @@ export function About(): React.ReactElement {
         width={200}
         height={0}
       />
-    </div>
+    </SectionContainer>
   )
 }

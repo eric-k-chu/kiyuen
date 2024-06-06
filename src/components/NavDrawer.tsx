@@ -2,7 +2,7 @@
 
 import { LINKS } from '@/common'
 import { Menu } from 'lucide-react'
-import Image from 'next/image'
+import { GitHubLink, LinkedInLink } from './Socials'
 import { ThemeToggle } from './ThemeToggle'
 import {
   Button,
@@ -13,12 +13,9 @@ import {
   SheetLink,
   SheetTitle,
   SheetTrigger,
-  useCarousel,
 } from './ui'
 
 export function NavDrawer(): React.ReactElement {
-  const { scrollTo } = useCarousel()
-
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -35,29 +32,14 @@ export function NavDrawer(): React.ReactElement {
         <SheetHeader>
           <SheetTitle>Navigation</SheetTitle>
         </SheetHeader>
-        <nav className='my-4 flex flex-col gap-y-4'>
-          {LINKS.map((link, index) => (
-            <SheetLink key={link} link={link} index={index} />
+        <nav className='my-4 flex flex-col items-start gap-y-4'>
+          {LINKS.map((link) => (
+            <SheetLink key={link} link={link} />
           ))}
         </nav>
         <SheetFooter className='mt-auto'>
-          <a href='https://github.com/eric-k-chu' rel='noreferrer noopener' target='_blank'>
-            <Image
-              className='dark:invert'
-              src='/github.svg'
-              alt='GitHub Logo'
-              width={24}
-              height={24}
-              priority
-            />
-          </a>
-          <a
-            href='https://www.linkedin.com/in/eric-k-chu/'
-            rel='noreferrer noopener'
-            target='_blank'
-          >
-            <Image src='/linkedin.svg' alt='LinkedIn Logo' width={24} height={24} priority />
-          </a>
+          <GitHubLink />
+          <LinkedInLink />
           <ThemeToggle className='ml-auto' />
         </SheetFooter>
       </SheetContent>

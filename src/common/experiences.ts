@@ -109,7 +109,7 @@ export const TIMELINE: TimelineItem[] = [
       {
         start: 'Aug 2018',
         end: 'Aug 2022',
-        title: 'Bachelor of Science in Computer Science',
+        title: 'B.S in Computer Science',
         place: 'California State University, Fullerton',
         skills: [CPP, CSHARP, UNITY, GIT, BLENDER, LINUX, SWIFT],
       },

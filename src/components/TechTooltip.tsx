@@ -1,4 +1,4 @@
-import { Tech } from '@/common'
+import { Tech, cn } from '@/common'
 import Image from 'next/image'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui'
 
@@ -17,7 +17,7 @@ export function TechTooltip({
             alt={alt}
             width={size}
             height={size}
-            className={invert ? 'dark:invert' : undefined}
+            className={cn('scale-75 sm:scale-100', invert && 'dark:invert')}
           />
         </TooltipTrigger>
         <TooltipContent>{alt}</TooltipContent>
