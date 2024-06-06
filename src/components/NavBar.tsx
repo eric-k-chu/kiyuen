@@ -15,7 +15,7 @@ export function NavBar(): React.ReactElement {
           <TooltipContent>Chu</TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <nav className='hidden items-center gap-x-4 sm:flex'>
+      <nav className='hidden items-center gap-x-12 sm:flex'>
         {LINKS.map((link) => (
           <NavLink key={link} link={link} />
         ))}
