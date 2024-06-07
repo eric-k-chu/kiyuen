@@ -1,4 +1,12 @@
-import { About, Experience, Footer, NavBar, ParticleBackground, Projects } from '@/components'
+import {
+  About,
+  Contact,
+  Experience,
+  Footer,
+  NavBar,
+  ParticleBackground,
+  Projects,
+} from '@/components'
 
 export default function Home(): React.ReactElement {
   return (
@@ -9,6 +17,7 @@ export default function Home(): React.ReactElement {
         <About />
         <Experience />
         <Projects />
+        <Contact />
         <Footer />
       </div>
     </main>

@@ -1,67 +1,60 @@
 'use client'
 
-import { ContactForm, contactFormSchema } from '@/common'
-import { Button, Input } from '@/components/ui'
 import {
-  Form,
+  Button,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
+  Form as FormProvider,
+  Input,
+  Textarea,
+} from '@/components/ui'
+import { useContactForm } from '@/hooks'
+import { SectionContainer } from './SectionContainer'
 
 export function Contact(): React.ReactElement {
-  return (
-    <div>
-      <h1>Contact</h1>
-    </div>
-  )
-}
-
-export function InputForm() {
-  const form = useForm<ContactForm>({
-    resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
+  const { form, onSubmit } = useContactForm({
+    title: 'Success!',
+    description: 'Email sent.',
   })
 
-  function onSubmit(data: ContactForm): void {
-    toast({
-      title: 'You submitted the following values:',
-      description: (
-        <pre className='mt-2 w-[340px] rounded-md bg-slate-950 p-4'>
-          <code className='text-white'>{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    })
-  }
-
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='w-2/3 space-y-6'>
-        <FormField
-          control={form.control}
-          name='username'
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder='shadcn' {...field} />
-              </FormControl>
-              <FormDescription>This is your public display name.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type='submit'>Submit</Button>
-      </form>
-    </Form>
+    <SectionContainer id='contact' className='w-full'>
+      <FormProvider {...form}>
+        <form onSubmit={onSubmit} className='w-2/4 space-y-4'>
+          <FormField
+            control={form.control}
+            name='email'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input placeholder='example@gmail.com' {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name='message'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Message</FormLabel>
+                <FormControl>
+                  <Textarea placeholder='Your message here...' {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type='submit' reader='form submit'>
+            Submit
+          </Button>
+        </form>
+      </FormProvider>
+    </SectionContainer>
   )
 }

@@ -10,5 +10,6 @@ export * from './input'
 export * from './label'
 export * from './scroll-area'
 export * from './sheet'
+export * from './textarea'
+export * from './toast'
 export * from './tooltip'
-export * from './toast';
