@@ -40,7 +40,7 @@ export function Contact(): React.ReactElement {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder='Name...' {...field} />
+                      <Input placeholder='Your name' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -53,7 +53,7 @@ export function Contact(): React.ReactElement {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder='Email...' {...field} />
+                      <Input placeholder='you@example.com' {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -66,7 +66,7 @@ export function Contact(): React.ReactElement {
                   <FormItem>
                     <FormLabel>Message</FormLabel>
                     <FormControl>
-                      <Textarea placeholder='Message...' {...field} rows={8} />
+                      <Textarea placeholder='Your message here' {...field} rows={8} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
