@@ -10,7 +10,9 @@ export function NavBar(): React.ReactElement {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <strong className='cursor-default select-none text-xl'>朱</strong>
+            <strong className='cursor-default select-none text-xl' aria-hidden>
+              朱
+            </strong>
           </TooltipTrigger>
           <TooltipContent>Chu</TooltipContent>
         </Tooltip>

@@ -2,6 +2,10 @@
 
 import {
   Button,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
   FormControl,
   FormField,
   FormItem,
@@ -23,37 +27,57 @@ export function Contact(): React.ReactElement {
   return (
     <SectionContainer id='contact' className='w-full'>
       <FormProvider {...form}>
-        <form onSubmit={onSubmit} className='w-2/4 space-y-4'>
-          <FormField
-            control={form.control}
-            name='email'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder='example@gmail.com' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='message'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Message</FormLabel>
-                <FormControl>
-                  <Textarea placeholder='Your message here...' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type='submit' reader='form submit'>
-            Submit
-          </Button>
-        </form>
+        <Card className='w-1/3'>
+          <CardHeader>
+            <CardTitle>Contact Me</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={onSubmit} className='space-y-4'>
+              <FormField
+                control={form.control}
+                name='name'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <FormControl>
+                      <Input placeholder='Name...' {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='email'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder='Email...' {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='message'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Message</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder='Message...' {...field} rows={8} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type='submit' className='w-full'>
+                Submit
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
       </FormProvider>
     </SectionContainer>
   )

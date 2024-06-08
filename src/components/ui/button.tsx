@@ -33,7 +33,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
-  reader: string
+  reader?: string
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -42,7 +42,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
         {props.children}
-        <span className='sr-only'>{reader}</span>
+        {reader && <span className='sr-only'>{reader}</span>}
       </Comp>
     )
   }
