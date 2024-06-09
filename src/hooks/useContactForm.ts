@@ -19,6 +19,8 @@ export function useContactForm(props: Toast): FormOutput<ContactForm> {
       const description = error instanceof Error ? error.message : 'An error has occurred.'
       const { dismiss } = toast({ title: 'Error', description })
       setTimeout(dismiss, 3000)
+    } finally {
+      form.reset()
     }
   }
 
