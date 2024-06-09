@@ -29,7 +29,7 @@ export function NavDrawer(): React.ReactElement {
         </Button>
       </SheetTrigger>
       <SheetContent className='flex flex-col'>
-        <SheetHeader>
+        <SheetHeader className='border-b border-border pb-5'>
           <SheetTitle>Navigation</SheetTitle>
         </SheetHeader>
         <nav className='my-4 flex flex-col items-start gap-y-4'>
@@ -37,7 +37,7 @@ export function NavDrawer(): React.ReactElement {
             <SheetLink key={link} link={link} />
           ))}
         </nav>
-        <SheetFooter className='mt-auto'>
+        <SheetFooter className='mt-auto border-t border-border pt-5'>
           <GitHubLink />
           <LinkedInLink />
           <ThemeToggle className='ml-auto' />

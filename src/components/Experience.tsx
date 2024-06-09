@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui'
 
 export function Experience(): React.ReactElement {
   return (
-    <SectionContainer id='experience' className=''>
+    <SectionContainer id='experience'>
       <Card className='max-w-[320px] sm:max-w-4xl'>
         <CardHeader>
           <CardTitle>Experience</CardTitle>

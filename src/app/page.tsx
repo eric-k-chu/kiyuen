@@ -13,7 +13,7 @@ export default function Home(): React.ReactElement {
     <main className='bg-secondary'>
       <ParticleBackground />
       <NavBar />
-      <div className='flex h-screen flex-col items-center gap-40 sm:gap-0'>
+      <div className='flex h-screen flex-col items-center'>
         <About />
         <Experience />
         <Projects />

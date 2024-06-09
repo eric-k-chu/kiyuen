@@ -25,9 +25,9 @@ export function Contact(): React.ReactElement {
   })
 
   return (
-    <SectionContainer id='contact' className='w-full'>
+    <SectionContainer id='contact'>
       <FormProvider {...form}>
-        <Card className='w-1/3'>
+        <Card className='w-full max-w-[290px] sm:max-w-[33%]'>
           <CardHeader>
             <CardTitle>Contact Me</CardTitle>
           </CardHeader>
