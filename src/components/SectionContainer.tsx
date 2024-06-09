@@ -6,8 +6,6 @@ type Props = PropsWithChildren<{
   className?: string
 }>
 
-// #bfe8fe
-// #f6e3f6
 export function SectionContainer({ children, id, className }: Props): React.ReactElement {
   return (
     <section
