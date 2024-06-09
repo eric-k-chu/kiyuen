@@ -30,7 +30,11 @@ export function NavDrawer(): React.ReactElement {
       </SheetTrigger>
       <SheetContent className='flex flex-col'>
         <SheetHeader className='border-b border-border pb-5'>
-          <SheetTitle>Navigation</SheetTitle>
+          <SheetTitle asChild>
+            <strong className='cursor-default select-none text-xl' aria-hidden>
+              朱
+            </strong>
+          </SheetTitle>
         </SheetHeader>
         <nav className='my-4 flex flex-col items-start gap-y-4'>
           {LINKS.map((link) => (

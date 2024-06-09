@@ -104,7 +104,7 @@ export const TIMELINE: TimelineItem[] = [
     ],
   },
   {
-    year: 2018,
+    year: 2022,
     exp: [
       {
         start: 'Aug 2018',
