@@ -1,71 +1,66 @@
-"use client";
+import { PROJECTS, Project } from '@/common'
+import Image from 'next/image'
+import { SectionContainer } from './SectionContainer'
+import { TechTooltip } from './TechTooltip'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui'
 
-import { PROJECTS } from "@/lib/constants";
-import Image from "next/image";
-import { useState } from "react";
-import { Github, SectionHeader } from ".";
-
-export function Projects() {
-  const [selected, setSelected] = useState(PROJECTS[0]);
-
+export function Projects(): React.ReactElement {
   return (
-    <>
-      <SectionHeader text="Projects" />
-      <div className="my-4 flex flex-col items-center gap-8 lg:flex-row lg:justify-center">
-        {PROJECTS.map((n) => (
-          <div
-            className={`relative w-full transition-all duration-300 ease-in-out lg:h-[400px] ${selected === n ? "h-[500px] lg:w-[500px]" : "h-[150px] lg:w-[150px]"}`}
-            key={n.name}
-          >
-            <div
-              className={`absolute z-[2] size-full rounded-xl transition-colors duration-300 ease-in-out ${selected === n ? "cursor-default bg-black/10" : "cursor-pointer bg-black/60 hover:bg-black/30"}`}
-              onClick={() => setSelected(n)}
-            />
-            <Image
-              key={n.name}
-              src={n.path}
-              alt={n.name}
-              width={0}
-              height={0}
-              unoptimized
-              className="absolute z-[1] size-full rounded-xl object-cover"
-            />
-            <h1
-              className={`absolute bottom-3 left-3 z-[3] text-2xl font-semibold transition-opacity duration-300 ease-in-out lg:left-auto lg:right-3 lg:-rotate-180 lg:text-4xl lg:[writing-mode:vertical-rl] ${selected === n ? "opacity-0" : "opacity-100"}`}
-            >
-              {n.name}
-            </h1>
-            <div
-              className={`absolute bottom-0 left-0 z-[3] w-full space-y-2 rounded-b-xl bg-gradient-to-t from-black/80 to-transparent transition-opacity ease-in-out ${selected === n ? "opacity-100 delay-200 duration-300" : "pointer-events-none opacity-0 delay-0 duration-75"}`}
-            >
-              <div className="space-y-2 p-3">
-                <h1 className="bg-gradient-primary w-fit rounded-lg px-4 py-2 text-2xl font-semibold text-black lg:text-4xl">
-                  {n.name}
-                </h1>
-                <h1 className="text-base font-semibold md:text-lg lg:text-2xl">
-                  {n.desc}
-                </h1>
-                <div className="flex items-center gap-x-4">
-                  <a target="_blank" href={n.gh}>
-                    <Github />
-                  </a>
-                  {n.live && (
-                    <a>
-                      <Image
-                        src="/image/link.svg"
-                        alt={`${n.name} live demo`}
-                        width={0}
-                        height={0}
-                        className="size-6"
-                      />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
+    <SectionContainer id='projects'>
+      <div className='grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-3'>
+        {PROJECTS.map((project) => (
+          <ProjectCard key={project.title} {...project} />
         ))}
       </div>
-    </>
-  );
+    </SectionContainer>
+  )
+}
+
+function ProjectCard(props: Project): React.ReactElement {
+  const { title, desc, tech, repo, live, img } = props
+  return (
+    <Card className='grid h-[300px] grid-rows-3 overflow-hidden'>
+      <CardHeader
+        className='justify-center border-t-border bg-cover bg-center bg-no-repeat'
+        style={{
+          backgroundImage: `url(${img})`,
+          borderImage: 'linear-gradient(hsl(240 100% 20% / 0.5), hsl(0 100% 20% / 0.5)) fill 1',
+        }}
+      >
+        <CardTitle className='text-white'>{title}</CardTitle>
+      </CardHeader>
+      <CardContent className='space-y-6 pt-6'>
+        <em className='text-muted-foreground'>{desc}</em>
+        <section className='flex flex-wrap items-center gap-2'>
+          {tech.map((t) => (
+            <TechTooltip key={t.alt} {...t} size={24} />
+          ))}
+        </section>
+      </CardContent>
+      <CardFooter className='items-center gap-x-6 pb-0 pt-6'>
+        <a href={repo} rel='noreferrer noopener' target='_blank'>
+          <Image
+            className='dark:invert'
+            src='/github.svg'
+            alt='GitHub Logo'
+            width={20}
+            height={20}
+            priority
+          />
+        </a>
+        {live && (
+          <a href={live} rel='noreferrer noopener' target='_blank'>
+            <Image
+              src='/link.svg'
+              alt={`${title} live site`}
+              width={20}
+              height={20}
+              priority
+              className='dark:invert'
+            />
+          </a>
+        )}
+      </CardFooter>
+    </Card>
+  )
 }

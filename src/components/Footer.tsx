@@ -1,17 +1,16 @@
-import { Github, Linkedin } from ".";
+import { GitHubLink, LinkedInLink } from './Socials'
 
-export function Footer() {
+export function Footer(): React.ReactElement {
   return (
-    <footer className="flex items-center justify-around bg-zinc-800 py-20">
-      <h2 className="font-mono text-xl font-semibold">&#169; 2024 Eric Chu</h2>
-      <div className="flex gap-x-4">
-        <a href="https://github.com/eric-k-chu" target="_blank">
-          <Github />
-        </a>
-        <a href="https://www.linkedin.com/in/eric-k-chu/" target="_blank">
-          <Linkedin />
-        </a>
+    <footer className='relative grid min-h-64 w-full grid-cols-2 items-center border-t border-border bg-background p-6'>
+      <strong className='text-center text-xl'>Eric Chu</strong>
+      <div className='flex items-center justify-center gap-x-4'>
+        <GitHubLink />
+        <LinkedInLink />
       </div>
+      <p className='absolute bottom-4 w-full text-center text-xs text-muted-foreground'>
+        Updated 6/5/2024
+      </p>
     </footer>
-  );
+  )
 }

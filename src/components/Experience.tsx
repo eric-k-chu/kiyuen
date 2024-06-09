@@ -1,55 +1,68 @@
-import { EXPERIENCE } from "@/lib/constants";
-import Image from "next/image";
-import { SectionHeader } from ".";
+import { TIMELINE, TimelineItem } from '@/common'
+import { SectionContainer } from './SectionContainer'
+import { TechTooltip } from './TechTooltip'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui'
 
-export function Experience() {
+export function Experience(): React.ReactElement {
   return (
-    <>
-      <SectionHeader text="Experience" black />
-      <div className="relative my-4 flex min-h-[30rem] flex-col items-start justify-around gap-y-20 md:items-center">
-        <TimelineLine />
-        <Experiences />
-      </div>
-    </>
-  );
+    <SectionContainer id='experience'>
+      <Card className='max-w-[320px] sm:max-w-4xl'>
+        <CardHeader>
+          <CardTitle>Experience</CardTitle>
+          <CardDescription>Education and Experience</CardDescription>
+        </CardHeader>
+        <CardContent>
+          {TIMELINE.map((tl, idx) => (
+            <TimelineCard key={tl.year} {...tl} last={idx === TIMELINE.length - 1} />
+          ))}
+        </CardContent>
+      </Card>
+    </SectionContainer>
+  )
 }
 
-function Experiences() {
+function TimelineCard(props: TimelineItem & { last: boolean }): React.ReactElement {
+  const { year, exp, last } = props
   return (
     <>
-      {EXPERIENCE.map((n) => (
-        <div className="group relative z-[1]" key={JSON.stringify(n)}>
-          <Image
-            className="size-10 rounded-full border-4 border-white bg-white lg:size-12"
-            src={n.icon}
-            alt={`${n.company} icon`}
-            width={0}
-            height={0}
-          />
-          <div className="absolute left-20 top-0 w-56 space-y-2 rounded-lg bg-zinc-800 py-4 pl-4 ring ring-primary-orange sm:w-64 md:left-auto md:w-[18rem] md:group-odd:right-20 md:group-even:left-20 lg:w-96">
-            <h1 className="text-base font-semibold text-primary-orange md:text-lg lg:text-2xl">
-              {n.title}
-            </h1>
-            <h2 className="text-xs font-medium sm:text-sm md:text-base">
-              {n.company}
-            </h2>
-            <h2 className="block text-xs font-medium uppercase text-zinc-500 md:hidden">
-              {n.date}
-            </h2>
+      {exp.map((we, idx) => {
+        const { title, place, skills, start, end } = we
+        const isLast = last && idx === exp.length - 1
+        const isFirst = idx === 0
+        return (
+          <div className='relative py-6 pl-[5rem] sm:pl-24' key={title + place}>
+            <div className='pl-2'>
+              <p className='mb-1 text-sm text-primary sm:text-base'>{place}</p>
+              <section className='mb-3 flex items-center'>
+                {!isLast && (
+                  <div
+                    className='absolute left-0 ml-[4.5rem] h-full -translate-x-1/2 translate-y-3 transform self-start bg-muted-foreground px-px sm:ml-20'
+                    aria-hidden
+                  />
+                )}
+                <div
+                  className='absolute left-0 ml-[4.5rem] box-content size-2 -translate-x-1/2 transform rounded-full bg-primary sm:ml-20'
+                  aria-hidden
+                />
+                {isFirst && (
+                  <p className='absolute left-0 inline-flex rounded-full bg-accent px-3 py-1 text-xs text-muted-foreground sm:text-sm'>
+                    {year}
+                  </p>
+                )}
+                <div className='flex items-center gap-x-2'>
+                  <h4 className='text-base font-semibold sm:text-lg'>{title}</h4>
+                  <i className='hidden text-sm text-muted-foreground sm:block'>{`${start} - ${end}`}</i>
+                </div>
+              </section>
+              <section className='flex flex-wrap items-center gap-2 text-sm sm:gap-4'>
+                {skills.map((tech) => (
+                  <TechTooltip key={tech.alt + place + title + year} {...tech} />
+                ))}
+              </section>
+            </div>
           </div>
-          <h2 className="absolute top-2 hidden w-96 text-sm font-semibold uppercase text-zinc-500 group-odd:left-20 group-odd:text-left group-even:right-20 group-even:text-right md:block lg:text-lg">
-            {n.date}
-          </h2>
-        </div>
-      ))}
+        )
+      })}
     </>
-  );
-}
-
-function TimelineLine() {
-  return (
-    <>
-      <div className="absolute left-4 z-0 h-[30rem] w-2 rounded-lg bg-gradient-to-t from-transparent via-primary-orange to-transparent md:left-auto" />
-    </>
-  );
+  )
 }

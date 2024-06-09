@@ -1,72 +1,49 @@
-import Image from "next/image";
-import { SectionHeader } from ".";
-import { ReactNode } from "react";
+import { SHADCN } from '@/common'
+import { ExternalLink, MapPin } from 'lucide-react'
+import Image from 'next/image'
+import { SectionContainer } from './SectionContainer'
+import { GitHubLink, LinkedInLink } from './Socials'
+import { TechTooltip } from './TechTooltip'
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui'
 
-export function About() {
+export function About(): React.ReactElement {
   return (
-    <>
-      <SectionHeader text="About" />
-      <div className="my-4 flex flex-col items-center gap-8 text-lg sm:text-xl md:flex-row md:justify-evenly md:text-2xl">
-        <Card>
-          <CardContent header="Web Development">
-            <p className="text-base">
-              Started my Web Development Journey in 2023. I&apos;ve been
-              fascinated with how many different technologies there available to
-              us web developers.
-            </p>
-          </CardContent>
-          <CardContent>
-            <Image
-              src="/image/web.svg"
-              alt="web development"
-              width={0}
-              height={0}
-              className="m-auto h-32 w-auto md:h-40"
-            />
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent header="Game Development">
-            <p className="text-base">
-              I&apos;ve always been interested in the complexity and
-              technicality of games. Developing a game from scratch is just so
-              exciting!
-            </p>
-          </CardContent>
-          <CardContent>
-            <Image
-              src="/image/controller.svg"
-              alt="game development"
-              width={0}
-              height={0}
-              className="m-auto h-32 w-auto md:h-40"
-            />
-          </CardContent>
-        </Card>
-      </div>
-    </>
-  );
-}
-
-type CardProps = {
-  children: ReactNode;
-};
-
-function Card({ children }: CardProps) {
-  return (
-    <div className="flex min-h-[250px] w-full items-center rounded-lg border border-zinc-700 bg-zinc-800 p-6 pr-0 md:w-1/2">
-      {children}
-    </div>
-  );
-}
-
-function CardContent({ header, children }: CardProps & { header?: string }) {
-  return (
-    <div className="w-1/2">
-      {header && (
-        <h1 className="text-xl font-semibold md:text-2xl">{header}</h1>
-      )}
-      <div className="mt-4">{children}</div>
-    </div>
-  );
+    <SectionContainer id='about' className='flex-col-reverse gap-8 sm:flex-row'>
+      <Card className='w-[320px]'>
+        <CardHeader>
+          <CardTitle>Eric Chu</CardTitle>
+          <div className='flex items-center gap-x-1 text-sm text-muted-foreground'>
+            <MapPin className='inline' size={14} />
+            Chino, California
+          </div>
+        </CardHeader>
+        <CardContent className='grid gap-4'>
+          <section className='flex items-center gap-x-1.5'>
+            <span>Software Engineer at</span>
+            <a
+              href='https://www.terros.com/'
+              rel='noreferrer noopener'
+              target='_blank'
+              className='flex items-center gap-x-2'
+            >
+              Terros
+              <ExternalLink size={16} />
+            </a>
+          </section>
+        </CardContent>
+        <CardFooter className='items-center gap-x-6'>
+          <GitHubLink />
+          <LinkedInLink />
+          <TechTooltip {...SHADCN} size={20} className='ml-auto scale-100' alt='Using @shadcn/ui' />
+        </CardFooter>
+      </Card>
+      <Image
+        src='/profile.jpg'
+        alt='Eric Chu'
+        className='size-72 rounded-full border-2 object-cover shadow-lg'
+        width={200}
+        height={0}
+      />
+    </SectionContainer>
+  )
 }

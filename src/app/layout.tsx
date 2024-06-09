@@ -1,38 +1,29 @@
-import type { Metadata } from "next";
-import { Nova_Mono, Roboto } from "next/font/google";
-import "./globals.css";
+import { cn } from '@/common'
+import { AppProvider, Toaster } from '@/components'
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-roboto",
-  weight: "400",
-});
-
-const nova = Nova_Mono({
-  subsets: ["latin"],
-  weight: "400",
-  display: "swap",
-  variable: "--font-nova-mono",
-});
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: "Eric Chu Portfolio",
-  description: "My Personal Portfolio Site",
-};
+  title: 'Eric Chu',
+  description: 'Eric Chu portfolio website',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children: React.ReactNode
+}>): React.ReactElement {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${roboto.variable} ${nova.variable}`}>
-        <main className="font-roboto relative min-h-screen overflow-y-auto">
+    <html lang='en' suppressHydrationWarning>
+      <body className={cn('font-sans antialiased', inter.variable)}>
+        <AppProvider>
           {children}
-        </main>
+          <Toaster />
+        </AppProvider>
       </body>
     </html>
-  );
+  )
 }
