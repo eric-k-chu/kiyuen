@@ -12,7 +12,7 @@ export function SectionContainer({ children, id, className }: Props): React.Reac
   return (
     <section
       className={cn(
-        'dark: flex min-w-0 shrink-0 grow-0 basis-full items-center justify-center from-background via-pink-50 to-sky-100 even:w-full even:bg-gradient-to-tr',
+        'flex w-full min-w-0 shrink-0 grow-0 basis-full items-center justify-center first:bg-gradient-to-t first:from-background first:to-transparent [&:not(:first-child)]:bg-background',
         className
       )}
       id={id}

@@ -10,7 +10,7 @@ export function NavLink({ link }: NavLinkProps): React.ReactElement {
   return (
     <a
       href={toId(link)}
-      className='group font-medium uppercase tracking-wide text-muted-foreground transition-colors ease-in-out hover:text-foreground'
+      className='group text-muted-foreground transition-colors ease-in-out hover:text-foreground'
     >
       {link}
       <span

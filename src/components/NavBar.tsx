@@ -6,7 +6,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui'
 
 export function NavBar(): React.ReactElement {
   return (
-    <div className='fixed top-0 z-10 flex w-screen items-center justify-between border-b bg-background px-4 py-1'>
+    <div className='fixed top-0 z-10 flex w-screen items-center justify-between border-b bg-background px-4 py-2'>
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
