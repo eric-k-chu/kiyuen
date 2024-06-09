@@ -2,9 +2,9 @@
 
 import { ContactFields } from '@/common'
 
-const SERVICE_ID = process.env.NEXT_PUBLIC_EMAIL_SERVICE
-const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE
-const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAIL_PK
+const SERVICE_ID = process.env.EMAIL_SERVICE
+const TEMPLATE_ID = process.env.EMAIL_TEMPLATE
+const PUBLIC_KEY = process.env.EMAIL_PK
 
 type ResponseSuccess = {
   type: 'success'
