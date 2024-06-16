@@ -1,10 +1,11 @@
 import { PROJECTS, Project } from '@/common'
 import Image from 'next/image'
+import { ReactElement } from 'react'
 import { SectionContainer } from './SectionContainer'
 import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui'
 
-export function Projects(): React.ReactElement {
+export function Projects(): ReactElement {
   return (
     <SectionContainer id='projects'>
       <div className='grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-3'>
@@ -16,7 +17,7 @@ export function Projects(): React.ReactElement {
   )
 }
 
-function ProjectCard(props: Project): React.ReactElement {
+function ProjectCard(props: Project): ReactElement {
   const { title, desc, tech, repo, live, img } = props
   return (
     <Card className='grid h-[300px] grid-rows-3 overflow-hidden'>

@@ -1,5 +1,6 @@
 import { Tech, cn } from '@/common'
 import Image from 'next/image'
+import { ReactElement } from 'react'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui'
 
 type Props = Tech & {
@@ -7,7 +8,7 @@ type Props = Tech & {
   className?: string
 }
 
-export function TechTooltip({ src, alt, invert, size = 24, className }: Props): React.ReactElement {
+export function TechTooltip({ src, alt, invert, size = 24, className }: Props): ReactElement {
   return (
     <TooltipProvider>
       <Tooltip>

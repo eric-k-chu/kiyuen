@@ -1,12 +1,11 @@
-'use client'
-
 import { Link, toId } from '@/common'
+import { ReactElement } from 'react'
 
 export type NavLinkProps = {
   link: Link
 }
 
-export function NavLink({ link }: NavLinkProps): React.ReactElement {
+export function NavLink({ link }: NavLinkProps): ReactElement {
   return (
     <a
       href={toId(link)}

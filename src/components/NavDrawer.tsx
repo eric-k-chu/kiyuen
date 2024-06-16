@@ -1,7 +1,6 @@
-'use client'
-
 import { LINKS } from '@/common'
 import { Menu } from 'lucide-react'
+import { ReactElement } from 'react'
 import { GitHubLink, LinkedInLink } from './Socials'
 import { ThemeToggle } from './ThemeToggle'
 import {
@@ -15,7 +14,7 @@ import {
   SheetTrigger,
 } from './ui'
 
-export function NavDrawer(): React.ReactElement {
+export function NavDrawer(): ReactElement {
   return (
     <Sheet>
       <SheetTrigger asChild>

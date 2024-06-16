@@ -7,8 +7,9 @@ import {
   ParticleBackground,
   Projects,
 } from '@/components'
+import { ReactElement } from 'react'
 
-export default function Home(): React.ReactElement {
+export default function Home(): ReactElement {
   return (
     <main className='bg-secondary'>
       <ParticleBackground />

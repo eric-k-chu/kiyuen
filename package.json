@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "ui:add": "tsx ./src/scripts/shadcn.ts",
+    "ui:add": "pnpm dlx shadcn-ui@latest add",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "dependencies": {
@@ -51,7 +51,6 @@
     "prettier": "^3.3.0",
     "prettier-plugin-tailwindcss": "^0.6.1",
     "tailwindcss": "^3.4.1",
-    "tsx": "^4.11.0",
     "typescript": "^5.3.3"
   }
 }

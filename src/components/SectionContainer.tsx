@@ -1,12 +1,12 @@
 import { cn } from '@/common'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, ReactElement } from 'react'
 
 type Props = PropsWithChildren<{
   id: string
   className?: string
 }>
 
-export function SectionContainer({ children, id, className }: Props): React.ReactElement {
+export function SectionContainer({ children, id, className }: Props): ReactElement {
   return (
     <section
       className={cn(

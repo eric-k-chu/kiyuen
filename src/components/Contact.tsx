@@ -16,9 +16,10 @@ import {
   Textarea,
 } from '@/components/ui'
 import { useContactForm } from '@/hooks'
+import { ReactElement } from 'react'
 import { SectionContainer } from './SectionContainer'
 
-export function Contact(): React.ReactElement {
+export function Contact(): ReactElement {
   const { form, onSubmit } = useContactForm({
     title: 'Success!',
     description: 'Email sent.',

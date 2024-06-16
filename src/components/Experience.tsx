@@ -1,4 +1,5 @@
 import { TIMELINE, TimelineItem } from '@/common'
+import { ReactElement } from 'react'
 import { SectionContainer } from './SectionContainer'
 import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui'
@@ -21,7 +22,7 @@ export function Experience(): React.ReactElement {
   )
 }
 
-function TimelineCard(props: TimelineItem & { last: boolean }): React.ReactElement {
+function TimelineCard(props: TimelineItem & { last: boolean }): ReactElement {
   const { year, exp, last } = props
   return (
     <>

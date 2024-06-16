@@ -1,12 +1,13 @@
 import { SHADCN } from '@/common'
 import { ExternalLink, MapPin } from 'lucide-react'
 import Image from 'next/image'
+import { ReactElement } from 'react'
 import { SectionContainer } from './SectionContainer'
 import { GitHubLink, LinkedInLink } from './Socials'
 import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui'
 
-export function About(): React.ReactElement {
+export function About(): ReactElement {
   return (
     <SectionContainer id='about' className='flex-col-reverse gap-8 sm:flex-row'>
       <Card className='w-[320px]'>
@@ -43,6 +44,7 @@ export function About(): React.ReactElement {
         className='size-72 rounded-full border-2 object-cover shadow-lg'
         width={200}
         height={0}
+        priority
       />
     </SectionContainer>
   )
