@@ -21,7 +21,7 @@ export function GitHubLink({ className = 'dark:invert' }: Props): ReactElement {
   )
 }
 
-export function LinkedInLink({ className }: Props): ReactElement {
+export function LinkedInLink({ className = 'dark:invert' }: Props): ReactElement {
   return (
     <a href={PORTFOLIO_CONFIG.socials.linkedin} rel='noreferrer noopener' target='_blank'>
       <Image

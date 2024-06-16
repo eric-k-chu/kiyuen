@@ -11,7 +11,7 @@ export function NavBar(): ReactElement {
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <strong className='cursor-default select-none text-xl' aria-hidden>
+            <strong className='cursor-default select-none text-2xl text-primary' aria-hidden>
               朱
             </strong>
           </TooltipTrigger>
