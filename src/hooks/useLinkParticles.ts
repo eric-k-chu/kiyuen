@@ -35,12 +35,12 @@ export function useLinkParticles(): ParticleOutput {
         number: {
           density: {
             enable: true,
-            area: 400,
+            area: 800,
           },
           value: 120,
         },
         size: {
-          value: { min: 2, max: 2 },
+          value: { min: 3, max: 3 },
         },
       },
       preset: 'links',
