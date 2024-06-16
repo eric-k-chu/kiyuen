@@ -1,4 +1,5 @@
-import { Theme, isDarkMode } from './theme'
+import { Theme } from '@/model'
+import { isDarkMode } from './theme'
 
 export function setBgColor(theme: string | undefined): WithColor {
   return setColor(theme, { light: '#f4f4f5', dark: '#27272a' })
