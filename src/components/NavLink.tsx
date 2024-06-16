@@ -1,4 +1,4 @@
-import { Link, toId } from '@/common'
+import { Link } from '@/model'
 import { ReactElement } from 'react'
 
 export type NavLinkProps = {
@@ -8,7 +8,7 @@ export type NavLinkProps = {
 export function NavLink({ link }: NavLinkProps): ReactElement {
   return (
     <a
-      href={toId(link)}
+      href={`#${link.toLowerCase()}`}
       className='group text-muted-foreground transition-colors ease-in-out hover:text-foreground'
     >
       {link}

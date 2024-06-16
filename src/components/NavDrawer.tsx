@@ -1,4 +1,4 @@
-import { LINKS } from '@/common'
+import { SITE_CONFIG } from '@/config'
 import { Menu } from 'lucide-react'
 import { ReactElement } from 'react'
 import { GitHubLink, LinkedInLink } from './Socials'
@@ -36,7 +36,7 @@ export function NavDrawer(): ReactElement {
           </SheetTitle>
         </SheetHeader>
         <nav className='my-4 flex flex-col items-start gap-y-4'>
-          {LINKS.map((link) => (
+          {SITE_CONFIG.navLinks.map((link) => (
             <SheetLink key={link} link={link} />
           ))}
         </nav>

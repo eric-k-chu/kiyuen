@@ -1,10 +1,12 @@
-import { TIMELINE, TimelineItem } from '@/common'
+import { PORTFOLIO_CONFIG } from '@/config'
+import type { Experience } from '@/model'
 import { ReactElement } from 'react'
 import { SectionContainer } from './SectionContainer'
 import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui'
 
 export function Experience(): React.ReactElement {
+  const { experiences } = PORTFOLIO_CONFIG
   return (
     <SectionContainer id='experience'>
       <Card className='max-w-[320px] sm:max-w-4xl'>
@@ -13,8 +15,8 @@ export function Experience(): React.ReactElement {
           <CardDescription>Education and Experience</CardDescription>
         </CardHeader>
         <CardContent>
-          {TIMELINE.map((tl, idx) => (
-            <TimelineCard key={tl.year} {...tl} last={idx === TIMELINE.length - 1} />
+          {experiences.map((tl, idx) => (
+            <TimelineCard key={tl.year} {...tl} last={idx === experiences.length - 1} />
           ))}
         </CardContent>
       </Card>
@@ -22,18 +24,18 @@ export function Experience(): React.ReactElement {
   )
 }
 
-function TimelineCard(props: TimelineItem & { last: boolean }): ReactElement {
-  const { year, exp, last } = props
+function TimelineCard(props: Experience & { last: boolean }): ReactElement {
+  const { year, history, last } = props
   return (
     <>
-      {exp.map((we, idx) => {
-        const { title, place, skills, start, end } = we
-        const isLast = last && idx === exp.length - 1
+      {history.map((we, idx) => {
+        const { title, company, skills, start, end } = we
+        const isLast = last && idx === history.length - 1
         const isFirst = idx === 0
         return (
-          <div className='relative py-6 pl-[5rem] sm:pl-24' key={title + place}>
+          <div className='relative py-6 pl-[5rem] sm:pl-24' key={title + company}>
             <div className='pl-2'>
-              <p className='mb-1 text-sm text-primary sm:text-base'>{place}</p>
+              <p className='mb-1 text-sm text-primary sm:text-base'>{company}</p>
               <section className='mb-3 flex items-center'>
                 {!isLast && (
                   <div
@@ -57,7 +59,7 @@ function TimelineCard(props: TimelineItem & { last: boolean }): ReactElement {
               </section>
               <section className='flex flex-wrap items-center gap-2 text-sm sm:gap-4'>
                 {skills.map((tech) => (
-                  <TechTooltip key={tech.alt + place + title + year} {...tech} />
+                  <TechTooltip key={tech + company + title + year} tech={tech} />
                 ))}
               </section>
             </div>

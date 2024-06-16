@@ -1,3 +1,4 @@
+import { SITE_CONFIG } from '@/config'
 import { ReactElement } from 'react'
 import { GitHubLink, LinkedInLink } from './Socials'
 
@@ -10,7 +11,7 @@ export function Footer(): ReactElement {
         <LinkedInLink />
       </div>
       <p className='absolute bottom-4 w-full text-center text-xs text-muted-foreground'>
-        Updated 6/5/2024
+        {`Updated ${SITE_CONFIG.updatedAt}`}
       </p>
     </footer>
   )

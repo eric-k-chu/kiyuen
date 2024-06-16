@@ -1,4 +1,4 @@
-import { LINKS } from '@/common'
+import { SITE_CONFIG } from '@/config'
 import { ReactElement } from 'react'
 import { NavDrawer } from './NavDrawer'
 import { NavLink } from './NavLink'
@@ -19,7 +19,7 @@ export function NavBar(): ReactElement {
         </Tooltip>
       </TooltipProvider>
       <nav className='hidden items-center gap-x-12 sm:flex'>
-        {LINKS.map((link) => (
+        {SITE_CONFIG.navLinks.map((link) => (
           <NavLink key={link} link={link} />
         ))}
       </nav>

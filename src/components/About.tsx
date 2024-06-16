@@ -1,4 +1,3 @@
-import { SHADCN } from '@/common'
 import { ExternalLink, MapPin } from 'lucide-react'
 import Image from 'next/image'
 import { ReactElement } from 'react'
@@ -35,7 +34,12 @@ export function About(): ReactElement {
         <CardFooter className='items-center gap-x-6'>
           <GitHubLink />
           <LinkedInLink />
-          <TechTooltip {...SHADCN} size={20} className='ml-auto scale-100' alt='Using @shadcn/ui' />
+          <TechTooltip
+            tech='shadcnui'
+            size={20}
+            className='ml-auto scale-100'
+            alt='Using @shadcn/ui'
+          />
         </CardFooter>
       </Card>
       <Image
