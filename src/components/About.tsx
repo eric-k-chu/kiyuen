@@ -1,3 +1,4 @@
+import { PORTFOLIO_CONFIG } from '@/config'
 import { ExternalLink, MapPin } from 'lucide-react'
 import Image from 'next/image'
 import { ReactElement } from 'react'
@@ -7,6 +8,7 @@ import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui'
 
 export function About(): ReactElement {
+  const { currentJob } = PORTFOLIO_CONFIG
   return (
     <SectionContainer id='about' className='flex-col-reverse gap-8 sm:flex-row'>
       <Card className='w-[320px]'>
@@ -19,14 +21,14 @@ export function About(): ReactElement {
         </CardHeader>
         <CardContent className='grid gap-4'>
           <section className='flex items-center gap-x-1.5'>
-            <span>Software Engineer at</span>
+            <span>{`${currentJob.title} at`}</span>
             <a
-              href='https://www.terros.com/'
+              href={currentJob.link}
               rel='noreferrer noopener'
               target='_blank'
               className='flex items-center gap-x-2'
             >
-              Terros
+              {currentJob.company}
               <ExternalLink size={16} />
             </a>
           </section>

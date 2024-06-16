@@ -12,6 +12,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     github: 'https://www.github.com/eric-k-chu',
     linkedin: 'https://www.linkedin.com/in/eric-k-chu',
   },
+  currentLocation: 'Chino, California',
   currentJob: {
     title: 'Software Engineer',
     company: 'Terros',

@@ -11,6 +11,7 @@ export type Link = 'About' | 'Experience' | 'Projects' | 'Contact'
 
 export type PortfolioConfig = {
   socials: Socials
+  currentLocation: `${string}, ${string}`
   currentJob: TinyJobHistory & { link: string }
   experiences: Experience[]
   projects: Project[]
