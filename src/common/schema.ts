@@ -19,4 +19,11 @@ export const contactFormSchema = z.object({
 
 export type ContactForm = z.infer<typeof contactFormSchema>
 
-export const contactForm = { resolver: zodResolver(contactFormSchema) }
+export const contactForm = {
+  resolver: zodResolver(contactFormSchema),
+  defaultValues: {
+    name: '',
+    email: '',
+    message: '',
+  },
+}
