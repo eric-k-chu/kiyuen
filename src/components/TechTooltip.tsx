@@ -22,7 +22,7 @@ export function TechTooltip({ tech, alt, invert, size = 24, className }: Props):
             alt={icon.alt || tech}
             width={size}
             height={size}
-            className={cn('scale-75 sm:scale-100', invert && 'dark:invert', className)}
+            className={cn('scale-75 sm:scale-100', icon.invert && 'dark:invert', className)}
           />
         </TooltipTrigger>
         <TooltipContent>{icon.alt}</TooltipContent>

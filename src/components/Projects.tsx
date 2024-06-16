@@ -11,22 +11,17 @@ export function Projects(): ReactElement {
     <SectionContainer id='projects'>
       <div className='grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-3'>
         {PORTFOLIO_CONFIG.projects.map((project, idx) => (
-          <ProjectCard key={project.name} {...project} delay={idx * 100} />
+          <ProjectCard key={project.name} {...project} />
         ))}
       </div>
     </SectionContainer>
   )
 }
 
-function ProjectCard(props: Project & { delay: number }): ReactElement {
-  const { name, description, technologies, repo, live, img, delay } = props
+function ProjectCard(props: Project): ReactElement {
+  const { name, description, technologies, repo, live, img } = props
   return (
-    <Card
-      className='grid h-[300px] grid-rows-3 overflow-hidden'
-      data-aos='fade-up'
-      data-aos-delay={delay}
-      data-aos-anchor='#projects'
-    >
+    <Card className='grid h-[300px] grid-rows-3 overflow-hidden'>
       <CardHeader
         className='justify-center border-t-border bg-cover bg-center bg-no-repeat'
         style={{

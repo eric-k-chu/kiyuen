@@ -39,7 +39,7 @@ export function About(): ReactElement {
           <TechTooltip
             tech='shadcnui'
             size={20}
-            className='ml-auto scale-100'
+            className='ml-auto scale-100 dark:invert'
             alt='Using @shadcn/ui'
           />
         </CardFooter>

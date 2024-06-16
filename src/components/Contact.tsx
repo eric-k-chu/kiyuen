@@ -29,11 +29,7 @@ export function Contact(): ReactElement {
   return (
     <SectionContainer id='contact'>
       <FormProvider {...form}>
-        <Card
-          className='w-full max-w-[290px] sm:max-w-[33%]'
-          data-aos='fade-up'
-          data-aos-anchor='#contact'
-        >
+        <Card className='w-full max-w-[290px] sm:max-w-[33%]'>
           <CardHeader>
             <CardTitle>Contact Me</CardTitle>
           </CardHeader>
