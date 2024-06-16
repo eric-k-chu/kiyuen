@@ -9,8 +9,9 @@ import {
 } from '@/components/ui/'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { ReactElement } from 'react'
 
-export function ThemeToggle({ className }: { className?: string }): React.ReactElement {
+export function ThemeToggle({ className }: { className?: string }): ReactElement {
   const { setTheme } = useTheme()
 
   return (

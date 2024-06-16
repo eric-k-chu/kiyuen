@@ -1,26 +1,31 @@
-import { Tech, cn } from '@/common'
+import { cn } from '@/common'
+import { TechIcon, Technology, buildTechIcon } from '@/model'
 import Image from 'next/image'
+import { ReactElement } from 'react'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui'
 
-type Props = Tech & {
+type Props = Pick<TechIcon, 'alt' | 'invert'> & {
+  tech: Technology
   size?: number
   className?: string
 }
 
-export function TechTooltip({ src, alt, invert, size = 24, className }: Props): React.ReactElement {
+export function TechTooltip({ tech, alt, invert, size = 24, className }: Props): ReactElement {
+  const icon = buildTechIcon({ tech, alt, invert })
+
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
           <Image
-            src={src}
-            alt={alt}
+            src={icon.src}
+            alt={icon.alt || tech}
             width={size}
             height={size}
             className={cn('scale-75 sm:scale-100', invert && 'dark:invert', className)}
           />
         </TooltipTrigger>
-        <TooltipContent>{alt}</TooltipContent>
+        <TooltipContent>{icon.alt}</TooltipContent>
       </Tooltip>
     </TooltipProvider>
   )

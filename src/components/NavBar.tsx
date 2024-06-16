@@ -1,10 +1,11 @@
-import { LINKS } from '@/common'
+import { SITE_CONFIG } from '@/config'
+import { ReactElement } from 'react'
 import { NavDrawer } from './NavDrawer'
 import { NavLink } from './NavLink'
 import { ThemeToggle } from './ThemeToggle'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui'
 
-export function NavBar(): React.ReactElement {
+export function NavBar(): ReactElement {
   return (
     <div className='fixed top-0 z-10 flex w-screen items-center justify-between border-b bg-background px-4 py-2'>
       <TooltipProvider>
@@ -18,7 +19,7 @@ export function NavBar(): React.ReactElement {
         </Tooltip>
       </TooltipProvider>
       <nav className='hidden items-center gap-x-12 sm:flex'>
-        {LINKS.map((link) => (
+        {SITE_CONFIG.navLinks.map((link) => (
           <NavLink key={link} link={link} />
         ))}
       </nav>

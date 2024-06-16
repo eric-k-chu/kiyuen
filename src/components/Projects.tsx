@@ -1,23 +1,25 @@
-import { PROJECTS, Project } from '@/common'
+import { PORTFOLIO_CONFIG } from '@/config'
+import { Project } from '@/model'
 import Image from 'next/image'
+import { ReactElement } from 'react'
 import { SectionContainer } from './SectionContainer'
 import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui'
 
-export function Projects(): React.ReactElement {
+export function Projects(): ReactElement {
   return (
     <SectionContainer id='projects'>
       <div className='grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-3'>
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.title} {...project} />
+        {PORTFOLIO_CONFIG.projects.map((project) => (
+          <ProjectCard key={project.name} {...project} />
         ))}
       </div>
     </SectionContainer>
   )
 }
 
-function ProjectCard(props: Project): React.ReactElement {
-  const { title, desc, tech, repo, live, img } = props
+function ProjectCard(props: Project): ReactElement {
+  const { name, description, technologies, repo, live, img } = props
   return (
     <Card className='grid h-[300px] grid-rows-3 overflow-hidden'>
       <CardHeader
@@ -27,13 +29,13 @@ function ProjectCard(props: Project): React.ReactElement {
           borderImage: 'linear-gradient(hsl(240 100% 20% / 0.5), hsl(0 100% 20% / 0.5)) fill 1',
         }}
       >
-        <CardTitle className='text-white'>{title}</CardTitle>
+        <CardTitle className='text-white'>{name}</CardTitle>
       </CardHeader>
       <CardContent className='space-y-6 pt-6'>
-        <em className='text-muted-foreground'>{desc}</em>
+        <em className='text-muted-foreground'>{description}</em>
         <section className='flex flex-wrap items-center gap-2'>
-          {tech.map((t) => (
-            <TechTooltip key={t.alt} {...t} size={24} />
+          {technologies.map((tech) => (
+            <TechTooltip key={tech} tech={tech} size={24} />
           ))}
         </section>
       </CardContent>
@@ -52,7 +54,7 @@ function ProjectCard(props: Project): React.ReactElement {
           <a href={live} rel='noreferrer noopener' target='_blank'>
             <Image
               src='/link.svg'
-              alt={`${title} live site`}
+              alt={`${name} live site`}
               width={20}
               height={20}
               priority
