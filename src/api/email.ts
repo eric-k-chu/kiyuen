@@ -1,16 +1,10 @@
-import { ContactFields } from '@/common'
+import { ContactFormFields } from '@/model'
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_EMAIL_SERVICE
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAIL_PK
 
-type ResponseSuccess = {
-  type: 'success'
-}
-
-export type EmailPostResponse = ResponseSuccess
-
-export async function sendEmail(data: ContactFields): Promise<EmailPostResponse> {
+export async function sendEmail(data: ContactFormFields): Promise<void> {
   const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
     method: 'POST',
     headers: {
@@ -23,8 +17,5 @@ export async function sendEmail(data: ContactFields): Promise<EmailPostResponse>
       template_params: data,
     }),
   })
-
   if (!response.ok) throw new Error(`${response.statusText}: ${response.status}`)
-
-  return { type: 'success' }
 }

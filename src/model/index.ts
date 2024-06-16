@@ -1,4 +1,6 @@
 export * from './config'
 export * from './experience'
+export * from './form'
 export * from './projects'
 export * from './technology'
+export * from './theme'
