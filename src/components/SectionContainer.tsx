@@ -1,5 +1,5 @@
 import { cn } from '@/common'
-import { PropsWithChildren, ReactElement } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 
 type Props = PropsWithChildren<{
   id: string
@@ -13,11 +13,11 @@ cn(
       )
  */
 
-export function SectionContainer({ children, id, className }: Props): ReactElement {
+export function SectionContainer({ children, id, className }: Props): ReactNode {
   return (
     <section
       className={cn(
-        'flex w-full min-w-0 shrink-0 grow-0 basis-full items-center justify-center py-4 odd:bg-background/60 even:bg-background',
+        'flex w-full min-w-0 shrink-0 grow-0 basis-full items-center justify-center bg-background py-4',
         className
       )}
       id={id}

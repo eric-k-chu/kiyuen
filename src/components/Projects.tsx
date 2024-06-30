@@ -1,14 +1,14 @@
 import { PORTFOLIO_CONFIG } from '@/config'
 import { Project } from '@/model'
 import Image from 'next/image'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 import { SectionContainer } from './SectionContainer'
 import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui'
 
-export function Projects(): ReactElement {
+export function Projects(): ReactNode {
   return (
-    <SectionContainer id='projects'>
+    <SectionContainer id='projects' className='bg-primary'>
       <div className='grid grid-cols-1 items-center gap-6 sm:grid-cols-2 md:grid-cols-3'>
         {PORTFOLIO_CONFIG.projects.map((project, idx) => (
           <ProjectCard key={project.name} {...project} />
@@ -18,7 +18,7 @@ export function Projects(): ReactElement {
   )
 }
 
-function ProjectCard(props: Project): ReactElement {
+function ProjectCard(props: Project): ReactNode {
   const { name, description, technologies, repo, live, img } = props
   return (
     <Card className='grid h-[300px] grid-rows-3 overflow-hidden'>

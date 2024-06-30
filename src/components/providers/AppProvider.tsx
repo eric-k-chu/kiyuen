@@ -1,8 +1,8 @@
 'use client'
 
-import { PropsWithChildren, ReactElement } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 import { ThemeProvider } from './ThemeProvider'
 
-export function AppProvider({ children }: PropsWithChildren): ReactElement {
+export function AppProvider({ children }: PropsWithChildren): ReactNode {
   return <ThemeProvider>{children}</ThemeProvider>
 }

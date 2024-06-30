@@ -13,13 +13,7 @@ import {
 } from '@radix-ui/react-dialog'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { X } from 'lucide-react'
-import {
-  ComponentPropsWithoutRef,
-  ElementRef,
-  HTMLAttributes,
-  ReactElement,
-  forwardRef,
-} from 'react'
+import { ComponentPropsWithoutRef, ElementRef, HTMLAttributes, ReactNode, forwardRef } from 'react'
 import { NavLink, NavLinkProps } from '../NavLink'
 
 const Sheet = Root
@@ -83,12 +77,12 @@ const SheetContent = forwardRef<ElementRef<typeof Content>, SheetContentProps>(
 )
 SheetContent.displayName = Content.displayName
 
-const SheetHeader = ({ className, ...props }: HTMLAttributes<HTMLDivElement>): ReactElement => (
+const SheetHeader = ({ className, ...props }: HTMLAttributes<HTMLDivElement>): ReactNode => (
   <div className={cn('flex flex-col space-y-2 text-left', className)} {...props} />
 )
 SheetHeader.displayName = 'SheetHeader'
 
-const SheetFooter = ({ className, ...props }: HTMLAttributes<HTMLDivElement>): ReactElement => (
+const SheetFooter = ({ className, ...props }: HTMLAttributes<HTMLDivElement>): ReactNode => (
   <div className={cn('flex items-center gap-x-4', className)} {...props} />
 )
 SheetFooter.displayName = 'SheetFooter'

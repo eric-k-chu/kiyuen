@@ -1,12 +1,12 @@
 import { PORTFOLIO_CONFIG } from '@/config'
 import Image from 'next/image'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 
 type Props = {
   className?: string
 }
 
-export function GitHubLink({ className = 'dark:invert' }: Props): ReactElement {
+export function GitHubLink({ className = 'dark:invert' }: Props): ReactNode {
   return (
     <a href={PORTFOLIO_CONFIG.socials.github} rel='noreferrer noopener' target='_blank'>
       <Image
@@ -21,7 +21,7 @@ export function GitHubLink({ className = 'dark:invert' }: Props): ReactElement {
   )
 }
 
-export function LinkedInLink({ className = 'dark:invert' }: Props): ReactElement {
+export function LinkedInLink({ className = 'dark:invert' }: Props): ReactNode {
   return (
     <a href={PORTFOLIO_CONFIG.socials.linkedin} rel='noreferrer noopener' target='_blank'>
       <Image

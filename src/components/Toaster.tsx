@@ -9,9 +9,9 @@ import {
   ToastViewport,
 } from '@/components/ui/toast'
 import { useToast } from '@/hooks'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 
-export function Toaster(): ReactElement {
+export function Toaster(): ReactNode {
   const { toasts } = useToast()
 
   return (

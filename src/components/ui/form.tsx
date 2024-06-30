@@ -6,7 +6,7 @@ import {
   ComponentPropsWithoutRef,
   ElementRef,
   HTMLAttributes,
-  ReactElement,
+  ReactNode,
   createContext,
   forwardRef,
   useContext,
@@ -43,7 +43,7 @@ const FormField = <
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
   ...props
-}: ControllerProps<TFieldValues, TName>): ReactElement => {
+}: ControllerProps<TFieldValues, TName>): ReactNode => {
   return (
     <FormFieldContext.Provider value={{ name: props.name }}>
       <Controller {...props} />

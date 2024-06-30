@@ -4,7 +4,7 @@ export const SITE_CONFIG: SiteConfig = {
   title: 'Eric Chu',
   description: 'Eric Chu portfolio website',
   navLinks: ['About', 'Experience', 'Projects', 'Contact'],
-  updatedAt: '6/15/2024',
+  updatedAt: '6/30/2024',
 }
 
 export const PORTFOLIO_CONFIG: PortfolioConfig = {
@@ -111,15 +111,7 @@ export const PORTFOLIO_CONFIG: PortfolioConfig = {
     {
       name: 'Portfolio',
       description: 'My personal portfolio site',
-      technologies: [
-        'nextjs',
-        'react',
-        'tailwindcss',
-        'typescript',
-        'vercel',
-        'shadcnui',
-        'threejs',
-      ],
+      technologies: ['nextjs', 'react', 'tailwindcss', 'typescript', 'vercel', 'shadcnui'],
       repo: 'https://github.com/eric-k-chu/kiyuen',
       live: 'https://www.kiyuen.dev',
       img: '/image/portfolio.png',

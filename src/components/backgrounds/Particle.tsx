@@ -2,9 +2,9 @@
 
 import { useLinkParticles } from '@/hooks'
 import Particles from '@tsparticles/react'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 
-export function ParticleBackground(): ReactElement | undefined {
+export function ParticleBackground(): ReactNode | undefined {
   const { options, isLoading } = useLinkParticles()
 
   if (isLoading) return

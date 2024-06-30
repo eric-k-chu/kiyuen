@@ -1,6 +1,6 @@
 import { SITE_CONFIG } from '@/config'
 import { Menu } from 'lucide-react'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 import { GitHubLink, LinkedInLink } from './Socials'
 import { ThemeToggle } from './ThemeToggle'
 import {
@@ -14,7 +14,7 @@ import {
   SheetTrigger,
 } from './ui'
 
-export function NavDrawer(): ReactElement {
+export function NavDrawer(): ReactNode {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -22,7 +22,7 @@ export function NavDrawer(): ReactElement {
           variant='ghost'
           size='icon'
           reader='Open Navigation'
-          className='inline-flex sm:hidden'
+          className='ml-auto inline-flex sm:hidden'
         >
           <Menu size={20} />
         </Button>

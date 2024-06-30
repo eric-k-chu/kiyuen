@@ -1,11 +1,11 @@
 'use client'
 
 import { ThemeProvider as NextThemesProvider } from 'next-themes'
-import { PropsWithChildren, ReactElement } from 'react'
+import { PropsWithChildren, ReactNode } from 'react'
 
-export function ThemeProvider({ children }: PropsWithChildren): ReactElement {
+export function ThemeProvider({ children }: PropsWithChildren): ReactNode {
   return (
-    <NextThemesProvider attribute='class' defaultTheme='light'>
+    <NextThemesProvider attribute='class' defaultTheme='dark'>
       {children}
     </NextThemesProvider>
   )

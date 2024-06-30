@@ -1,15 +1,15 @@
 import { Link } from '@/model'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 
 export type NavLinkProps = {
   link: Link
 }
 
-export function NavLink({ link }: NavLinkProps): ReactElement {
+export function NavLink({ link }: NavLinkProps): ReactNode {
   return (
     <a
       href={`#${link.toLowerCase()}`}
-      className='group text-foreground transition-colors ease-in-out hover:text-primary'
+      className='group text-muted-foreground transition-colors ease-in-out hover:text-primary'
     >
       {link}
       <span

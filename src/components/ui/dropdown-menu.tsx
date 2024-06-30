@@ -18,13 +18,7 @@ import {
   Trigger,
 } from '@radix-ui/react-dropdown-menu'
 import { Check, ChevronRight, Circle } from 'lucide-react'
-import {
-  ComponentPropsWithoutRef,
-  ElementRef,
-  HTMLAttributes,
-  ReactElement,
-  forwardRef,
-} from 'react'
+import { ComponentPropsWithoutRef, ElementRef, HTMLAttributes, ReactNode, forwardRef } from 'react'
 
 import { cn } from '@/common'
 
@@ -182,7 +176,7 @@ DropdownMenuSeparator.displayName = Separator.displayName
 const DropdownMenuShortcut = ({
   className,
   ...props
-}: HTMLAttributes<HTMLSpanElement>): ReactElement => {
+}: HTMLAttributes<HTMLSpanElement>): ReactNode => {
   return <span className={cn('ml-auto text-xs tracking-widest opacity-60', className)} {...props} />
 }
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut'

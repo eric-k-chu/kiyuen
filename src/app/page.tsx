@@ -1,26 +1,15 @@
-import {
-  About,
-  Contact,
-  Experience,
-  Footer,
-  NavBar,
-  ParticleBackground,
-  Projects,
-} from '@/components'
-import { ReactElement } from 'react'
+import { About, Contact, Experience, Footer, NavBar, Projects } from '@/components'
+import { ReactNode } from 'react'
 
-export default function Home(): ReactElement {
+export default function Home(): ReactNode {
   return (
-    <main className='bg-secondary'>
-      <ParticleBackground />
+    <main className='flex h-screen flex-col items-center'>
       <NavBar />
-      <div className='flex h-screen flex-col items-center'>
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
-        <Footer />
-      </div>
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
+      <Footer />
     </main>
   )
 }

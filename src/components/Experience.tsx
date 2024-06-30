@@ -1,11 +1,11 @@
 import { PORTFOLIO_CONFIG } from '@/config'
 import type { Experience } from '@/model'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 import { SectionContainer } from './SectionContainer'
 import { TechTooltip } from './TechTooltip'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui'
 
-export function Experience(): React.ReactElement {
+export function Experience(): React.ReactNode {
   const { experiences } = PORTFOLIO_CONFIG
   return (
     <SectionContainer id='experience'>
@@ -24,18 +24,18 @@ export function Experience(): React.ReactElement {
   )
 }
 
-function TimelineCard(props: Experience & { last: boolean }): ReactElement {
+function TimelineCard(props: Experience & { last: boolean }): ReactNode {
   const { year, history, last } = props
   return (
     <>
-      {history.map((we, idx) => {
-        const { title, company, skills, start, end } = we
+      {history.map((job, idx) => {
+        const { title, company, skills, start, end } = job
         const isLast = last && idx === history.length - 1
         const isFirst = idx === 0
         return (
           <div className='relative py-6 pl-[5rem] sm:pl-24' key={title + company}>
             <div className='pl-2'>
-              <p className='mb-1 text-sm text-primary sm:text-base'>{company}</p>
+              <p className='mb-1 text-sm font-thin text-muted-foreground sm:text-base'>{company}</p>
               <section className='mb-3 flex items-center'>
                 {!isLast && (
                   <div

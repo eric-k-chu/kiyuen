@@ -17,10 +17,10 @@ import {
 } from '@/components/ui'
 import { useContactForm } from '@/hooks'
 import { Loader } from 'lucide-react'
-import { ReactElement } from 'react'
+import { ReactNode } from 'react'
 import { SectionContainer } from './SectionContainer'
 
-export function Contact(): ReactElement {
+export function Contact(): ReactNode {
   const { form, onSubmit, isPending } = useContactForm({
     title: 'Success!',
     description: 'Email sent.',
@@ -74,7 +74,7 @@ export function Contact(): ReactElement {
                   </FormItem>
                 )}
               />
-              <Button type='submit' className='w-full' disabled={isPending}>
+              <Button type='submit' className='w-full font-semibold' disabled={isPending}>
                 {isPending ? <Loader className='animate-spin' /> : 'Send'}
               </Button>
             </form>

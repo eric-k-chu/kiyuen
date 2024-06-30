@@ -2,7 +2,7 @@ import { cn } from '@/common'
 import { AppProvider, Toaster } from '@/components'
 import { SITE_CONFIG } from '@/config'
 import { Inter } from 'next/font/google'
-import { ReactElement, ReactNode } from 'react'
+import { ReactNode } from 'react'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -13,7 +13,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode
-}>): ReactElement {
+}>): ReactNode {
   return (
     <html lang='en' suppressHydrationWarning>
       <body className={cn('font-sans antialiased', inter.variable)}>
