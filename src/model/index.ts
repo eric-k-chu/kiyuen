@@ -1,7 +1,0 @@
-export * from './config'
-export * from './experience'
-export * from './form'
-export * from './particle'
-export * from './projects'
-export * from './technology'
-export * from './theme'

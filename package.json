@@ -1,55 +1,30 @@
 {
   "name": "kiyuen",
-  "version": "2.0.0",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "ui:add": "pnpm dlx shadcn-ui@latest add",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.9.0",
-    "@radix-ui/react-dialog": "^1.1.1",
-    "@radix-ui/react-dropdown-menu": "^2.1.1",
-    "@radix-ui/react-label": "^2.1.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "@radix-ui/react-toast": "^1.2.1",
-    "@radix-ui/react-tooltip": "^1.1.2",
-    "@tsparticles/engine": "^3.5.0",
-    "@tsparticles/preset-links": "^3.1.0",
-    "@tsparticles/react": "^3.0.0",
-    "aos": "3.0.0-beta.6",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "framer-motion": "^11.9.0",
-    "lucide-react": "^0.446.0",
-    "next": "14.2.13",
-    "next-themes": "^0.3.0",
+    "@mantine/core": "7.13.0",
+    "@mantine/hooks": "7.13.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-hook-form": "^7.53.0",
-    "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.23.8"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7",
-    "@types/node": "^22.7.4",
+    "@biomejs/biome": "1.9.2",
     "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.7.0",
-    "@typescript-eslint/parser": "^8.7.0",
-    "eslint": "^9.11.1",
-    "eslint-config-next": "14.2.13",
-    "eslint-plugin-prettier": "^5.2.1",
+    "@vitejs/plugin-react": "^4.3.1",
     "postcss": "^8.4.47",
-    "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.8",
-    "tailwindcss": "^3.4.13",
-    "typescript": "^5.6.2"
-  }
+    "postcss-preset-mantine": "1.17.0",
+    "postcss-simple-vars": "^7.0.1",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8"
+  },
+  "packageManager": "pnpm@9.11.0"
 }

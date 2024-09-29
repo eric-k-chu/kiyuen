@@ -1,2 +1,1 @@
-- [x] Portfolio v2
-- [ ] Portfolio Terminal
+# Portfolio
