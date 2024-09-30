@@ -1,4 +1,4 @@
-import { Container, Text, Timeline } from '@mantine/core'
+import { Container, Stack, Text, Timeline, Title } from '@mantine/core'
 import { DateTime } from 'luxon'
 import type { ReactNode } from 'react'
 import { Components } from './icons'
@@ -7,23 +7,26 @@ import { config } from './site.config'
 export function Experience(): ReactNode {
   return (
     <Container size='md' id={config.anchors[1].id}>
-      <Timeline active={0} bulletSize={24} lineWidth={4}>
-        {config.experiences.map((exp, i) => (
-          <Timeline.Item
-            key={exp.title}
-            bullet={
-              <Components size={12} color={i === 0 ? 'black' : 'white'} />
-            }
-            title={<strong style={{ fontWeight: 900 }}>{exp.title}</strong>}
-            color={config.primary}
-          >
-            <Text size='md'>{exp.company}</Text>
-            <Text size='sm' c='dimmed' mt={4}>
-              {period(exp.start, exp.end)}
-            </Text>
-          </Timeline.Item>
-        ))}
-      </Timeline>
+      <Stack gap='xl'>
+        <Title>Experience</Title>
+        <Timeline active={0} bulletSize={24} lineWidth={4}>
+          {config.experiences.map((exp, i) => (
+            <Timeline.Item
+              key={exp.title}
+              bullet={
+                <Components size={12} color={i === 0 ? 'black' : 'white'} />
+              }
+              title={<strong style={{ fontWeight: 900 }}>{exp.title}</strong>}
+              color={config.primary}
+            >
+              <Text size='md'>{exp.company}</Text>
+              <Text size='sm' c='dimmed' mt={4}>
+                {period(exp.start, exp.end)}
+              </Text>
+            </Timeline.Item>
+          ))}
+        </Timeline>
+      </Stack>
     </Container>
   )
 }
