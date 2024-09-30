@@ -7,7 +7,7 @@ export function Logo(): ReactNode {
   return (
     <Group>
       <ThemeIcon color={config.secondary} radius='xl'>
-        <Chu strokeWidth={2} color='black' />
+        <Chu strokeWidth={1} color='black' />
       </ThemeIcon>
       <strong>ERIC CHU</strong>
     </Group>
