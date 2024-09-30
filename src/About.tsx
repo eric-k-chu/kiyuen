@@ -1,7 +1,9 @@
 import {
+  ActionIcon,
   Anchor,
   Button,
   Container,
+  Flex,
   Group,
   Image,
   List,
@@ -9,17 +11,49 @@ import {
   Title,
   rem,
 } from '@mantine/core'
-import { IconComponents } from '@tabler/icons-react'
 import type { ReactNode } from 'react'
+import { Components, Github, Linkedin } from './icons'
 import { config } from './site.config'
 import classes from './styles/about.module.css'
 
 export function About(): ReactNode {
   return (
-    <Container size='md' id={config.anchors[0].link}>
+    <Container size='md' id={config.anchors[0].id}>
       <div className={classes.inner}>
         <div className={classes.content}>
-          <Title className={classes.title}>Eric Chu</Title>
+          <Flex gap='xs' direction='row' align='center'>
+            <Title className={classes.title}>Eric Chu</Title>
+            <Group gap={0}>
+              <ActionIcon
+                component='a'
+                href={config.github}
+                target='_blank'
+                rel='noreferrer'
+                size='lg'
+                color='gray'
+                variant='subtle'
+              >
+                <Github
+                  style={{ width: rem(20), height: rem(20) }}
+                  strokeWidth={1.5}
+                />
+              </ActionIcon>
+              <ActionIcon
+                component='a'
+                href={config.linkedin}
+                target='_blank'
+                rel='noreferrer'
+                size='lg'
+                color='gray'
+                variant='subtle'
+              >
+                <Linkedin
+                  style={{ width: rem(20), height: rem(20) }}
+                  strokeWidth={1.5}
+                />
+              </ActionIcon>
+            </Group>
+          </Flex>
           <Text c='dimmed' mt='md'>
             Just another software developer living in California.
           </Text>
@@ -29,7 +63,7 @@ export function About(): ReactNode {
             spacing='sm'
             size='sm'
             icon={
-              <IconComponents
+              <Components
                 style={{ width: rem(14), height: rem(14), strokeWidth: 2 }}
                 color={config.primary}
               />
@@ -58,25 +92,16 @@ export function About(): ReactNode {
             </List.Item>
           </List>
 
-          <Group mt={30}>
-            <Button
-              radius='xl'
-              size='md'
-              className={classes.control}
-              c='black'
-              bg={config.primary}
-            >
-              Experience
-            </Button>
-            <Button
-              variant='default'
-              radius='xl'
-              size='md'
-              className={classes.control}
-            >
-              Contact Me
-            </Button>
-          </Group>
+          <Button
+            radius='xl'
+            size='md'
+            className={classes.control}
+            c='black'
+            bg={config.primary}
+            mt={30}
+          >
+            Contact Me
+          </Button>
         </div>
         <Image
           src='/profile.jpg'

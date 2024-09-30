@@ -9,10 +9,10 @@ export const config = {
     url: 'https://www.terros.com/',
   },
   anchors: [
-    { link: '#about', label: 'About' },
-    { link: '#experience', label: 'Experience' },
-    { link: '#education', label: 'Education' },
-    { link: '#contact', label: 'Contact' },
+    { id: 'about', link: '#about', label: 'About' },
+    { id: 'experience', link: '#experience', label: 'Experience' },
+    { id: 'education', link: '#education', label: 'Education' },
+    { id: 'contact', link: '#contact', label: 'Contact' },
   ],
   experiences: [
     {

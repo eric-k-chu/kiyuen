@@ -1,6 +1,7 @@
 import { Anchor, Burger, Container, Group } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { type ReactNode, useState } from 'react'
+import { Logo } from './icons'
 import { config } from './site.config'
 import classes from './styles/header.module.css'
 
@@ -11,19 +12,16 @@ export function Header(): ReactNode {
   return (
     <header className={classes.header}>
       <Container size='md' className={classes.inner}>
-        <strong>朱 ERIC CHU</strong>
+        <Logo />
         <Group gap={5} visibleFrom='xs'>
-          {config.anchors.map(({ link, label }) => (
+          {config.anchors.map(({ id, link, label }) => (
             <Anchor
-              key={label}
+              key={id}
               href={link}
               underline='never'
               className={classes.link}
               data-active={active === link || undefined}
-              onClick={(event) => {
-                event.preventDefault()
-                setActive(link)
-              }}
+              onClick={() => setActive(link)}
             >
               {label}
             </Anchor>
