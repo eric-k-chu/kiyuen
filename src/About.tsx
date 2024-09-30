@@ -9,7 +9,7 @@ import {
   Title,
   rem,
 } from '@mantine/core'
-import { Component } from 'lucide-react'
+import { IconComponents } from '@tabler/icons-react'
 import type { ReactNode } from 'react'
 import { config } from './site.config'
 import classes from './styles/about.module.css'
@@ -29,7 +29,7 @@ export function About(): ReactNode {
             spacing='sm'
             size='sm'
             icon={
-              <Component
+              <IconComponents
                 style={{ width: rem(14), height: rem(14), strokeWidth: 2 }}
                 color={config.primary}
               />

@@ -1,5 +1,5 @@
 import { Container, Text, Timeline } from '@mantine/core'
-import { Component } from 'lucide-react'
+import { IconComponents } from '@tabler/icons-react'
 import { DateTime } from 'luxon'
 import type { ReactNode } from 'react'
 import { config } from './site.config'
@@ -11,7 +11,9 @@ export function Experience(): ReactNode {
         {config.experiences.map((exp, i) => (
           <Timeline.Item
             key={exp.title}
-            bullet={<Component size={12} color={i === 0 ? 'black' : 'white'} />}
+            bullet={
+              <IconComponents size={12} color={i === 0 ? 'black' : 'white'} />
+            }
             title={<strong style={{ fontWeight: 900 }}>{exp.title}</strong>}
             color={config.primary}
           >
