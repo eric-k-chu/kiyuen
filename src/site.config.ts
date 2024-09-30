@@ -22,14 +22,14 @@ export const config = {
     },
     {
       title: 'Freelance Web Developer',
-      company: 'Randy Mark Auctioneer',
+      company: 'Freelance',
       start: '2024-02-01',
       end: '2024-04-08',
     },
     {
-      title: 'Teaching Assistant',
+      title: 'Web Developer Teaching Assistant',
       company: 'LearningFuze',
-      start: '2023-01-05',
+      start: '2023-12-20',
       end: '2024-04-05',
     },
   ],

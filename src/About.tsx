@@ -12,7 +12,7 @@ import {
 import { Component } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { config } from './site.config'
-import classes from './styles/core.module.css'
+import classes from './styles/about.module.css'
 
 export function About(): ReactNode {
   return (
@@ -48,8 +48,8 @@ export function About(): ReactNode {
               </Anchor>
             </List.Item>
             <List.Item>
-              <b>Full Stack Development</b> &ndash; Experienced with AWS and
-              Node.js applications using IaC and TypeScript for the backend and
+              <b>Full Stack Development</b> &ndash; Building Node.js
+              applications using IaC, AWS, and TypeScript for the backend and
               React for the frontend
             </List.Item>
             <List.Item>
