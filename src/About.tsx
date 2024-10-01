@@ -1,7 +1,6 @@
 import {
   ActionIcon,
   Anchor,
-  Button,
   Container,
   Flex,
   Group,
@@ -92,16 +91,17 @@ export function About(): ReactNode {
             </List.Item>
           </List>
 
-          <Button
-            radius='xl'
+          <Anchor
             size='md'
             className={classes.control}
             c='black'
+            underline='never'
+            href={config.anchors[3].link}
             bg={config.primary}
             mt={30}
           >
             Contact Me
-          </Button>
+          </Anchor>
         </div>
         <Image
           src='/profile.jpg'

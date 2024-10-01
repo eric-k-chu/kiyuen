@@ -30,6 +30,11 @@
 }
 
 .control {
+  display: inline-block;
+  padding: rem(8px) rem(16px);
+  font-weight: 700;
+  border-radius: var(--mantine-radius-xl);
+
   @media (max-width: $mantine-breakpoint-xs) {
     flex: 1;
   }
