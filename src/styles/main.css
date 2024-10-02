@@ -1,3 +1,17 @@
-:root[data-mantine-color-scheme="dark"] body {
-  --mantine-color-body: #1F2430 !important;
+@tailwind components;
+@tailwind utilities;
+
+@layer tailwind {
+  @tailwind base;
 }
+ 
+:root[data-mantine-color-scheme="dark"] body {
+  --mantine-color-body: #242936 !important;
+}
+
+*:focus {
+  border-color: #73D0FF !important;
+  outline: none !important;
+  border-width: 2px !important;
+}
+

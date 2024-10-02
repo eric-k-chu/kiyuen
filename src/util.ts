@@ -1,9 +1,5 @@
 import { DateTime } from 'luxon'
 
-export function stripHttps(url: string): string {
-  return url.replace(/^https?:\/\//, '')
-}
-
 export function formatPeriod(start: string, end: string | undefined): string {
   const duration = getDuration(start, end)
   const startDate = toMonthYear(start)

@@ -1,6 +1,6 @@
 .header {
   height: rem(56px);
-  background-color: var(--mantine-color-body);
+  background-color: #1F2430;
   border-bottom: rem(1px) solid #12151CB3;
 }
 

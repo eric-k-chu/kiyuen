@@ -1,6 +1,7 @@
 .footer {
   margin-top: rem(120px);
   border-top: rem(1px) solid #12151CB3;
+  background-color: #1F2430;
 }
 
 .inner {
