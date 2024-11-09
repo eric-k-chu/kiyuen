@@ -1,39 +1,76 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.2/schema.json",
-  "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
-  "files": { "ignoreUnknown": false, "ignore": ["*.css"] },
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "files": {
+    "ignore": [],
+    "ignoreUnknown": false
+  },
   "formatter": {
+    "attributePosition": "auto",
+    "bracketSpacing": true,
     "enabled": true,
-    "useEditorconfig": true,
     "formatWithErrors": false,
+    "ignore": ["**/node_modules", "**/.next", "**/dist", "**/build"],
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
-    "lineWidth": 80,
-    "attributePosition": "auto",
-    "bracketSpacing": true
-  },
-  "organizeImports": { "enabled": true },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "suspicious": {
-        "noArrayIndexKey": "warn"
-      }
-    }
+    "lineWidth": 100,
+    "useEditorconfig": true
   },
   "javascript": {
     "formatter": {
+      "enabled": true,
+      "arrowParentheses": "always",
+      "attributePosition": "auto",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
       "jsxQuoteStyle": "single",
       "quoteProperties": "asNeeded",
-      "trailingCommas": "es5",
-      "semicolons": "asNeeded",
-      "arrowParentheses": "always",
-      "bracketSameLine": false,
       "quoteStyle": "single",
-      "attributePosition": "auto",
-      "bracketSpacing": true
+      "semicolons": "asNeeded",
+      "trailingCommas": "es5"
     }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "correctness": {
+        "useExhaustiveDependencies": "off"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "error",
+          "options": {
+            "functions": ["clsx", "cva", "tw"]
+          }
+        }
+      },
+      "a11y": {
+        "useFocusableInteractive": "off",
+        "useMediaCaption": "off",
+        "useSemanticElements": "off"
+      },
+      "style": {
+        "useNodejsImportProtocol": {
+          "fix": "safe",
+          "level": "warn"
+        }
+      },
+      "suspicious": {
+        "noArrayIndexKey": "warn"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      },
+      "recommended": true
+    }
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "vcs": {
+    "clientKind": "git",
+    "enabled": true,
+    "useIgnoreFile": true
   }
 }
