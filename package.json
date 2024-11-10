@@ -1,23 +1,37 @@
 {
-  "name": "volid",
+  "name": "kiyuen",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ui": "bunx shadcn@latest add"
   },
   "dependencies": {
-    "solid-js": "^1.9.3"
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.456.0",
+    "luxon": "^3.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@catppuccin/tailwindcss": "^0.1.6",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3",
-    "vite": "^5.4.10",
-    "vite-plugin-solid": "^2.10.2"
+    "vite": "^5.4.10"
   }
 }

@@ -1,3 +1,3 @@
-# volid
+# Veact
 
-Vite + Solid
+Vite + React
