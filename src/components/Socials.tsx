@@ -1,7 +1,7 @@
 import { GITHUB, LINKEDIN } from '@/config'
+import { cn } from '@/lib'
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
-import type { ReactElement } from 'react'
-import { ExternalLink } from './ExternalLink'
+import type { AnchorHTMLAttributes, PropsWithChildren, ReactElement } from 'react'
 import { ThemeToggle } from './ThemeToggle'
 
 export function Socials(): ReactElement {
@@ -15,5 +15,20 @@ export function Socials(): ReactElement {
       </ExternalLink>
       <ThemeToggle />
     </div>
+  )
+}
+
+function ExternalLink(
+  props: PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>
+): ReactElement {
+  return (
+    <a
+      {...props}
+      className={cn('flex items-center justify-center gap-x-2', props.className)}
+      target='_blank'
+      rel='noreferrer'
+    >
+      {props.children}
+    </a>
   )
 }
