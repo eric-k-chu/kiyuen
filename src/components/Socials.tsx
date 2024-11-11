@@ -1,37 +1,19 @@
-import { PORTFOLIO_CONFIG } from '@/config'
-import Image from 'next/image'
-import { ReactNode } from 'react'
+import { GITHUB, LINKEDIN } from '@/config'
+import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
+import type { ReactElement } from 'react'
+import { ExternalLink } from './ExternalLink'
+import { ThemeToggle } from './ThemeToggle'
 
-type Props = {
-  className?: string
-}
-
-export function GitHubLink({ className = 'dark:invert' }: Props): ReactNode {
+export function Socials(): ReactElement {
   return (
-    <a href={PORTFOLIO_CONFIG.socials.github} rel='noreferrer noopener' target='_blank'>
-      <Image
-        className={className}
-        src='/github.svg'
-        alt='GitHub Logo'
-        width={24}
-        height={24}
-        priority
-      />
-    </a>
-  )
-}
-
-export function LinkedInLink({ className = 'dark:invert' }: Props): ReactNode {
-  return (
-    <a href={PORTFOLIO_CONFIG.socials.linkedin} rel='noreferrer noopener' target='_blank'>
-      <Image
-        className={className}
-        src='/linkedin.svg'
-        alt='LinkedIn Logo'
-        width={24}
-        height={24}
-        priority
-      />
-    </a>
+    <div className='mt-1 flex flex-col items-center gap-y-4'>
+      <ExternalLink href={GITHUB}>
+        <GitHubLogoIcon />
+      </ExternalLink>
+      <ExternalLink href={LINKEDIN}>
+        <LinkedInLogoIcon />
+      </ExternalLink>
+      <ThemeToggle />
+    </div>
   )
 }
