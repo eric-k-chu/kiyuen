@@ -12,7 +12,7 @@ export const EXPERIENCE = [
     end: '2024-04-05',
     title: 'Teaching Assistant',
     company: 'LearningFuze',
-    stack: ['React', 'Typescript', 'Express'],
+    stack: ['React', 'TypeScript', 'Express'],
   },
 ]
 export const EDUCATION = [
