@@ -31,7 +31,7 @@ export function Progress(): ReactElement {
         />
       </div>
       <section className='flex w-full items-center'>
-        <button className='flex basis-1/3 items-center justify-center' onClick={prev} type='button'>
+        <button className='basis-1/3' onClick={prev} type='button'>
           <TriangleLeftIcon className='mx-auto' />
         </button>
         <h3
@@ -40,7 +40,7 @@ export function Progress(): ReactElement {
         >
           {TITLES[section(current)]}
         </h3>
-        <button className='flex basis-1/3 items-center justify-center' onClick={next} type='button'>
+        <button className='basis-1/3' onClick={next} type='button'>
           <TriangleRightIcon className='mx-auto' />
         </button>
       </section>
