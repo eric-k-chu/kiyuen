@@ -1,6 +1,6 @@
 import { EXPERIENCE } from '@/config'
 import { useCarousel } from '@/lib/use-carousel'
-import { ChevronLeftIcon, ChevronRightIcon } from '@radix-ui/react-icons'
+import { TriangleLeftIcon, TriangleRightIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
 import { CARDS } from './Resume'
 
@@ -31,8 +31,8 @@ export function Progress(): ReactElement {
         />
       </div>
       <section className='flex w-full items-center'>
-        <button className='basis-1/3' onClick={prev} type='button'>
-          <ChevronLeftIcon className='mx-auto' />
+        <button className='flex basis-1/3 items-center justify-center' onClick={prev} type='button'>
+          <TriangleLeftIcon className='mx-auto' />
         </button>
         <h3
           className='basis-1/3 animate-fade-in-static select-none text-center'
@@ -40,8 +40,8 @@ export function Progress(): ReactElement {
         >
           {TITLES[section(current)]}
         </h3>
-        <button className='basis-1/3' onClick={next} type='button'>
-          <ChevronRightIcon className='mx-auto' />
+        <button className='flex basis-1/3 items-center justify-center' onClick={next} type='button'>
+          <TriangleRightIcon className='mx-auto' />
         </button>
       </section>
     </div>

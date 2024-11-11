@@ -1,7 +1,7 @@
 import { EDUCATION, EXPERIENCE } from '@/config'
 import { formatDateRange } from '@/lib'
 import { useCarousel } from '@/lib/use-carousel'
-import type { ReactNode } from 'react'
+import type { ReactElement, ReactNode } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 
 type CardData = {
@@ -81,7 +81,7 @@ export const CARDS: CardData[] = [
   }),
 ]
 
-export function Resume(): ReactNode {
+export function Resume(): ReactElement {
   const { current, next } = useCarousel()
 
   return (

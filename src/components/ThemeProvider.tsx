@@ -1,5 +1,5 @@
 import { type Theme, ThemeProviderContext } from '@/lib'
-import { useEffect, useState } from 'react'
+import { type ReactElement, useEffect, useState } from 'react'
 
 type ThemeProviderProps = {
   children: React.ReactNode
@@ -12,7 +12,7 @@ export function ThemeProvider({
   defaultTheme = 'system',
   storageKey = 'kiyuen-ui-theme',
   ...props
-}: ThemeProviderProps) {
+}: ThemeProviderProps): ReactElement {
   const [theme, setTheme] = useState<Theme>(
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   )

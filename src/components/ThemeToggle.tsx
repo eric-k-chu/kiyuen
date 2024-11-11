@@ -20,9 +20,24 @@ export function ThemeToggle(): ReactElement {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='start'>
-        <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme('system')}>System</DropdownMenuItem>
+        <DropdownMenuItem
+          className='hover:bg-accent hover:text-accent-foreground'
+          onClick={() => setTheme('light')}
+        >
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className='hover:bg-accent hover:text-accent-foreground'
+          onClick={() => setTheme('dark')}
+        >
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className='hover:bg-accent hover:text-accent-foreground'
+          onClick={() => setTheme('system')}
+        >
+          System
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
