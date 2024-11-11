@@ -24,7 +24,10 @@ function ExternalLink(
   return (
     <a
       {...props}
-      className={cn('flex items-center justify-center gap-x-2', props.className)}
+      className={cn(
+        'flex items-center justify-center gap-x-2 focus:outline-none focus:ring-1 focus:ring-flamingo',
+        props.className
+      )}
       target='_blank'
       rel='noreferrer'
     >

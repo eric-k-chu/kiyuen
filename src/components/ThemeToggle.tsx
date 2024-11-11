@@ -14,7 +14,7 @@ export function ThemeToggle(): ReactElement {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button type='button'>
+        <button className='focus:outline-none focus:ring-1 focus:ring-flamingo' type='button'>
           <DotsHorizontalIcon />
           <span className='sr-only'>Select Theme</span>
         </button>

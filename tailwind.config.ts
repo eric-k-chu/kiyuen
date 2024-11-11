@@ -11,6 +11,7 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
+        flamingo: 'hsl(var(--ctp-flamingo))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
