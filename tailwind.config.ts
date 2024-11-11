@@ -52,8 +52,23 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
       },
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0', transform: 'translateX(-10px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'fade-in-static': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.3s ease-out',
+        'fade-in-static': 'fade-in-static 0.3s ease-out',
+      },
     },
   },
+
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
 }
 

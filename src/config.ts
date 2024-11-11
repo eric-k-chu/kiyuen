@@ -1,51 +1,55 @@
-export type Config = {
-  github: string
-  linkedin: string
-  experience: {
-    start: string
-    end?: string
-    title: string
-    company: string
-  }[]
-  education: {
-    start: string
-    end?: string
-    degree?: string
-    school: string
-  }[]
-}
-
-export type Experience = Config['experience']
-
-export type Education = Config['education']
-
-export const config: Config = {
-  github: 'https://github.com/eric-k-chu',
-  linkedin: 'https://www.linkedin.com/in/eric-k-chu',
-  experience: [
-    {
-      start: '2024-04-08',
-      title: 'Software Engineer',
-      company: 'Terros',
-    },
-    {
-      start: '2024-01-05',
-      end: '2024-04-05',
-      title: 'Web Development Teaching Assistant',
-      company: 'LearningFuze',
-    },
-  ],
-  education: [
-    {
-      start: '2023-08-28',
-      end: '2024-12-08',
-      school: 'LearningFuze Full Stack Web Development Bootcamp',
-    },
-    {
-      start: '2018-08-05',
-      end: '2022-08-05',
-      degree: 'B.S in Computer Science',
-      school: 'Califonia State University, Fullerton',
-    },
-  ],
-}
+export const GITHUB = 'https://github.com/eric-k-chu'
+export const LINKEDIN = 'https://www.linkedin.com/in/eric-k-chu'
+export const EXPERIENCE = [
+  {
+    start: '2024-04-08',
+    title: 'Software Engineer',
+    company: 'Terros',
+    stack: ['SST', 'TypeScript', 'AWS', 'Elasticsearch', 'React Native'],
+  },
+  {
+    start: '2024-01-05',
+    end: '2024-04-05',
+    title: 'Teaching Assistant',
+    company: 'LearningFuze',
+    stack: ['React', 'Typescript', 'Express'],
+  },
+]
+export const EDUCATION = [
+  {
+    start: '2024-08-28',
+    end: '2024-12-08',
+    cert: 'Web Dev Bootcamp',
+    school: 'LearningFuze',
+    projects: [
+      {
+        name: 'Video Hosting App',
+        link: `${GITHUB}/Artus`,
+      },
+      {
+        name: 'Chess.com API App',
+        link: `${GITHUB}/Castle-v2`,
+      },
+    ],
+  },
+  {
+    start: '2018-08-05',
+    end: '2022-08-05',
+    cert: 'B.S in Comp Sci',
+    school: 'CSU Fullerton',
+    projects: [
+      {
+        name: '2D Platformer',
+        link: 'https://github.com/ecorona9/Midnight-Metal-Madness---Unity',
+      },
+      {
+        name: 'Endless Runner',
+        link: `${GITHUB}/Geo-Run`,
+      },
+      {
+        name: '2.5D Platformer',
+        link: `${GITHUB}/Project-S`,
+      },
+    ],
+  },
+]
