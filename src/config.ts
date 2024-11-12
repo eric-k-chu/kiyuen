@@ -8,6 +8,13 @@ export const EXPERIENCE = [
     stack: ['SST', 'TypeScript', 'AWS', 'Elasticsearch', 'React Native'],
   },
   {
+    start: '2024-02-21',
+    end: '2024-03-23',
+    title: 'Freelance Web Developer',
+    company: 'Randy Mark Auctioneer',
+    stack: ['Next.js', 'TypeScript', 'Github Api'],
+  },
+  {
     start: '2024-01-05',
     end: '2024-04-05',
     title: 'Teaching Assistant',

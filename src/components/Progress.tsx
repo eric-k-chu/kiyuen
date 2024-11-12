@@ -22,7 +22,7 @@ export function Progress(): ReactElement {
         aria-valuemin={0}
         aria-valuemax={CARDS.length}
         aria-valuenow={current + 1}
-        className='relative h-2 w-full rounded-xl border shadow'
+        className='h-2 w-full rounded-xl border shadow'
       >
         <div
           aria-hidden

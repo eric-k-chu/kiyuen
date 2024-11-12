@@ -22,63 +22,32 @@ export const CARDS: CardData[] = [
       </CardContent>
     ),
   },
-  ...EXPERIENCE.map<CardData>((e) => {
-    return {
-      header: (
-        <CardHeader>
-          <CardTitle>{e.title}</CardTitle>
-          <CardDescription className='text-xs'>
-            {e.company}
-            <br />
-            {formatDateRange(e.start, e.end)}
-          </CardDescription>
-        </CardHeader>
-      ),
-      content: (
-        <CardContent>
-          <ul className='list-inside list-disc space-y-4'>
-            {e.stack.map((s) => (
-              <li key={s} className='text-xs'>
-                {s}
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      ),
-    }
-  }),
-  ...EDUCATION.map<CardData>((e) => {
-    return {
-      header: (
-        <CardHeader>
-          <CardTitle>{e.cert}</CardTitle>
-          <CardDescription className='text-xs'>
-            {e.school}
-            <br />
-            {formatDateRange(e.start, e.end)}
-          </CardDescription>
-        </CardHeader>
-      ),
-      content: (
-        <CardContent>
-          <ul className='list-inside list-disc space-y-4'>
-            {e.projects.map((p) => (
-              <li key={p.name} className='text-xs'>
-                <a
-                  href={p.link}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='underline underline-offset-4'
-                >
-                  {p.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      ),
-    }
-  }),
+  ...EXPERIENCE.map<CardData>((e) => ({
+    header: (
+      <Header title={e.title} subtitle={e.company} dateRange={formatDateRange(e.start, e.end)} />
+    ),
+    content: <Content items={e.stack} renderItem={(s) => s} />,
+  })),
+  ...EDUCATION.map<CardData>((e) => ({
+    header: (
+      <Header title={e.cert} subtitle={e.school} dateRange={formatDateRange(e.start, e.end)} />
+    ),
+    content: (
+      <Content
+        items={e.projects}
+        renderItem={(p) => (
+          <a
+            href={p.link}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='underline underline-offset-4'
+          >
+            {p.name}
+          </a>
+        )}
+      />
+    ),
+  })),
 ]
 
 export function Resume(): ReactElement {
@@ -124,5 +93,43 @@ export function Resume(): ReactElement {
         </div>
       </Card>
     </div>
+  )
+}
+
+type HeaderProps = {
+  title: string
+  subtitle: string
+  dateRange: string
+}
+
+function Header({ title, subtitle, dateRange }: HeaderProps): ReactElement {
+  return (
+    <CardHeader>
+      <CardTitle>{title}</CardTitle>
+      <CardDescription className='text-xs'>
+        {subtitle}
+        <br />
+        {dateRange}
+      </CardDescription>
+    </CardHeader>
+  )
+}
+
+type ContentProps<T> = {
+  items: T[]
+  renderItem: (item: T) => ReactNode
+}
+
+function Content<T>({ items, renderItem }: ContentProps<T>): ReactElement {
+  return (
+    <CardContent>
+      <ul className='list-inside list-disc space-y-4'>
+        {items.map((i) => (
+          <li key={JSON.stringify(i)} className='text-xs'>
+            {renderItem(i)}
+          </li>
+        ))}
+      </ul>
+    </CardContent>
   )
 }
