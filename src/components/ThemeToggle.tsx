@@ -5,7 +5,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { useTheme } from '@/lib'
-import { DotsHorizontalIcon } from '@radix-ui/react-icons'
+import { DotsVerticalIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
 
 export function ThemeToggle(): ReactElement {
@@ -15,7 +15,7 @@ export function ThemeToggle(): ReactElement {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button className='focus:outline-none focus:ring-1 focus:ring-flamingo' type='button'>
-          <DotsHorizontalIcon />
+          <DotsVerticalIcon />
           <span className='sr-only'>Select Theme</span>
         </button>
       </DropdownMenuTrigger>
