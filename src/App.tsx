@@ -11,7 +11,7 @@ export function App(): ReactElement {
     <ThemeProvider defaultTheme='dark'>
       <CarouselProvider>
         <div className='flex min-h-screen items-center justify-center'>
-          <section className='flex h-96 justify-center gap-x-4'>
+          <section className='flex h-96 justify-center gap-x-3'>
             <Profile />
             <div className='h-full w-56 space-y-4'>
               <Resume />
