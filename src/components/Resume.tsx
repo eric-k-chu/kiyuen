@@ -17,12 +17,12 @@ export function Resume(): ReactElement {
       </Card>
       <button
         type='button'
-        className='absolute left-0 z-[1] h-full w-1/4 rounded-l-lg'
+        className='absolute left-0 z-[1] h-full w-1/4 rounded-l-lg bg-gradient-to-r from-0% from-accent/0 to-50% hover:from-accent/20'
         onClick={prev}
       />
       <button
         type='button'
-        className='absolute right-0 z-[1] h-full w-1/4 rounded-r-lg'
+        className='absolute right-0 z-[1] h-full w-1/4 rounded-l-lg bg-gradient-to-l from-0% from-accent/0 to-50% hover:from-accent/20'
         onClick={next}
       />
     </div>
@@ -78,7 +78,7 @@ function ResumeContent(props: NonNullable<CardData['content']>): ReactElement {
               href={item.link}
               target='_blank'
               rel='noopener noreferrer'
-              className='underline underline-offset-4'
+              className='underline underline-offset-4 transition-colors hover:text-flamingo focus:outline-none focus:ring-1 focus:ring-flamingo'
             >
               {item.name}
             </a>
