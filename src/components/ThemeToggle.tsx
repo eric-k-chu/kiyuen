@@ -7,7 +7,6 @@ import {
 import { useTheme } from '@/lib'
 import { DotsVerticalIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
-import { Icon } from './Icon'
 
 export function ThemeToggle(): ReactElement {
   const { setTheme } = useTheme()
@@ -15,10 +14,13 @@ export function ThemeToggle(): ReactElement {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Icon>
+        <button
+          type='button'
+          className='rounded-lg p-1 transition-colors hover:bg-accent focus:outline-none focus:ring-1 focus:ring-flamingo'
+        >
           <DotsVerticalIcon />
           <span className='sr-only'>Select Theme</span>
-        </Icon>
+        </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align='start'>
         <DropdownMenuItem
