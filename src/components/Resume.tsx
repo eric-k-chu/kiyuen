@@ -8,10 +8,7 @@ export function Resume(): ReactElement {
 
   return (
     <div className='relative size-full'>
-      <Card
-        key={current}
-        className='pointer-events-none absolute inset-0 size-full animate-fade-in select-none'
-      >
+      <Card key={current} className='absolute inset-0 size-full animate-fade-in select-none'>
         {CARDS[current].header && <ResumeHeader {...CARDS[current].header} />}
         {CARDS[current].content && <ResumeContent {...CARDS[current].content} />}
         <div className='absolute right-2 bottom-2'>
@@ -20,12 +17,12 @@ export function Resume(): ReactElement {
       </Card>
       <button
         type='button'
-        className='absolute left-0 z-1 h-full w-1/2 rounded-l-lg'
+        className='absolute left-0 z-[1] h-full w-1/4 rounded-l-lg'
         onClick={prev}
       />
       <button
         type='button'
-        className='absolute right-0 z-1 h-full w-1/2 rounded-r-lg'
+        className='absolute right-0 z-[1] h-full w-1/4 rounded-r-lg'
         onClick={next}
       />
     </div>
