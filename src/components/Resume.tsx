@@ -4,14 +4,13 @@ import type { ReactElement } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 
 export function Resume(): ReactElement {
-  const { current, next } = useCarousel()
+  const { current, next, prev } = useCarousel()
 
   return (
     <div className='relative size-full'>
       <Card
         key={current}
-        className='absolute inset-0 size-full animate-fade-in cursor-pointer select-none'
-        onClick={next}
+        className='pointer-events-none absolute inset-0 size-full animate-fade-in select-none'
       >
         {CARDS[current].header && <ResumeHeader {...CARDS[current].header} />}
         {CARDS[current].content && <ResumeContent {...CARDS[current].content} />}
@@ -19,6 +18,16 @@ export function Resume(): ReactElement {
           <ShadcnUi />
         </div>
       </Card>
+      <button
+        type='button'
+        className='absolute left-0 z-1 h-full w-1/2 rounded-l-lg'
+        onClick={prev}
+      />
+      <button
+        type='button'
+        className='absolute right-0 z-1 h-full w-1/2 rounded-r-lg'
+        onClick={next}
+      />
     </div>
   )
 }
