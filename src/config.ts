@@ -1,3 +1,5 @@
+import { formatDateRange } from './lib'
+
 export const GITHUB = 'https://github.com/eric-k-chu'
 export const LINKEDIN = 'https://www.linkedin.com/in/eric-k-chu'
 export const EXPERIENCE = [
@@ -59,4 +61,59 @@ export const EDUCATION = [
       },
     ],
   },
+]
+
+export type CardData = {
+  header?: {
+    title: string
+    subtitle: string
+    dateRange: string
+  }
+  content?:
+    | {
+        type: 'cover'
+        title: string
+      }
+    | {
+        type: 'text'
+        items: string[]
+      }
+    | {
+        type: 'link'
+        items: {
+          name: string
+          link: string
+        }[]
+      }
+}
+
+export const CARDS: CardData[] = [
+  {
+    content: {
+      type: 'cover',
+      title: 'Full Stack\nDeveloper',
+    },
+  },
+  ...EXPERIENCE.map<CardData>((e) => ({
+    header: {
+      title: e.title,
+      subtitle: e.company,
+      dateRange: formatDateRange(e.start, e.end),
+    },
+    content: {
+      type: 'text',
+      items: e.stack,
+    },
+  })),
+  ...EDUCATION.map<CardData>((e) => ({
+    header: {
+      title: e.cert,
+      subtitle: e.school,
+      dateRange: formatDateRange(e.start, e.end),
+    },
+    content: {
+      type: 'link',
+      items: e.projects,
+    },
+  })),
 ]

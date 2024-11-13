@@ -1,13 +1,11 @@
-import { EXPERIENCE } from '@/config'
+import { CARDS, EXPERIENCE } from '@/config'
 import { useCarousel } from '@/lib/use-carousel'
-import { TriangleLeftIcon, TriangleRightIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
-import { CARDS } from './Resume'
 
-const TITLES = ['Profile', 'Experience', 'Education']
+const TITLES = ['', 'Experience', 'Education']
 
 export function Progress(): ReactElement {
-  const { current, next, prev } = useCarousel()
+  const { current } = useCarousel()
 
   const section = (val: number) => {
     if (val === 0) return 0
@@ -30,28 +28,9 @@ export function Progress(): ReactElement {
           style={{ width: `${((current + 1) / CARDS.length) * 100}%` }}
         />
       </div>
-      <section className='flex w-full items-center'>
-        <button
-          className='basis-1/3 focus:outline-none focus:ring-1 focus:ring-flamingo'
-          onClick={prev}
-          type='button'
-        >
-          <TriangleLeftIcon className='mx-auto' />
-        </button>
-        <h3
-          className='basis-1/3 animate-fade-in-static select-none text-center'
-          key={section(current)}
-        >
-          {TITLES[section(current)]}
-        </h3>
-        <button
-          className='basis-1/3 focus:outline-none focus:ring-1 focus:ring-flamingo'
-          onClick={next}
-          type='button'
-        >
-          <TriangleRightIcon className='mx-auto' />
-        </button>
-      </section>
+      <h3 className='animate-fade-in-static select-none text-center' key={section(current)}>
+        {TITLES[section(current)]}
+      </h3>
     </div>
   )
 }
