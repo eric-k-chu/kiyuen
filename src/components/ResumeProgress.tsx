@@ -3,12 +3,12 @@ import { useCarousel } from '@/lib/use-carousel'
 import type { ReactElement } from 'react'
 import { Progress } from './ui/progress'
 
-const TITLES = ['', 'Experience', 'Education']
+const SECTIONS = ['', 'Experience', 'Education']
 
 export function ResumeProgress(): ReactElement {
   const { current } = useCarousel()
 
-  const section = (val: number) => {
+  const index = (val: number) => {
     if (val === 0) return 0
     if (val < EXPERIENCE.length + 1) return 1
     return 2
@@ -19,8 +19,8 @@ export function ResumeProgress(): ReactElement {
   return (
     <div className='h-6 space-y-2'>
       <Progress value={percent * 100} />
-      <h3 className='animate-fade-in-static select-none text-center' key={section(current)}>
-        {TITLES[section(current)]}
+      <h3 className='animate-fade-in-static select-none text-center' key={index(current)}>
+        {SECTIONS[index(current)]}
       </h3>
     </div>
   )
