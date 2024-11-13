@@ -1,8 +1,8 @@
 import type { ReactElement } from 'react'
 import { CarouselProvider } from './components/CarouselProvider'
 import { Profile } from './components/Profile'
-import { Progress } from './components/Progress'
 import { Resume } from './components/Resume'
+import { ResumeProgress } from './components/ResumeProgress'
 import { Socials } from './components/Socials'
 import { ThemeProvider } from './components/ThemeProvider'
 
@@ -15,7 +15,7 @@ export function App(): ReactElement {
             <Profile />
             <div className='h-full w-56 space-y-4'>
               <Resume />
-              <Progress />
+              <ResumeProgress />
             </div>
             <Socials />
           </section>

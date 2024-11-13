@@ -1,10 +1,11 @@
 import { CARDS, EXPERIENCE } from '@/config'
 import { useCarousel } from '@/lib/use-carousel'
 import type { ReactElement } from 'react'
+import { Progress } from './ui/progress'
 
 const TITLES = ['', 'Experience', 'Education']
 
-export function Progress(): ReactElement {
+export function ResumeProgress(): ReactElement {
   const { current } = useCarousel()
 
   const section = (val: number) => {
@@ -13,21 +14,11 @@ export function Progress(): ReactElement {
     return 2
   }
 
+  const percent = (current + 1) / CARDS.length
+
   return (
     <div className='h-6 space-y-2'>
-      <div
-        role='progressbar'
-        aria-valuemin={0}
-        aria-valuemax={CARDS.length}
-        aria-valuenow={current + 1}
-        className='h-2 w-full rounded-xl border shadow'
-      >
-        <div
-          aria-hidden
-          className={`h-full bg-foreground transition-all ${current + 1 < CARDS.length ? 'rounded-l-xl' : 'rounded-xl'}`}
-          style={{ width: `${((current + 1) / CARDS.length) * 100}%` }}
-        />
-      </div>
+      <Progress value={percent * 100} />
       <h3 className='animate-fade-in-static select-none text-center' key={section(current)}>
         {TITLES[section(current)]}
       </h3>
