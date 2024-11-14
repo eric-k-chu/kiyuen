@@ -15,14 +15,16 @@ export function Resume(): ReactElement {
           <ShadcnUi />
         </div>
       </Card>
+
       <button
         type='button'
-        className='absolute left-0 z-[1] h-full w-1/4 rounded-l-lg bg-gradient-to-r from-0% from-accent/0 to-50% hover:from-accent/20'
-        onClick={prev}
+        className='absolute left-0 z-[1] h-full w-1/6 rounded-l-lg bg-gradient-to-r from-0% from-accent/0 to-80% hover:from-accent/30'
+        onClick={next}
       />
+
       <button
         type='button'
-        className='absolute right-0 z-[1] h-full w-1/4 rounded-l-lg bg-gradient-to-l from-0% from-accent/0 to-50% hover:from-accent/20'
+        className='absolute right-0 z-[1] h-full w-1/6 rounded-r-lg bg-gradient-to-l from-0% from-accent/0 to-80% hover:from-accent/30'
         onClick={next}
       />
     </div>
