@@ -14,13 +14,15 @@ export function ResumeProgress(): ReactElement {
     return 2
   }
 
-  const percent = (current + 1) / CARDS.length
+  const percent = current / (CARDS.length - 1)
+
+  const key = index(current)
 
   return (
     <div className='h-6 space-y-2'>
       <Progress value={percent * 100} />
-      <h3 className='animate-fade-in-static select-none text-center' key={index(current)}>
-        {SECTIONS[index(current)]}
+      <h3 className='animate-fade-in-static select-none text-center' key={key}>
+        {SECTIONS[key]}
       </h3>
     </div>
   )
