@@ -14,7 +14,7 @@ export function Resume(): ReactElement {
       >
         {CARDS[current].header && <ResumeHeader {...CARDS[current].header} />}
         {CARDS[current].content && <ResumeContent {...CARDS[current].content} />}
-        <div className='absolute right-2 bottom-2'>
+        <div className='absolute right-2 bottom-2 z-[2]'>
           <ShadcnUi />
         </div>
       </Card>

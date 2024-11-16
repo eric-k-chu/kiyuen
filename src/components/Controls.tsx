@@ -35,7 +35,9 @@ function Help(): ReactElement {
         </Button>
       </DialogTrigger>
       <DialogContent>
-        <p className='text-xs'>Clicking on the cards will navigate through the sections.</p>
+        <p className='text-xs'>
+          Clicking on the side of the cards will transition to the next card.
+        </p>
         <p className='text-xs'>
           Alternatively, the <CSpan t='←' /> or <CSpan t='h' /> and <CSpan t='→' /> or{' '}
           <CSpan t='l' /> keys can be used for navigation.
