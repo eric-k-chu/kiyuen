@@ -19,7 +19,7 @@ export function Resume(): ReactElement {
       <button
         type='button'
         className='absolute left-0 z-[1] h-full w-1/6 rounded-l-lg bg-gradient-to-r from-0% from-accent/0 to-80% hover:from-accent/30 focus:outline-none'
-        onClick={next}
+        onClick={prev}
       />
 
       <button
