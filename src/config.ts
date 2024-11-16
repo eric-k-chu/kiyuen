@@ -26,7 +26,7 @@ export const EXPERIENCE = [
 ]
 export const EDUCATION = [
   {
-    start: '2024-08-28',
+    start: '2023-08-28',
     end: '2024-12-08',
     cert: 'Web Dev Bootcamp',
     school: 'LearningFuze',
