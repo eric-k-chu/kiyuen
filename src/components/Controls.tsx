@@ -4,7 +4,7 @@ import type { ReactElement } from 'react'
 import { DirToggle } from './DirToggle'
 import { ThemeToggle } from './ThemeToggle'
 import { Button } from './ui/button'
-import { Dialog, DialogContent, DialogTrigger } from './ui/dialog'
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from './ui/dialog'
 
 export function Controls(): ReactElement {
   return (
@@ -35,6 +35,7 @@ function Help(): ReactElement {
         </Button>
       </DialogTrigger>
       <DialogContent>
+        <DialogTitle className='sr-only'>Help</DialogTitle>
         <p className='text-xs'>
           Clicking on the side of the cards will transition to the next card.
         </p>
