@@ -2,7 +2,7 @@ import type { ReactElement } from 'react'
 
 export function Profile(): ReactElement {
   return (
-    <div className='flex select-none flex-col items-center gap-y-4'>
+    <div className='flex select-none flex-col items-center gap-y-3'>
       <p className='px-1 font-sans text-lg'>
         朱<span className='sr-only'>Chu</span>
       </p>
