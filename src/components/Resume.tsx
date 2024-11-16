@@ -8,7 +8,10 @@ export function Resume(): ReactElement {
 
   return (
     <div className='relative size-full'>
-      <Card key={current} className='absolute inset-0 size-full animate-fade-in select-none'>
+      <Card
+        key={current}
+        className='absolute inset-0 size-full animate-fade-in select-none rtl:animate-fade-in-rtl'
+      >
         {CARDS[current].header && <ResumeHeader {...CARDS[current].header} />}
         {CARDS[current].content && <ResumeContent {...CARDS[current].content} />}
         <div className='absolute right-2 bottom-2'>

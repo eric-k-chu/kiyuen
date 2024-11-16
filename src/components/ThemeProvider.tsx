@@ -1,21 +1,27 @@
-import { type Theme, ThemeProviderContext } from '@/lib'
+import {
+  type StorageProviderProps,
+  type Theme,
+  ThemeProviderContext,
+  getLsItem,
+  setLsItem,
+} from '@/lib'
 import { type ReactElement, useEffect, useState } from 'react'
 
-type ThemeProviderProps = {
-  children: React.ReactNode
+type ThemeProviderProps = StorageProviderProps<{
   defaultTheme?: Theme
-  storageKey?: string
-}
+}>
 
 export function ThemeProvider({
   children,
   defaultTheme = 'system',
   storageKey = 'kiyuen-ui-theme',
-  ...props
 }: ThemeProviderProps): ReactElement {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  )
+  const [theme, setTheme] = useState<Theme>(() => getLsItem(storageKey, defaultTheme))
+
+  const set = (theme: Theme): void => {
+    setLsItem(storageKey, theme)
+    setTheme(theme)
+  }
 
   useEffect(() => {
     const root = window.document.documentElement
@@ -31,17 +37,6 @@ export function ThemeProvider({
   }, [theme])
 
   return (
-    <ThemeProviderContext.Provider
-      {...props}
-      value={{
-        theme,
-        setTheme: (theme: Theme) => {
-          localStorage.setItem(storageKey, theme)
-          setTheme(theme)
-        },
-      }}
-    >
-      {children}
-    </ThemeProviderContext.Provider>
+    <ThemeProviderContext.Provider value={{ theme, set }}>{children}</ThemeProviderContext.Provider>
   )
 }

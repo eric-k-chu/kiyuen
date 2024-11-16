@@ -4,12 +4,12 @@ export type Theme = 'dark' | 'light' | 'system'
 
 type ThemeProviderState = {
   theme: Theme
-  setTheme: (theme: Theme) => void
+  set: (theme: Theme) => void
 }
 
 export const ThemeProviderContext = createContext<ThemeProviderState>({
   theme: 'system',
-  setTheme: () => undefined,
+  set: () => undefined,
 })
 
 export function useTheme(): ThemeProviderState {

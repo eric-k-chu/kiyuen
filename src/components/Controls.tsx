@@ -1,24 +1,26 @@
 import { GITHUB, LINKEDIN } from '@/config'
 import { GitHubLogoIcon, LinkedInLogoIcon, QuestionMarkCircledIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
+import { DirToggle } from './DirToggle'
 import { ThemeToggle } from './ThemeToggle'
 import { Button } from './ui/button'
 import { Dialog, DialogContent, DialogTrigger } from './ui/dialog'
 
-export function Socials(): ReactElement {
+export function Controls(): ReactElement {
   return (
     <div className='flex flex-col items-center gap-y-3'>
-      <Button asChild className='size-6 p-1' variant='ghost'>
+      <Button asChild variant='ghost' size='icon'>
         <a href={GITHUB} target='_blank' rel='noopener noreferrer'>
           <GitHubLogoIcon />
         </a>
       </Button>
-      <Button asChild className='size-6 p-1' variant='ghost'>
+      <Button asChild variant='ghost' size='icon'>
         <a href={LINKEDIN} target='_blank' rel='noopener noreferrer'>
           <LinkedInLogoIcon />
         </a>
       </Button>
       <Help />
+      <DirToggle />
       <ThemeToggle />
     </div>
   )
@@ -28,7 +30,7 @@ function Help(): ReactElement {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant='ghost' className='size-6 p-1'>
+        <Button variant='ghost' size='icon'>
           <QuestionMarkCircledIcon />
         </Button>
       </DialogTrigger>
