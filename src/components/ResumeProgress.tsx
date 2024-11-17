@@ -1,6 +1,5 @@
 import { CARDS, EXPERIENCE } from '@/config'
-import { useDir } from '@/lib'
-import { useCarousel } from '@/lib/use-carousel'
+import { useCarousel, useDir } from '@/lib'
 import type { ReactElement } from 'react'
 import { Progress } from './ui/progress'
 

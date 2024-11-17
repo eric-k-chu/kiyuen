@@ -1,5 +1,5 @@
 import { CARDS, type CardData } from '@/config'
-import { useCarousel } from '@/lib/use-carousel'
+import { useCarousel } from '@/lib'
 import type { ReactElement } from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 
