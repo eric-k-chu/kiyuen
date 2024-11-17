@@ -2,7 +2,7 @@ import { CARDS } from '@/config'
 import { CarouselProviderContext, useDir, useKeyboard } from '@/lib'
 import { type PropsWithChildren, type ReactElement, useState } from 'react'
 
-type CarouselProviderProps = PropsWithChildren
+export type CarouselProviderProps = PropsWithChildren
 
 export function CarouselProvider({ children }: CarouselProviderProps): ReactElement {
   const [current, setCurrent] = useState(0)

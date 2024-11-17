@@ -7,7 +7,7 @@ import {
 } from '@/lib'
 import { useEffect, useState } from 'react'
 
-type DirProviderProps = StorageProviderProps<{
+export type DirProviderProps = StorageProviderProps<{
   defaultDir?: Dir
 }>
 

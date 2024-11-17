@@ -7,7 +7,7 @@ import {
 } from '@/lib'
 import { type ReactElement, useEffect, useState } from 'react'
 
-type ThemeProviderProps = StorageProviderProps<{
+export type ThemeProviderProps = StorageProviderProps<{
   defaultTheme?: Theme
 }>
 

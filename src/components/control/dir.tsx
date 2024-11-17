@@ -1,6 +1,6 @@
 import { useDir } from '@/lib'
 import type { ReactElement } from 'react'
-import { Button } from './ui/button'
+import { Button } from '../ui'
 
 export function DirToggle(): ReactElement {
   const { dir, toggle } = useDir()
