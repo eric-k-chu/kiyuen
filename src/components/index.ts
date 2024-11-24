@@ -1,4 +1,5 @@
 export * from './control'
+export * from './navigation'
 export * from './profile'
 export * from './provider'
 export * from './resume'
