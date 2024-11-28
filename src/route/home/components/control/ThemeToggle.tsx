@@ -1,8 +1,13 @@
+import {
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components'
 import { useTheme } from '@/lib'
 import { DotsVerticalIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui'
-import { Button } from '../ui'
 
 export function ThemeToggle(): ReactElement {
   const { set } = useTheme()

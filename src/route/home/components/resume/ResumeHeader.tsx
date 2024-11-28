@@ -1,6 +1,6 @@
+import { CardDescription, CardHeader, CardTitle } from '@/components'
 import type { CardData } from '@/config'
 import type { ReactNode } from 'react'
-import { CardDescription, CardHeader, CardTitle } from '../ui'
 
 type Props = {
   header?: CardData['header']

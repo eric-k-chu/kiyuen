@@ -1,8 +1,7 @@
 import type { ReactElement } from 'react'
-import { Outlet, Route, Routes } from 'react-router'
-import { AppShell, Navigation } from './components'
-import { Home, Play, Tetris } from './route'
-import { Wordle } from './route/play/wordle'
+import { Link, Outlet, Route, Routes } from 'react-router'
+import { AppShell, Button } from './components'
+import { Home, Play, Tetris, Wordle } from './route'
 
 export function App(): ReactElement {
   return (
@@ -24,4 +23,30 @@ export function App(): ReactElement {
       <Navigation />
     </AppShell>
   )
+}
+
+const PAGES = [
+  { title: 'Home', path: '/' },
+  { title: 'Play', path: '/play' },
+]
+
+export function Navigation(): ReactElement {
+  return (
+    <nav className='fixed bottom-3 w-screen'>
+      <div className='mx-auto w-fit rounded-md border border-border'>
+        {PAGES.map(({ title, path }, i) => (
+          <Button key={title} asChild variant='ghost' className={roundCorners(i, PAGES.length)}>
+            <Link className='text-xs' to={path}>
+              {title}
+            </Link>
+          </Button>
+        ))}
+      </div>
+    </nav>
+  )
+}
+
+function roundCorners(i: number, length: number): string | undefined {
+  if (i === 0) return 'rounded-r-none'
+  if (i === length - 1) return 'rounded-l-none'
 }

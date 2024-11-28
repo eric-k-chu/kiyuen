@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui'
+import { Button } from '@/components'
 import type { ReactElement } from 'react'
 import { Link } from 'react-router'
 

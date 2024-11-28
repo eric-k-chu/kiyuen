@@ -1,10 +1,10 @@
+import { Button } from '@/components'
 import { GITHUB, LINKEDIN } from '@/config'
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
-import { Button } from '../ui'
-import { DirToggle } from './dir'
-import { Help } from './help'
-import { ThemeToggle } from './theme'
+import { DirToggle } from './DirToggle'
+import { Help } from './Help'
+import { ThemeToggle } from './ThemeToggle'
 
 export function Controls(): ReactElement {
   return (

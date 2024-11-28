@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react'
-import { ResumeCard } from './card'
-import { ResumeProgress } from './progress'
+import { ResumeCard } from './ResumeCard'
+import { ResumeProgress } from './ResumeProgress'
 
 export function Resume(): ReactElement {
   return (

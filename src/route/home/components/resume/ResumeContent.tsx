@@ -1,6 +1,6 @@
+import { CardContent } from '@/components'
 import type { CardData } from '@/config'
 import type { ReactNode } from 'react'
-import { CardContent } from '../ui'
 
 type Props = {
   content?: CardData['content']

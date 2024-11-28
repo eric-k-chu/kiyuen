@@ -1,10 +1,10 @@
+import { Card, ShadcnUi } from '@/components'
 import { CARDS } from '@/config'
 import { useCarousel } from '@/lib'
 import type { ReactElement } from 'react'
-import { Card, ShadcnUi } from '../ui'
-import { ResumeContent } from './content'
-import { ResumeHeader } from './header'
-import { Navigate } from './navigate'
+import { ResumeContent } from './ResumeContent'
+import { ResumeHeader } from './ResumeHeader'
+import { Navigate } from './ResumeNavigate'
 
 export function ResumeCard(): ReactElement {
   const { current, next, prev } = useCarousel()

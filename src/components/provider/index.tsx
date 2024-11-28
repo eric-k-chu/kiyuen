@@ -1,6 +1,6 @@
 import type { PropsWithChildren, ReactElement } from 'react'
-import { DirProvider, type DirProviderProps } from './dir'
-import { ThemeProvider, type ThemeProviderProps } from './theme'
+import { DirProvider, type DirProviderProps } from './DirProvider'
+import { ThemeProvider, type ThemeProviderProps } from './ThemeProvider'
 
 type Props = PropsWithChildren &
   Pick<DirProviderProps, 'defaultDir'> &

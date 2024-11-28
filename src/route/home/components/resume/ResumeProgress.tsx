@@ -1,7 +1,7 @@
+import { Progress } from '@/components'
 import { CARDS, EXPERIENCE } from '@/config'
 import { useCarousel, useDir } from '@/lib'
 import type { ReactElement } from 'react'
-import { Progress } from '../ui'
 
 const SECTIONS = ['', 'Experience', 'Education']
 

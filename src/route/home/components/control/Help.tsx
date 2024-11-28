@@ -1,6 +1,6 @@
+import { Button, Dialog, DialogContent, DialogTitle, DialogTrigger } from '@/components'
 import { QuestionMarkCircledIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
-import { Button, Dialog, DialogContent, DialogTitle, DialogTrigger } from '../ui'
 
 export function Help(): ReactElement {
   return (

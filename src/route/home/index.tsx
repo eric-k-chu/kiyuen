@@ -1,6 +1,5 @@
-import { Controls, Profile, Resume } from '@/components'
-import { CarouselProvider } from '@/components/provider/carousel'
 import type { ReactElement } from 'react'
+import { CarouselProvider, Controls, Profile, Resume } from './components'
 
 export function Home(): ReactElement {
   return (
