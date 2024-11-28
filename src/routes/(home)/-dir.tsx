@@ -1,5 +1,5 @@
 import { Button } from '@/components'
-import { useDir } from '@/lib'
+import { useDir } from '@/hooks'
 import type { ReactElement } from 'react'
 
 export function DirToggle(): ReactElement {

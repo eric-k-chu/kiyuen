@@ -5,13 +5,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components'
-import { useTheme } from '@/lib'
+import { useTheme } from '@/hooks'
 import { DotsVerticalIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
 
 export function ThemeToggle(): ReactElement {
   const { set } = useTheme()
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

@@ -76,14 +76,7 @@ export type CardData = {
       }
     | {
         type: 'text'
-        items: string[]
-      }
-    | {
-        type: 'link'
-        items: {
-          name: string
-          link: string
-        }[]
+        items: { name: string; link?: string }[]
       }
 }
 
@@ -102,7 +95,7 @@ export const CARDS: CardData[] = [
     },
     content: {
       type: 'text',
-      items: e.stack,
+      items: e.stack.map((name) => ({ name })),
     },
   })),
   ...EDUCATION.map<CardData>((e) => ({
@@ -112,7 +105,7 @@ export const CARDS: CardData[] = [
       dateRange: formatDateRange(e.start, e.end),
     },
     content: {
-      type: 'link',
+      type: 'text',
       items: e.projects,
     },
   })),

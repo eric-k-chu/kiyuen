@@ -22,10 +22,10 @@ export function Help(): ReactElement {
   )
 }
 
-type Props = {
+type CSpanProps = {
   text: string
 }
 
-function CSpan({ text }: Props): ReactElement {
+function CSpan({ text }: CSpanProps): ReactElement {
   return <span className='font-bold text-flamingo text-sm'>{text}</span>
 }
