@@ -1,4 +1,5 @@
-import { type Dir, cn } from '@/lib'
+import type { Dir } from '@/hooks'
+import { cn } from '@/lib'
 import * as ProgressPrimitive from '@radix-ui/react-progress'
 import * as React from 'react'
 

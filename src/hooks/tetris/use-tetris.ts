@@ -1,5 +1,5 @@
-import { useTimer } from '@/lib'
 import { useEffect } from 'react'
+import { useTimer } from '../use-timer'
 import { type Dimensions, useGrid } from './use-grid'
 import { type Direction, type Position, usePosition } from './use-position'
 

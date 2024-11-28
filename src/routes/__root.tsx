@@ -1,6 +1,17 @@
 import { AppShell, Button } from '@/components'
-import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
+import { Link, Outlet, createRootRoute, linkOptions } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
+
+const navs = [
+  linkOptions({
+    to: '/',
+    label: 'Home',
+  }),
+  linkOptions({
+    to: '/play',
+    label: 'Play',
+  }),
+]
 
 export const Route = createRootRoute({
   component: (): ReactElement => (
@@ -10,18 +21,21 @@ export const Route = createRootRoute({
       </div>
       <nav className='fixed bottom-5 w-screen'>
         <div className='mx-auto w-fit rounded-md border border-border'>
-          <Button asChild variant='ghost' className='rounded-r-none'>
-            <Link to='/' className='text-xs'>
-              Home
-            </Link>
-          </Button>
-          <Button asChild variant='ghost' className='rounded-l-none'>
-            <Link to='/play' className='text-xs'>
-              Play
-            </Link>
-          </Button>
+          {navs.map((nav, i) => (
+            <Button asChild variant='ghost' key={nav.to} className={flattenCorners(i, navs.length)}>
+              <Link {...nav} className='text-xs'>
+                {nav.label}
+              </Link>
+            </Button>
+          ))}
         </div>
       </nav>
     </AppShell>
   ),
 })
+
+function flattenCorners(index: number, length: number): string | undefined {
+  if (index === 0) return 'rounded-r-none rtl:rounded-l-none'
+  if (index === length - 1) return 'rounded-l-none rtl:rounded-r-none'
+  return
+}
