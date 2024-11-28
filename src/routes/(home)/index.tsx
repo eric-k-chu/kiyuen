@@ -5,15 +5,15 @@ import { Menubar } from './-menu-bar'
 import { Profile } from './-profile'
 import { Resume } from './-resume'
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute('/(home)/')({
   component: Home,
 })
 
 function Home(): ReactElement {
   return (
     <CarouselProvider>
-      <div className='flex min-h-screen items-center justify-center'>
-        <section className='flex h-96 justify-center gap-x-3'>
+      <div className="flex min-h-screen items-center justify-center">
+        <section className="flex h-96 justify-center gap-x-3">
           <Profile />
           <Resume />
           <Menubar />

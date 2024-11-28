@@ -1,6 +1,6 @@
+import { Progress } from '@/components'
 import { CARDS, EXPERIENCE } from '@/config'
 import { useCarousel, useDir } from '@/hooks'
-import { Progress } from '@radix-ui/react-progress'
 import type { ReactElement } from 'react'
 import { ResumeCard } from './-card'
 

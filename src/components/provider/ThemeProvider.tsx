@@ -1,11 +1,6 @@
-import {
-  type StorageProviderProps,
-  type Theme,
-  ThemeProviderContext,
-  getLsItem,
-  setLsItem,
-} from '@/lib'
-import { type ReactElement, useEffect, useState } from 'react'
+import { type Theme, ThemeProviderContext, useLocalStorage } from '@/hooks'
+import type { StorageProviderProps } from '@/lib'
+import { type ReactElement, useEffect } from 'react'
 
 export type ThemeProviderProps = StorageProviderProps<{
   defaultTheme?: Theme
@@ -16,12 +11,7 @@ export function ThemeProvider({
   defaultTheme = 'system',
   storageKey = 'kiyuen-ui-theme',
 }: ThemeProviderProps): ReactElement {
-  const [theme, setTheme] = useState<Theme>(() => getLsItem(storageKey, defaultTheme))
-
-  const set = (theme: Theme): void => {
-    setLsItem(storageKey, theme)
-    setTheme(theme)
-  }
+  const { item: theme, set } = useLocalStorage({ key: storageKey, fallback: defaultTheme })
 
   useEffect(() => {
     const root = window.document.documentElement
