@@ -1,30 +1,25 @@
-import { cn, useKeyboard, useTetris } from '@/lib'
+import { cn, useKeyboard } from '@/lib'
 import type { ReactElement } from 'react'
+import type { Position } from './use-position'
+import { useTetris } from './use-tetris'
 
 export function Tetris(): ReactElement {
-  const { grid, pos, moveY, moveX, canMoveDown, canMoveLeft, canMoveRight } = useTetris({
-    interval: 1000,
-    width: 9,
-    height: 9,
-  })
+  const { grid, pos, move } = useTetris({ width: 9, height: 9 })
+
   useKeyboard(
     (key) => {
       switch (key) {
-        case 'k':
-        case 'ArrowUp':
-          // setPos((pos) => ({ row: pos.row - 1, col: pos.col }))
-          break
         case 'j':
         case 'ArrowDown':
-          if (canMoveDown()) moveY('down')
+          move('down')
           break
         case 'h':
         case 'ArrowLeft':
-          if (canMoveLeft()) moveX('left')
+          move('left')
           break
         case 'l':
         case 'ArrowRight':
-          if (canMoveRight()) moveX('right')
+          move('right')
           break
       }
     },
@@ -41,7 +36,7 @@ export function Tetris(): ReactElement {
       >
         {grid.map((row, i) => (
           <div key={i}>
-            {row.map((cell, j) => (
+            {row.map((_, j) => (
               <div
                 key={`${i}-${j}`}
                 className={cn(
@@ -53,20 +48,11 @@ export function Tetris(): ReactElement {
           </div>
         ))}
       </div>
-      <div className='flex flex-col items-center gap-y-3'>
-        <p>x: {pos.x}</p>
-        <p>y: {pos.y}</p>
-        <div className='flex justify-center gap-x-3'>
-          <p>Left: {canMoveLeft() ? 'true' : 'false'}</p>
-          <p>Right: {canMoveRight() ? 'true' : 'false'}</p>
-          <p>Down: {canMoveDown() ? 'true' : 'false'}</p>
-        </div>
-      </div>
     </div>
   )
 }
 
-function isActive(j: number, i: number, pos: { x: number; y: number }, grid: number[][]): boolean {
+function isActive(j: number, i: number, pos: Position, grid: number[][]): boolean {
   if (grid[i][j] === 1) return true
   return i === pos.x && j === pos.y
 }
