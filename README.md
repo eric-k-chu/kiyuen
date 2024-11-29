@@ -8,5 +8,5 @@ bun dev
 ```
 ### build
 ```sh
-bun run build
+bun make
 ```
