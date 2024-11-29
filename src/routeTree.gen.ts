@@ -11,17 +11,11 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as PlayIndexImport } from './routes/play/index'
 import { Route as homeIndexImport } from './routes/(home)/index'
-import { Route as PlayTetrisIndexImport } from './routes/play/tetris/index'
+import { Route as playPlayImport } from './routes/(play)/play'
+import { Route as playtetrisPlayTetrisImport } from './routes/(play)/(tetris)/play.tetris'
 
 // Create/Update Routes
-
-const PlayIndexRoute = PlayIndexImport.update({
-  id: '/play/',
-  path: '/play/',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const homeIndexRoute = homeIndexImport.update({
   id: '/(home)/',
@@ -29,9 +23,15 @@ const homeIndexRoute = homeIndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const PlayTetrisIndexRoute = PlayTetrisIndexImport.update({
-  id: '/play/tetris/',
-  path: '/play/tetris/',
+const playPlayRoute = playPlayImport.update({
+  id: '/(play)/play',
+  path: '/play',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const playtetrisPlayTetrisRoute = playtetrisPlayTetrisImport.update({
+  id: '/(play)/(tetris)/play/tetris',
+  path: '/play/tetris',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,6 +39,13 @@ const PlayTetrisIndexRoute = PlayTetrisIndexImport.update({
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/(play)/play': {
+      id: '/(play)/play'
+      path: '/play'
+      fullPath: '/play'
+      preLoaderRoute: typeof playPlayImport
+      parentRoute: typeof rootRoute
+    }
     '/(home)/': {
       id: '/(home)/'
       path: '/'
@@ -46,18 +53,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof homeIndexImport
       parentRoute: typeof rootRoute
     }
-    '/play/': {
-      id: '/play/'
-      path: '/play'
-      fullPath: '/play'
-      preLoaderRoute: typeof PlayIndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/play/tetris/': {
-      id: '/play/tetris/'
+    '/(play)/(tetris)/play/tetris': {
+      id: '/(play)/(tetris)/play/tetris'
       path: '/play/tetris'
       fullPath: '/play/tetris'
-      preLoaderRoute: typeof PlayTetrisIndexImport
+      preLoaderRoute: typeof playtetrisPlayTetrisImport
       parentRoute: typeof rootRoute
     }
   }
@@ -66,43 +66,43 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
+  '/play': typeof playPlayRoute
   '/': typeof homeIndexRoute
-  '/play': typeof PlayIndexRoute
-  '/play/tetris': typeof PlayTetrisIndexRoute
+  '/play/tetris': typeof playtetrisPlayTetrisRoute
 }
 
 export interface FileRoutesByTo {
+  '/play': typeof playPlayRoute
   '/': typeof homeIndexRoute
-  '/play': typeof PlayIndexRoute
-  '/play/tetris': typeof PlayTetrisIndexRoute
+  '/play/tetris': typeof playtetrisPlayTetrisRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
+  '/(play)/play': typeof playPlayRoute
   '/(home)/': typeof homeIndexRoute
-  '/play/': typeof PlayIndexRoute
-  '/play/tetris/': typeof PlayTetrisIndexRoute
+  '/(play)/(tetris)/play/tetris': typeof playtetrisPlayTetrisRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/play' | '/play/tetris'
+  fullPaths: '/play' | '/' | '/play/tetris'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/play' | '/play/tetris'
-  id: '__root__' | '/(home)/' | '/play/' | '/play/tetris/'
+  to: '/play' | '/' | '/play/tetris'
+  id: '__root__' | '/(play)/play' | '/(home)/' | '/(play)/(tetris)/play/tetris'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
+  playPlayRoute: typeof playPlayRoute
   homeIndexRoute: typeof homeIndexRoute
-  PlayIndexRoute: typeof PlayIndexRoute
-  PlayTetrisIndexRoute: typeof PlayTetrisIndexRoute
+  playtetrisPlayTetrisRoute: typeof playtetrisPlayTetrisRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  playPlayRoute: playPlayRoute,
   homeIndexRoute: homeIndexRoute,
-  PlayIndexRoute: PlayIndexRoute,
-  PlayTetrisIndexRoute: PlayTetrisIndexRoute,
+  playtetrisPlayTetrisRoute: playtetrisPlayTetrisRoute,
 }
 
 export const routeTree = rootRoute
@@ -115,19 +115,19 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/(play)/play",
         "/(home)/",
-        "/play/",
-        "/play/tetris/"
+        "/(play)/(tetris)/play/tetris"
       ]
+    },
+    "/(play)/play": {
+      "filePath": "(play)/play.tsx"
     },
     "/(home)/": {
       "filePath": "(home)/index.tsx"
     },
-    "/play/": {
-      "filePath": "play/index.tsx"
-    },
-    "/play/tetris/": {
-      "filePath": "play/tetris/index.tsx"
+    "/(play)/(tetris)/play/tetris": {
+      "filePath": "(play)/(tetris)/play.tetris.tsx"
     }
   }
 }
