@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export function useKeyboard(cb: (key: string) => void, deps: unknown[] = []): void {
+export function useKeyboard(cb: (key: string) => void, deps: unknown[]): void {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       cb(e.key)

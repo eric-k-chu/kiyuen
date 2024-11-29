@@ -1,12 +1,12 @@
+import { Button } from '@/components'
 import { GITHUB, LINKEDIN } from '@/config'
 import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
 import type { ReactElement } from 'react'
-import { Button } from '../ui'
-import { DirToggle } from './dir'
-import { Help } from './help'
-import { ThemeToggle } from './theme'
+import { DirToggle } from './-dir'
+import { Help } from './-help'
+import { ThemeToggle } from './-theme'
 
-export function Controls(): ReactElement {
+export function Menubar(): ReactElement {
   return (
     <div className='flex flex-col items-center gap-y-3'>
       <Button asChild variant='ghost' size='icon'>

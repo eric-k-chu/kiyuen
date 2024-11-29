@@ -22,7 +22,8 @@
     /* Node.js specific settings */
     "composite": true,
     "types": [
-      "node"
+      "node",
+      "jest"
     ],
     "baseUrl": ".",
     "paths": {

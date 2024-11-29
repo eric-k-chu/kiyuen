@@ -1,5 +1,5 @@
 import { CARDS } from '@/config'
-import { CarouselProviderContext, useDir, useKeyboard } from '@/lib'
+import { CarouselProviderContext, useDir, useKeyboard } from '@/hooks'
 import { type PropsWithChildren, type ReactElement, useState } from 'react'
 
 export type CarouselProviderProps = PropsWithChildren

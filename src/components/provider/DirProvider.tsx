@@ -1,11 +1,6 @@
-import {
-  type Dir,
-  DirProviderContext,
-  type StorageProviderProps,
-  getLsItem,
-  setLsItem,
-} from '@/lib'
-import { useEffect, useState } from 'react'
+import { type Dir, DirProviderContext, useLocalStorage } from '@/hooks'
+import type { StorageProviderProps } from '@/lib'
+import { useEffect } from 'react'
 
 export type DirProviderProps = StorageProviderProps<{
   defaultDir?: Dir
@@ -16,12 +11,11 @@ export function DirProvider({
   defaultDir = 'ltr',
   storageKey = 'kiyuen-ui-dir',
 }: DirProviderProps) {
-  const [dir, setDir] = useState<Dir>(() => getLsItem(storageKey, defaultDir))
+  const { item: dir, set } = useLocalStorage({ key: storageKey, fallback: defaultDir })
 
   const toggle = (): void => {
     const toggledDir = dir === 'ltr' ? 'rtl' : 'ltr'
-    setLsItem(storageKey, toggledDir)
-    setDir(toggledDir)
+    set(toggledDir)
   }
 
   useEffect(() => {
