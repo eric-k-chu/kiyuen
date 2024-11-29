@@ -11,6 +11,6 @@ export function useGrid(dimensions: Dimensions): UseGridOutput {
   return useState(buildGrid(dimensions))
 }
 
-function buildGrid({ width, height }: Dimensions): number[][] {
+export function buildGrid({ width, height }: Dimensions): number[][] {
   return Array.from({ length: height }, () => Array.from({ length: width }, () => 0))
 }

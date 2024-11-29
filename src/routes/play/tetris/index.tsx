@@ -8,7 +8,7 @@ export const Route = createFileRoute('/play/tetris/')({
 })
 
 export function Tetris(): ReactElement {
-  const { grid, pos, move } = useTetris({ width: 9, height: 9 })
+  const { grid, pos, move } = useTetris({ width: 10, height: 20 })
 
   useKeyboard(
     (key) => {
@@ -27,24 +27,19 @@ export function Tetris(): ReactElement {
           break
       }
     },
-    [pos, grid]
+    [move]
   )
 
   return (
     <div>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: `repeat(${9}, 1fr)`,
-        }}
-      >
+      <div>
         {grid.map((row, i) => (
-          <div key={i}>
+          <div key={i} className='flex flex-none'>
             {row.map((_, j) => (
               <div
                 key={`${i}-${j}`}
                 className={cn(
-                  'flex size-16 items-center justify-center border border-border',
+                  'flex size-8 items-center justify-center border border-border text-xs',
                   isActive(i, j, pos, grid) ? 'bg-accent' : 'bg-transparent'
                 )}
               />
@@ -52,11 +47,16 @@ export function Tetris(): ReactElement {
           </div>
         ))}
       </div>
+      <div>
+        <span>{pos.x}</span>
+        <span>, </span>
+        <span>{pos.y}</span>
+      </div>
     </div>
   )
 }
 
-function isActive(j: number, i: number, pos: Position, grid: number[][]): boolean {
+function isActive(i: number, j: number, pos: Position, grid: number[][]): boolean {
   if (grid[i][j] === 1) return true
   return i === pos.x && j === pos.y
 }
