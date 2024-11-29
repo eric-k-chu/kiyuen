@@ -1,9 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, ShadcnUi } from '@/components'
-import type { CardData } from '@/config'
-import { CARDS } from '@/config'
 import { useCarousel } from '@/hooks'
-import { cn } from '@/lib'
+import { RESUME_CARDS, cn } from '@/lib'
 import type { ReactElement, ReactNode } from 'react'
+
+type Props = {
+  currentIndex: number
+}
 
 export function ResumeCard(): ReactElement {
   const { current, next, prev } = useCarousel()
@@ -14,8 +16,8 @@ export function ResumeCard(): ReactElement {
         key={current}
         className='absolute inset-0 size-full animate-fade-in select-none rtl:animate-fade-in-rtl'
       >
-        <ResumeHeader header={CARDS[current].header} />
-        <ResumeContent content={CARDS[current].content} />
+        <Header currentIndex={current} />
+        <Content currentIndex={current} />
         <div className='absolute right-2 bottom-2 z-[2]'>
           <ShadcnUi />
         </div>
@@ -26,11 +28,8 @@ export function ResumeCard(): ReactElement {
   )
 }
 
-type HeaderProps = {
-  header?: CardData['header']
-}
-
-function ResumeHeader({ header }: HeaderProps): ReactNode {
+function Header({ currentIndex }: Props): ReactNode {
+  const header = RESUME_CARDS[currentIndex].header
   if (!header) return
 
   return (
@@ -45,11 +44,8 @@ function ResumeHeader({ header }: HeaderProps): ReactNode {
   )
 }
 
-type ContentProps = {
-  content?: CardData['content']
-}
-
-function ResumeContent({ content }: ContentProps): ReactNode {
+function Content({ currentIndex }: Props): ReactNode {
+  const content = RESUME_CARDS[currentIndex].content
   if (!content) return
 
   if (content.type === 'cover') {

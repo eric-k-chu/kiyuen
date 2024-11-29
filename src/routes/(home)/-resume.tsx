@@ -1,7 +1,8 @@
 import { Progress } from '@/components'
-import { CARDS, EXPERIENCE } from '@/config'
 import { useCarousel, useDir } from '@/hooks'
+import { RESUME_SIZE } from '@/lib'
 import type { ReactElement } from 'react'
+import meta from '~meta'
 import { ResumeCard } from './-card'
 
 export function Resume(): ReactElement {
@@ -19,7 +20,7 @@ function ResumeProgress(): ReactElement {
 
   const getSectionIndex = (cardIndex: number) => {
     if (cardIndex === 0) return 0
-    if (cardIndex < EXPERIENCE.length + 1) return 1
+    if (cardIndex < meta.experience.length + 1) return 1
     return 2
   }
 
@@ -29,7 +30,7 @@ function ResumeProgress(): ReactElement {
     return 'Education'
   }
 
-  const percent = current / (CARDS.length - 1)
+  const percent = current / (RESUME_SIZE - 1)
 
   const index = getSectionIndex(current)
 

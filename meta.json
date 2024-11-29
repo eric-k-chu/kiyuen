@@ -1,0 +1,64 @@
+{
+  "github": "https://github.com/eric-k-chu",
+  "linkedin": "https://www.linkedin.com/in/eric-k-chu/",
+  "experience": [
+    {
+      "company": "Terros",
+      "title": "Software Engineer",
+      "start": "2021-04-08",
+      "stack": ["SST", "TypeScript", "AWS", "Elasticsearch", "React Native"]
+    },
+    {
+      "company": "Randy Mark Auctioneer",
+      "title": "Freelance Web Developer",
+      "start": "2024-02-21",
+      "end": "2024-03-23",
+      "stack": ["Next.js", "TypeScript", "Github Api"]
+    },
+    {
+      "company": "LearningFuze",
+      "title": "Teaching Assistant",
+      "start": "2024-01-05",
+      "end": "2024-04-05",
+      "stack": ["React", "TypeScript", "Express"]
+    }
+  ],
+  "education": [
+    {
+      "school": "LearningFuze",
+      "cert": "Web Dev Bootcamp",
+      "start": "2023-08-28",
+      "end": "2024-12-08",
+      "projects": [
+        {
+          "name": "Video Hosting App",
+          "link": "https://github.com/eric-k-chu/Artus"
+        },
+        {
+          "name": "Chess.com API App",
+          "link": "https://github.com/eric-k-chu/Castle-v2"
+        }
+      ]
+    },
+    {
+      "school": "CSU Fullerton",
+      "cert": "B.S in Comp Sci",
+      "start": "2018-08-05",
+      "end": "2022-08-05",
+      "projects": [
+        {
+          "name": "2D Platformer",
+          "link": "https://github.com/ecorona9/Midnight-Metal-Madness---Unity"
+        },
+        {
+          "name": "Endless Runner",
+          "link": "https://github.com/eric-k-chu/Geo-Run"
+        },
+        {
+          "name": "2.5D Platformer",
+          "link": "https://github.com/eric-k-chu/Project-S"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-import { CARDS } from '@/config'
 import { CarouselProviderContext, useDir, useKeyboard } from '@/hooks'
+import { RESUME_SIZE } from '@/lib'
 import { type PropsWithChildren, type ReactElement, useState } from 'react'
 
 export type CarouselProviderProps = PropsWithChildren
@@ -9,7 +9,7 @@ export function CarouselProvider({ children }: CarouselProviderProps): ReactElem
   const { dir } = useDir()
 
   const transition = (factor: number): void => {
-    setCurrent((p) => (p + factor + CARDS.length) % CARDS.length)
+    setCurrent((p) => (p + factor + RESUME_SIZE) % RESUME_SIZE)
   }
 
   const next = (): void => transition(dir === 'ltr' ? 1 : -1)
