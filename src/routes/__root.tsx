@@ -1,5 +1,5 @@
-import { AppShell, Button } from '@/components'
-import { Link, Outlet, createRootRoute, linkOptions } from '@tanstack/react-router'
+import { AppShell, NavLink } from '@/components'
+import { Outlet, createRootRoute, linkOptions } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
 const navs = [
@@ -22,11 +22,14 @@ export const Route = createRootRoute({
       <nav className='fixed bottom-5 w-screen'>
         <div className='mx-auto w-fit rounded-md border border-border'>
           {navs.map((nav, i) => (
-            <Button asChild variant='ghost' key={nav.to} className={flattenCorners(i, navs.length)}>
-              <Link {...nav} className='text-xs'>
-                {nav.label}
-              </Link>
-            </Button>
+            <NavLink
+              variant='ghost'
+              key={nav.to}
+              className={flattenCorners(i, navs.length)}
+              to={nav.to}
+            >
+              {nav.label}
+            </NavLink>
           ))}
         </div>
       </nav>
