@@ -16,10 +16,7 @@ export function Tetris(): ReactElement {
         {grid.map((row, i) => (
           <div key={i} className='flex flex-none'>
             {row.map((_, j) => (
-              <div
-                key={`${i}-${j}`}
-                className='flex size-8 items-center justify-center border border-border text-xs'
-              />
+              <div key={`${i}-${j}`} className='size-8 border border-border' />
             ))}
           </div>
         ))}
