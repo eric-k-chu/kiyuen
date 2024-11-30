@@ -31,7 +31,7 @@ export const RESUME_CARDS: ResumeData[] = [
   {
     content: {
       type: 'cover',
-      title: 'Full Stack\nDeveloper',
+      title: 'Full Stack Developer',
     },
   },
   ...meta.experience.map<ResumeData>((e) => ({

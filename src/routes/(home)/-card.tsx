@@ -1,7 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, ShadcnUi } from '@/components'
+import { BriefcaseIcon, GraduationCapIcon } from '@/components/icon'
 import { useCarousel } from '@/hooks'
-import { RESUME_CARDS, cn } from '@/lib'
+import { RESUME_CARDS, RESUME_SIZE, cn } from '@/lib'
 import type { ReactElement, ReactNode } from 'react'
+import meta from '~meta'
 
 type Props = {
   currentIndex: number
@@ -19,7 +21,7 @@ export function ResumeCard(): ReactElement {
         <Header currentIndex={current} />
         <Content currentIndex={current} />
         <div className='absolute right-2 bottom-2 z-[2]'>
-          <ShadcnUi />
+          <Progress currentIndex={current} />
         </div>
       </Card>
       <Navigate pos='left' onNavigate={prev} />
@@ -33,15 +35,25 @@ function Header({ currentIndex }: Props): ReactNode {
   if (!header) return
 
   return (
-    <CardHeader>
-      <CardTitle>{header.title}</CardTitle>
+    <CardHeader className='space-y-3 pb-3'>
+      <CardTitle className='flex items-center gap-x-3'>
+        <Icon currentIndex={currentIndex} />
+        <span>{header.title}</span>
+      </CardTitle>
       <CardDescription className='text-xs'>
         {header.subtitle}
-        <br />
+        <br className='my-1' />
         {header.dateRange}
       </CardDescription>
     </CardHeader>
   )
+}
+
+function Icon({ currentIndex }: Props): ReactElement {
+  if (currentIndex === 0) return <ShadcnUi />
+  if (currentIndex < meta.experience.length + 1)
+    return <BriefcaseIcon className='size-4 fill-flamingo' />
+  return <GraduationCapIcon className='size-5 stroke-flamingo' />
 }
 
 function Content({ currentIndex }: Props): ReactNode {
@@ -98,5 +110,14 @@ function Navigate({ pos, onNavigate }: NavigateProps): ReactElement {
       )}
       onClick={onNavigate}
     />
+  )
+}
+
+function Progress({ currentIndex }: Props): ReactElement {
+  if (currentIndex < 1) return <ShadcnUi />
+  return (
+    <p className='text-xs'>
+      {currentIndex} / {RESUME_SIZE - 1}
+    </p>
   )
 }
