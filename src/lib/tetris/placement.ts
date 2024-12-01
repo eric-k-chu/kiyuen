@@ -1,6 +1,6 @@
 import type { Position } from './validate'
 
-type Tetromino = {
+export type Tetromino = {
   matrix: number[][]
   pos: Position
 }
