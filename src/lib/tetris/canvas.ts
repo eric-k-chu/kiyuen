@@ -9,8 +9,8 @@ export function renderCanvas(canvas: HTMLCanvasElement | null): void {
 
   for (let row = 0; row < 20; row++) {
     for (let col = 0; col < 10; col++) {
-      ctx.fillStyle = '#cdd1db'
-      ctx.fillRect(col * GRID, row * GRID, GRID - 2, GRID - 2)
+      ctx.fillStyle = '#1e1e2e'
+      ctx.fillRect(col * GRID, row * GRID, GRID - 1, GRID - 1)
     }
   }
 }
