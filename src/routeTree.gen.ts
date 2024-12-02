@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as homeIndexImport } from './routes/(home)/index'
 import { Route as playPlayImport } from './routes/(play)/play'
+import { Route as blogBlogImport } from './routes/(blog)/blog'
 import { Route as playtetrisPlayTetrisImport } from './routes/(play)/(tetris)/play.tetris'
 
 // Create/Update Routes
@@ -29,6 +30,12 @@ const playPlayRoute = playPlayImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const blogBlogRoute = blogBlogImport.update({
+  id: '/(blog)/blog',
+  path: '/blog',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const playtetrisPlayTetrisRoute = playtetrisPlayTetrisImport.update({
   id: '/(play)/(tetris)/play/tetris',
   path: '/play/tetris',
@@ -39,6 +46,13 @@ const playtetrisPlayTetrisRoute = playtetrisPlayTetrisImport.update({
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/(blog)/blog': {
+      id: '/(blog)/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof blogBlogImport
+      parentRoute: typeof rootRoute
+    }
     '/(play)/play': {
       id: '/(play)/play'
       path: '/play'
@@ -66,12 +80,14 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
+  '/blog': typeof blogBlogRoute
   '/play': typeof playPlayRoute
   '/': typeof homeIndexRoute
   '/play/tetris': typeof playtetrisPlayTetrisRoute
 }
 
 export interface FileRoutesByTo {
+  '/blog': typeof blogBlogRoute
   '/play': typeof playPlayRoute
   '/': typeof homeIndexRoute
   '/play/tetris': typeof playtetrisPlayTetrisRoute
@@ -79,6 +95,7 @@ export interface FileRoutesByTo {
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
+  '/(blog)/blog': typeof blogBlogRoute
   '/(play)/play': typeof playPlayRoute
   '/(home)/': typeof homeIndexRoute
   '/(play)/(tetris)/play/tetris': typeof playtetrisPlayTetrisRoute
@@ -86,20 +103,27 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/play' | '/' | '/play/tetris'
+  fullPaths: '/blog' | '/play' | '/' | '/play/tetris'
   fileRoutesByTo: FileRoutesByTo
-  to: '/play' | '/' | '/play/tetris'
-  id: '__root__' | '/(play)/play' | '/(home)/' | '/(play)/(tetris)/play/tetris'
+  to: '/blog' | '/play' | '/' | '/play/tetris'
+  id:
+    | '__root__'
+    | '/(blog)/blog'
+    | '/(play)/play'
+    | '/(home)/'
+    | '/(play)/(tetris)/play/tetris'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
+  blogBlogRoute: typeof blogBlogRoute
   playPlayRoute: typeof playPlayRoute
   homeIndexRoute: typeof homeIndexRoute
   playtetrisPlayTetrisRoute: typeof playtetrisPlayTetrisRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  blogBlogRoute: blogBlogRoute,
   playPlayRoute: playPlayRoute,
   homeIndexRoute: homeIndexRoute,
   playtetrisPlayTetrisRoute: playtetrisPlayTetrisRoute,
@@ -115,10 +139,14 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/(blog)/blog",
         "/(play)/play",
         "/(home)/",
         "/(play)/(tetris)/play/tetris"
       ]
+    },
+    "/(blog)/blog": {
+      "filePath": "(blog)/blog.tsx"
     },
     "/(play)/play": {
       "filePath": "(play)/play.tsx"

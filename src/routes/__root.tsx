@@ -8,6 +8,10 @@ const navs = [
     label: 'Home',
   }),
   linkOptions({
+    to: '/blog',
+    label: 'Blog',
+  }),
+  linkOptions({
     to: '/play',
     label: 'Play',
   }),
@@ -20,7 +24,7 @@ export const Route = createRootRoute({
         <Outlet />
       </div>
       <nav className='fixed bottom-5 w-screen'>
-        <div className='mx-auto w-fit rounded-md border border-border'>
+        <div className='mx-auto w-fit rounded-md border border-border bg-background'>
           {navs.map((nav, i) => (
             <NavLink
               variant='ghost'
@@ -37,8 +41,8 @@ export const Route = createRootRoute({
   ),
 })
 
-function flattenCorners(index: number, length: number): string | undefined {
+function flattenCorners(index: number, length: number): string {
   if (index === 0) return 'rounded-r-none rtl:rounded-l-none'
   if (index === length - 1) return 'rounded-l-none rtl:rounded-r-none'
-  return
+  return 'rounded-none'
 }
