@@ -10,7 +10,7 @@ export const Route = createFileRoute('/(blog)/blog')({
 
 function Blog(): ReactElement {
   return (
-    <div className='prose dark:prose-invert prose-base'>
+    <div className='prose dark:prose-invert prose-base py-8'>
       <ReactComponent />
     </div>
   )
