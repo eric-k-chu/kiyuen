@@ -14,7 +14,7 @@ function Blog(): ReactElement {
       className='prose dark:prose-invert prose-base py-8'
       ref={async (node) => {
         if (!node) return
-        const md = await fetch('/sample.md').then((res) => res.text())
+        const md = await fetch('/blog/sample.md').then((res) => res.text())
         node.innerHTML = await marked(md)
       }}
     />
