@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components'
 import { Badge } from '@/components/badge'
 import { createFileRoute } from '@tanstack/react-router'
+import { marked } from 'marked'
 import type { ReactElement } from 'react'
 
 export const Route = createFileRoute('/(blog)/blog')({
@@ -9,26 +10,14 @@ export const Route = createFileRoute('/(blog)/blog')({
 
 function Blog(): ReactElement {
   return (
-    <div className='flex h-screen flex-wrap justify-center gap-8 overflow-auto p-8'>
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-      <BlogCard />
-    </div>
+    <div
+      ref={async (node) => {
+        if (!node) return
+        const md = await fetch('/sample.md').then((res) => res.text())
+        node.innerHTML = await marked.parse(md)
+      }}
+      className='prose dark:prose-invert prose-base'
+    />
   )
 }
 
