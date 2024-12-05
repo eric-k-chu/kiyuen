@@ -1,8 +1,8 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components'
 import { Badge } from '@/components/badge'
 import { createFileRoute } from '@tanstack/react-router'
+import { marked } from 'marked'
 import type { ReactElement } from 'react'
-import { ReactComponent } from './sample.md'
 
 export const Route = createFileRoute('/(blog)/blog')({
   component: Blog,
@@ -10,9 +10,14 @@ export const Route = createFileRoute('/(blog)/blog')({
 
 function Blog(): ReactElement {
   return (
-    <div className='prose dark:prose-invert prose-base py-8'>
-      <ReactComponent />
-    </div>
+    <div
+      className='prose dark:prose-invert prose-base py-8'
+      ref={async (node) => {
+        if (!node) return
+        const md = await fetch('/sample.md').then((res) => res.text())
+        node.innerHTML = await marked(md)
+      }}
+    />
   )
 }
 
