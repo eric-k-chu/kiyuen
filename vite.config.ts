@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer'
 import path from 'node:path'
 import tailwindcss from 'tailwindcss'
 import { defineConfig } from 'vite'
+import markdown, { Mode } from 'vite-plugin-markdown'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -18,6 +19,9 @@ export default defineConfig({
       babel: {
         plugins: [['babel-plugin-react-compiler', { target: '18' }]],
       },
+    }),
+    markdown({
+      mode: [Mode.REACT],
     }),
   ],
   resolve: {
