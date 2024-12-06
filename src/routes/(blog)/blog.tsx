@@ -1,24 +1,26 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components'
-import { Badge } from '@/components/badge'
+import {
+  Badge,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components'
+import { useBlog } from '@/hooks'
 import { createFileRoute } from '@tanstack/react-router'
-import { marked } from 'marked'
-import { type ReactElement, useCallback } from 'react'
+import type { ReactElement } from 'react'
 
 export const Route = createFileRoute('/(blog)/blog')({
   component: Blog,
 })
 
 function Blog(): ReactElement {
-  const setRef = useCallback((node: HTMLDivElement | null) => {
-    if (!node) return
-    fetch('/blog/sample.md')
-      .then((res) => res.text())
-      .then(async (md) => {
-        node.innerHTML = await marked(md)
-      })
-  }, [])
+  const { ref, error } = useBlog('/sample.md')
 
-  return <div className='prose dark:prose-invert prose-base py-8' ref={setRef} />
+  if (error) return <div>{error}</div>
+
+  return <div className='prose dark:prose-invert prose-base py-8' ref={ref} />
 }
 
 function BlogCard(): ReactElement {
