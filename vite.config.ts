@@ -12,14 +12,7 @@ export default defineConfig({
       plugins: [tailwindcss, autoprefixer],
     },
   },
-  plugins: [
-    TanStackRouterVite(),
-    react({
-      babel: {
-        plugins: [['babel-plugin-react-compiler', { target: '18' }]],
-      },
-    }),
-  ],
+  plugins: [TanStackRouterVite(), react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
