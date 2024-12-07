@@ -7,8 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components'
-import { useBlog } from '@/hooks'
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
 export const Route = createFileRoute('/(blog)/blog')({
@@ -16,16 +15,22 @@ export const Route = createFileRoute('/(blog)/blog')({
 })
 
 function Blog(): ReactElement {
-  const { ref, error } = useBlog('/sample.md')
-
-  if (error) return <div>{error}</div>
-
-  return <div className='prose dark:prose-invert prose-base py-8' ref={ref} />
+  return (
+    <div className='flex h-screen flex-wrap gap-8 py-8'>
+      <BlogCard />
+    </div>
+  )
 }
 
 function BlogCard(): ReactElement {
+  const go = useNavigate()
   return (
-    <Card className='flex h-96 w-48 flex-col border-border'>
+    <Card
+      className='flex h-96 w-48 flex-col border-border'
+      onClick={() => {
+        go({ to: '/blog/$blogId', params: { blogId: 'sample' } })
+      }}
+    >
       <CardHeader>
         <CardTitle>Blog</CardTitle>
         <CardDescription>Coming Soon...</CardDescription>

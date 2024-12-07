@@ -3,7 +3,7 @@ import { marked } from 'marked'
 import { useCallback, useState } from 'react'
 
 type Output = {
-  ref: (node: HTMLDivElement | null) => VoidFunction | undefined
+  ref: (node: HTMLDivElement | null) => void
   error?: string
 }
 
@@ -12,10 +12,7 @@ export function useBlog(filename: string): Output {
   const ref = useCallback((node: HTMLDivElement | null) => {
     if (!node) return
 
-    const abortController = new AbortController()
-    fetch(`/blog/${filename}`, {
-      signal: abortController.signal,
-    })
+    fetch(`/blog/${filename}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to fetch blog post')
@@ -30,10 +27,6 @@ export function useBlog(filename: string): Output {
       .catch((err) => {
         setError(err.message)
       })
-
-    return () => {
-      abortController.abort()
-    }
   }, [])
   return { ref, error }
 }
