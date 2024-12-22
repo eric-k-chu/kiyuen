@@ -9,7 +9,7 @@ type ThemeProviderState = {
 
 export const ThemeProviderContext = createContext<ThemeProviderState>({
   theme: 'system',
-  set: () => undefined,
+  set: (): void => undefined,
 })
 
 export function useTheme(): ThemeProviderState {

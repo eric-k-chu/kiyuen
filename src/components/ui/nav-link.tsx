@@ -5,28 +5,29 @@ import {
   type LinkComponentProps,
   createLink,
 } from '@tanstack/react-router'
-import { type AnchorHTMLAttributes, forwardRef } from 'react'
+import type { AnchorHTMLAttributes, ReactElement, Ref } from 'react'
 import { Button, type ButtonProps } from './button'
 
 type BaseLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   ButtonProps & {
+    ref?: Ref<HTMLAnchorElement>
     linkClassName?: string
   }
 
-const BaseLink = forwardRef<HTMLAnchorElement, BaseLinkProps>(
-  ({ className, variant, linkClassName, ...props }, ref) => (
+function BaseLink({ className, variant, linkClassName, ...props }: BaseLinkProps): ReactElement {
+  return (
     <Button asChild variant={variant || 'ghost'} size={props.size} className={className} {...props}>
-      <Link ref={ref} {...props} className={cn('text-xs', linkClassName)}>
+      <Link {...props} className={cn('text-xs', linkClassName)}>
         {props.children}
       </Link>
     </Button>
   )
-)
+}
 
 const LinkNav = createLink(BaseLink)
 
 export type NavLinkProps = LinkComponentProps<typeof BaseLink>
 
-export const NavLink: LinkComponent<typeof BaseLink> = (props) => {
+export const NavLink: LinkComponent<typeof BaseLink> = (props): ReactElement => {
   return <LinkNav preload='intent' {...props} />
 }

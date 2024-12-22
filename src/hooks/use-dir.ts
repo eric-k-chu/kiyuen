@@ -9,7 +9,7 @@ type DirProviderState = {
 
 export const DirProviderContext = createContext<DirProviderState>({
   dir: 'ltr',
-  toggle: () => undefined,
+  toggle: (): void => undefined,
 })
 
 export function useDir(): DirProviderState {

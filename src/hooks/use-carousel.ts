@@ -8,8 +8,8 @@ type CarouselProviderState = {
 
 export const CarouselProviderContext = createContext<CarouselProviderState>({
   current: 0,
-  next: () => undefined,
-  prev: () => undefined,
+  next: (): void => undefined,
+  prev: (): void => undefined,
 })
 
 export function useCarousel(): CarouselProviderState {

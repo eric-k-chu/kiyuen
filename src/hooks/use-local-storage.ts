@@ -23,7 +23,7 @@ export function useLocalStorage<T extends string>(input: Input<T>): UseLocalStor
 
 function subscribe(cb: () => void): () => void {
   window.addEventListener('storage', cb)
-  return () => {
+  return (): void => {
     window.removeEventListener('storage', cb)
   }
 }

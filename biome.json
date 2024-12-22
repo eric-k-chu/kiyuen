@@ -1,7 +1,6 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "files": {
-    "ignore": ["*.gen.ts"],
     "ignoreUnknown": false
   },
   "formatter": {
@@ -13,8 +12,7 @@
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
-    "lineWidth": 100,
-    "useEditorconfig": true
+    "lineWidth": 100
   },
   "javascript": {
     "formatter": {
@@ -43,6 +41,9 @@
           "options": {
             "functions": ["clsx", "cva", "tw"]
           }
+        },
+        "useExplicitType": {
+          "level": "warn"
         }
       },
       "a11y": {
