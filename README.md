@@ -1,6 +1,6 @@
 # kiyuen
 
-Portfolio
+Personal portfolio site.
 
 ### dev
 ```sh
