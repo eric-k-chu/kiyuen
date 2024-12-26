@@ -4,14 +4,14 @@ import { Link, createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
 
 export const Route = createFileRoute('/blog/')({
-  component: RouteComponent,
+  component: Blog,
 })
 
 type WithBlogId = {
   blogId: string
 }
 
-function RouteComponent(): ReactElement {
+function Blog(): ReactElement {
   return (
     <section className='flex h-[26rem] justify-center gap-x-3'>
       <Profile />

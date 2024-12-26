@@ -7,7 +7,7 @@ type PostMetadata = {
   description: string
 }
 
-type Post = PostMetadata & {
+export type Post = PostMetadata & {
   id: string
   content: string
 }
