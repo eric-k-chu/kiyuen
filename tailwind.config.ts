@@ -82,6 +82,18 @@ const config: Config = {
         'slide-in': 'slide-in 0.3s ease-out',
         'slide-in-rtl': 'slide-in-rtl 0.3s ease-out',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+          },
+        },
+      },
     },
   },
 
