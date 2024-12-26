@@ -72,3 +72,9 @@
   font-family: "JetBrains Mono", monospace;
   font-optical-sizing: auto;
 }
+
+pre > div {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}

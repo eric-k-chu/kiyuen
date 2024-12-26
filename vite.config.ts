@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer'
 import path from 'node:path'
 import tailwindcss from 'tailwindcss'
 import { defineConfig } from 'vite'
+import compileTime from 'vite-plugin-compile-time'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -12,14 +13,7 @@ export default defineConfig({
       plugins: [tailwindcss, autoprefixer],
     },
   },
-  plugins: [
-    TanStackRouterVite(),
-    react({
-      babel: {
-        plugins: [['babel-plugin-react-compiler', { target: '18' }]],
-      },
-    }),
-  ],
+  plugins: [TanStackRouterVite(), react(), compileTime()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

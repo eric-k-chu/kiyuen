@@ -1,8 +1,6 @@
-import { CarouselProvider } from '@/components'
+import { CarouselProvider, Menubar, Profile } from '@/components'
 import { createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
-import { Menubar } from './-menu-bar'
-import { Profile } from './-profile'
 import { Resume } from './-resume'
 
 export const Route = createFileRoute('/(home)/')({
@@ -12,13 +10,11 @@ export const Route = createFileRoute('/(home)/')({
 function Home(): ReactElement {
   return (
     <CarouselProvider>
-      <div className='flex min-h-screen items-center justify-center'>
-        <section className='flex h-[26rem] justify-center gap-x-3'>
-          <Profile />
-          <Resume />
-          <Menubar />
-        </section>
-      </div>
+      <section className='flex h-[26rem] justify-center gap-x-3'>
+        <Profile />
+        <Resume />
+        <Menubar />
+      </section>
     </CarouselProvider>
   )
 }
