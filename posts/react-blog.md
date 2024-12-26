@@ -1,6 +1,6 @@
 ---
 title: A Personal Blog in React
-description: readme file
+description: A small tutorial on adding a blog section in your React app.
 ---
 
 # A Personal Blog in React

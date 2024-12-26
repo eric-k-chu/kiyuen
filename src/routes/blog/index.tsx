@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle, Menubar, Profile } from '@/co
 import { posts } from '@/lib'
 import { Link, createFileRoute } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
+import { Helmet } from 'react-helmet-async'
 
 export const Route = createFileRoute('/blog/')({
   component: Blog,
@@ -14,6 +15,10 @@ type WithBlogId = {
 function Blog(): ReactElement {
   return (
     <section className='flex h-[26rem] justify-center gap-x-3'>
+      <Helmet>
+        <title>Blog</title>
+        <meta name='description' content='A list of programming related blog posts' />
+      </Helmet>
       <Profile />
       <Card className='h-full w-56 animate-fade-in space-y-4 rtl:animate-fade-in-rtl'>
         <CardHeader className='pb-2'>
@@ -24,7 +29,7 @@ function Blog(): ReactElement {
             {posts.map((item) => (
               <li key={item.id}>
                 <Link
-                  className='hover:underline'
+                  className='text-xs hover:underline'
                   to={`/blog/${item.id}`}
                   params={toBlogId(item.id)}
                 >
