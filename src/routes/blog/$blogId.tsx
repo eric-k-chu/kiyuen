@@ -1,17 +1,24 @@
-import { Button, Card, Menubar, Profile } from '@/components'
+import { Button, Menubar, Profile } from '@/components'
 import { type Post, posts } from '@/lib'
 import { Link, createFileRoute, isNotFound, notFound } from '@tanstack/react-router'
 import type { ReactElement } from 'react'
+import { BlogCard } from './-card'
 
 export const Route = createFileRoute('/blog/$blogId')({
-  loader: ({ params }): Post => {
-    const post = posts.find((post) => post.id === params.blogId.toLowerCase())
-    if (!post) throw notFound({ routeId: '/blog/$blogId', data: params.blogId })
-    return post
-  },
+  loader,
   component: RouteComponent,
-  notFoundComponent: (c): ReactElement => <PostNotFound data={c.data} />,
+  notFoundComponent: PostNotFound,
 })
+
+type LoaderProps = {
+  params: { blogId: string }
+}
+
+function loader({ params }: LoaderProps): Post {
+  const post = posts.find((post) => post.id === params.blogId.toLowerCase())
+  if (!post) throw notFound({ routeId: '/blog/$blogId', data: params.blogId })
+  return post
+}
 
 function RouteComponent(): ReactElement {
   const post = Route.useLoaderData()
@@ -20,12 +27,7 @@ function RouteComponent(): ReactElement {
       <Menubar className='mb-4 flex w-full max-w-lg flex-row sm:hidden' />
       <section className='flex flex-1 justify-center gap-x-3'>
         <Profile className='hidden sm:flex' />
-        <Card className='flex-1 animate-fade-in p-4 rtl:animate-fade-in-rtl'>
-          <div
-            className='prose dark:prose-invert'
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
-        </Card>
+        <BlogCard body={post.body} />
         <Menubar className='hidden sm:flex' />
       </section>
     </>

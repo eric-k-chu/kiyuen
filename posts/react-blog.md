@@ -53,7 +53,7 @@ function Post(): ReactElement {
 
 ## Using other markdown libraries
 
-With [marked.js](https://github.com/markedjs/marked) and [front-matter](https://github.com/jxson/front-matter), you can push this even further:
+With [react-markdown](https://github.com/markedjs/marked) and [front-matter](https://github.com/jxson/front-matter), you can push this even further:
 
 
 `foo.md`
@@ -82,9 +82,9 @@ const post = compileTime(async () => {
   const { attributes, body } = fm<PostMetadata>(md)
   return {
     id: 'foo',
+    body,
     title: attributes.title,
     description: attributes.description,
-    body: await marked(body)
   }
 })
 ```
@@ -92,16 +92,16 @@ const post = compileTime(async () => {
 `Post.tsx`
 ```tsx
 import { post } from './post'
+import Markdown from 'react-markdown'
 
 function Post(): ReactElement {
   return (
     <div>
       <h1>{post.title}</h1>
       <h2>{post.description}</h2>
-      <div
-        className='prose'
-        dangerouslySetInnerHTML={{ __html: post.body }}
-      />
+      <Markdown className='prose'>
+        {post.body}
+      </Markdown>
     </div>
   )
 }

@@ -73,6 +73,8 @@
   font-optical-sizing: auto;
 }
 
-code {
-  white-space: normal;
+pre > div {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
 }

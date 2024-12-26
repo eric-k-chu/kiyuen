@@ -1,5 +1,4 @@
 import fm from 'front-matter'
-import { marked } from 'marked'
 import { readFile, readdir } from 'node:fs/promises'
 
 type PostMetadata = {
@@ -9,7 +8,7 @@ type PostMetadata = {
 
 export type Post = PostMetadata & {
   id: string
-  content: string
+  body: string
 }
 
 /**
@@ -26,9 +25,9 @@ export const posts = compileTime(async () => {
     const { attributes, body } = fm<PostMetadata>(md)
     return {
       id: file.replace('.md', ''),
+      body,
       title: attributes.title,
       description: attributes.description,
-      content: await marked(body),
     }
   }
 
