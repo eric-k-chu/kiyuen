@@ -9,7 +9,7 @@ export const Route = createRootRoute({
 function App(): ReactElement {
   return (
     <AppShell defaultDir='ltr' defaultTheme='dark'>
-      <div className='flex min-h-screen items-center justify-center'>
+      <div className='flex min-h-screen flex-col items-center justify-center p-4'>
         <Outlet />
       </div>
     </AppShell>

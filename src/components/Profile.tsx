@@ -1,8 +1,13 @@
+import { cn } from '@/lib'
 import type { ReactElement } from 'react'
 
-export function Profile(): ReactElement {
+type Props = {
+  className?: string
+}
+
+export function Profile({ className }: Props): ReactElement {
   return (
-    <div className='flex select-none flex-col items-center gap-y-3'>
+    <div className={cn('flex select-none flex-col items-center gap-y-3', className)}>
       <p className='px-1 font-sans text-lg'>
         朱<span className='sr-only'>Chu</span>
       </p>
