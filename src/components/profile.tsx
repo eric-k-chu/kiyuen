@@ -7,8 +7,14 @@ type Props = {
 
 export function Profile({ className }: Props): ReactElement {
   return (
-    <div className={cn('flex select-none flex-col items-center gap-y-3', className)}>
-      <p className='px-1 font-sans text-lg'>
+    <div
+      style={{
+        filter: 'invert(1)',
+        mixBlendMode: 'difference',
+      }}
+      className={cn('flex select-none flex-col items-center gap-y-3 text-foreground', className)}
+    >
+      <p className='px-1 text-lg'>
         朱<span className='sr-only'>Chu</span>
       </p>
       <p>

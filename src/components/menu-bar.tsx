@@ -26,7 +26,13 @@ type Props = {
 
 export function Menubar({ className }: Props): ReactElement {
   return (
-    <div className={cn('flex flex-col items-center gap-3', className)}>
+    <div
+      className={cn('flex flex-col items-center gap-3', className)}
+      style={{
+        filter: 'invert(1)',
+        mixBlendMode: 'difference',
+      }}
+    >
       <Button asChild variant='ghost' size='icon'>
         <Link href='/'>
           <HomeIcon />
@@ -47,8 +53,6 @@ export function Menubar({ className }: Props): ReactElement {
           <LinkedInLogoIcon />
         </a>
       </Button>
-      <DirToggle />
-      <ThemeToggle />
     </div>
   )
 }

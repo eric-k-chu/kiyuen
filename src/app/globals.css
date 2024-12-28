@@ -59,19 +59,19 @@
     --ctp-flamingo: 0 59% 88%;
   }
 }
+
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    background: linear-gradient(to bottom right, #1e1e1e 50%, #eeeeee 50%);
+    background-size: 100% 100%;
   }
 }
 
-:root {
-  font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
-}
+
 
 /* pre > div {
   background-color: transparent !important;
