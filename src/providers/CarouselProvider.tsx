@@ -1,3 +1,5 @@
+'use client'
+
 import { CarouselProviderContext, useDir, useKeyboard } from '@/hooks'
 import { RESUME_SIZE } from '@/lib'
 import { type PropsWithChildren, type ReactElement, useState } from 'react'

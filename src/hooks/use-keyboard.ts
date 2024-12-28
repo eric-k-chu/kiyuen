@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect } from 'react'
 
 export function useKeyboard(cb: (key: string) => void, deps: unknown[]): void {

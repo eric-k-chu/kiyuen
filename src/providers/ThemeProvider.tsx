@@ -1,3 +1,5 @@
+'use client'
+
 import { type Theme, ThemeProviderContext, useLocalStorage } from '@/hooks'
 import type { StorageProviderProps } from '@/lib'
 import { type ReactElement, useEffect } from 'react'

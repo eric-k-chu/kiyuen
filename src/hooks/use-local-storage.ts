@@ -1,4 +1,6 @@
-import { useSyncExternalStore } from 'react'
+'use client'
+
+import { useState } from 'react'
 
 type Input<T extends string> = {
   key: string
@@ -11,23 +13,16 @@ type UseLocalStorageOutput<T extends string> = {
 }
 
 export function useLocalStorage<T extends string>(input: Input<T>): UseLocalStorageOutput<T> {
-  const item = useSyncExternalStore(subscribe, () =>
-    getItemFromLocalStorage(input.key, input.fallback)
-  )
+  const [item, setItem] = useState(getItemFromLocalStorage(input.key, input.fallback))
   const set = (value: T): void => {
+    if (typeof window === 'undefined') return
     localStorage.setItem(input.key, value)
-    window.dispatchEvent(new Event('storage'))
+    setItem(value)
   }
   return { item, set }
 }
 
-function subscribe(cb: () => void): () => void {
-  window.addEventListener('storage', cb)
-  return (): void => {
-    window.removeEventListener('storage', cb)
-  }
-}
-
 function getItemFromLocalStorage<T extends string>(key: string, fallback: T): T {
+  if (typeof window === 'undefined') return fallback
   return (localStorage.getItem(key) as T) || fallback
 }

@@ -1,3 +1,5 @@
+'use client'
+
 import {
   Button,
   DropdownMenu,
@@ -14,7 +16,7 @@ import {
   LinkedInLogoIcon,
   ReaderIcon,
 } from '@radix-ui/react-icons'
-import { Link } from '@tanstack/react-router'
+import Link from 'next/link'
 import type { ReactElement } from 'react'
 import meta from '~meta'
 
@@ -26,12 +28,12 @@ export function Menubar({ className }: Props): ReactElement {
   return (
     <div className={cn('flex flex-col items-center gap-3', className)}>
       <Button asChild variant='ghost' size='icon'>
-        <Link to='/'>
+        <Link href='/'>
           <HomeIcon />
         </Link>
       </Button>
       <Button asChild variant='ghost' size='icon'>
-        <Link to='/blog'>
+        <Link href='/blog'>
           <ReaderIcon />
         </Link>
       </Button>

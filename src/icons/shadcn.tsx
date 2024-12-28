@@ -1,8 +1,15 @@
+import { cn } from '@/lib'
 import type { ReactElement } from 'react'
+import type { IconProps } from './model'
 
-export function ShadcnUi(): ReactElement {
+export function ShadcnUi({ className, viewBox, xmlns, ...props }: IconProps): ReactElement {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' className='size-5'>
+    <svg
+      {...props}
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 256 256'
+      className={cn('size-5', className)}
+    >
       <title>Built With shadcn-ui</title>
       <rect width='256' height='256' fill='none' />
       <line

@@ -1,6 +1,8 @@
+'use client'
+
 import { type Dir, DirProviderContext, useLocalStorage } from '@/hooks'
 import type { StorageProviderProps } from '@/lib'
-import { useEffect } from 'react'
+import { type ReactElement, useEffect } from 'react'
 
 export type DirProviderProps = StorageProviderProps<{
   defaultDir?: Dir
@@ -10,7 +12,7 @@ export function DirProvider({
   children,
   defaultDir = 'ltr',
   storageKey = 'kiyuen-ui-dir',
-}: DirProviderProps) {
+}: DirProviderProps): ReactElement {
   const { item: dir, set } = useLocalStorage({ key: storageKey, fallback: defaultDir })
 
   const toggle = (): void => {

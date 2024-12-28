@@ -1,6 +1,8 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, ShadcnUi } from '@/components'
-import { BriefcaseIcon, GraduationCapIcon } from '@/components/icon'
+'use client'
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components'
 import { useCarousel } from '@/hooks'
+import { BriefcaseIcon, GraduationCapIcon, ShadcnUi } from '@/icons'
 import { RESUME_CARDS, RESUME_SIZE, cn } from '@/lib'
 import type { ReactElement, ReactNode } from 'react'
 import meta from '~meta'
@@ -13,19 +15,21 @@ export function ResumeCard(): ReactElement {
   const { current, next, prev } = useCarousel()
 
   return (
-    <div className='relative size-full'>
-      <Card
-        key={current}
-        className='absolute inset-0 size-full animate-fade-in select-none rtl:animate-fade-in-rtl'
-      >
-        <Header currentIndex={current} />
-        <Content currentIndex={current} />
-        <div className='absolute right-2 bottom-2 z-[2]'>
-          <Progress currentIndex={current} />
-        </div>
-      </Card>
-      <Navigate pos='left' onNavigate={prev} />
-      <Navigate pos='right' onNavigate={next} />
+    <div className='h-full w-56 space-y-4'>
+      <div className='relative size-full'>
+        <Card
+          key={current}
+          className='absolute inset-0 size-full animate-fade-in select-none rtl:animate-fade-in-rtl'
+        >
+          <Header currentIndex={current} />
+          <Content currentIndex={current} />
+          <div className='absolute right-2 bottom-2 z-[2]'>
+            <Progress currentIndex={current} />
+          </div>
+        </Card>
+        <Navigate pos='left' onNavigate={prev} />
+        <Navigate pos='right' onNavigate={next} />
+      </div>
     </div>
   )
 }
