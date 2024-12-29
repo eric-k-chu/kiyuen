@@ -4,10 +4,7 @@ import meta from '~meta'
 
 export function Hero(): ReactElement {
   return (
-    <div
-      className='fixed left-0 flex h-dvh w-[50dvw] flex-col items-center justify-center gap-2 uppercase'
-      style={{ filter: 'invert(1)', mixBlendMode: 'difference' }}
-    >
+    <div className='grid h-dvh basis-1/2 place-content-center place-items-center gap-2 bg-yin text-yang uppercase'>
       <h1 className='text-2xl tracking-widest sm:text-4xl'>朱麒源</h1>
       <h1 className='text-lg tracking-widest sm:text-2xl'>Eric Chu</h1>
       <div className='flex space-x-8'>

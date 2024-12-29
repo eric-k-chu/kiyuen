@@ -1,18 +1,18 @@
-import { SnapSection } from '@/components'
+import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import Education from './education'
-import Experience from './experience'
-import { NavSection } from './nav'
+import { Hero } from '../hero'
+import { SnapSections } from './sections'
+
+export const metadata: Metadata = {
+  title: 'kiyuen',
+  description: 'Eric Chu Portfolio',
+}
 
 export default function Home(): ReactNode {
   return (
-    <>
-      <NavSection />
-      <SnapSection id='snap-1'>
-        <h1 className='text-center font-semibold'>Full Stack Software Developer</h1>
-      </SnapSection>
-      <Experience />
-      <Education />
-    </>
+    <main className='flex items-center justify-center'>
+      <Hero />
+      <SnapSections />
+    </main>
   )
 }

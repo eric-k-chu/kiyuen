@@ -1,18 +1,21 @@
 import type { ReactElement } from 'react'
-import meta from '~meta'
+import { SECTIONS } from './util'
 
-const sections = [
-  'Home',
-  ...meta.experience.map((e) => e.title),
-  ...meta.education.map((e) => e.cert),
-]
+type Props = {
+  current: string
+}
 
-export function NavSection(): ReactElement {
+export function NavSection({ current }: Props): ReactElement {
   return (
     <nav className='absolute right-4 z-10 grid h-full place-content-center gap-4'>
-      {sections.map((section, index) => (
-        <a href={`#snap-${index + 1}`} key={section} className='size-2 rounded-full bg-[#1e1e1e]'>
-          <span className='sr-only'>{section}</span>
+      {SECTIONS.map(({ id }) => (
+        <a
+          href={`#${id}`}
+          key={id}
+          data-status={current === id ? 'active' : 'inactive'}
+          className='size-2 rounded-full bg-yin/50 transition-all data-[status=active]:bg-yin'
+        >
+          <span className='sr-only'>{id}</span>
         </a>
       ))}
     </nav>
