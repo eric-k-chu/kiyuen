@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Home(): ReactNode {
   return (
     <main className='flex items-center justify-center'>
-      <Hero />
+      <Hero className='hidden sm:grid' />
       <SnapSections />
     </main>
   )

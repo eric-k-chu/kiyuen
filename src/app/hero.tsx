@@ -1,23 +1,33 @@
 import { Yin } from '@/components'
-import { GitHubLogoIcon, LinkedInLogoIcon } from '@radix-ui/react-icons'
+import { GithubIcon, LinkedInIcon } from '@/icons'
+import { cn } from '@/lib'
 import type { ReactElement } from 'react'
 import meta from '~meta'
 
-export function Hero(): ReactElement {
+type Props = {
+  className?: string
+}
+
+export function Hero({ className }: Props): ReactElement {
   return (
-    <Yin className='gap-2 uppercase' variant='center'>
+    <Yin className={cn('gap-2 uppercase', className)} variant='center'>
       <h1 className='text-2xl tracking-widest sm:text-4xl'>{meta.hanzi}</h1>
       <h1 className='text-lg tracking-widest sm:text-2xl'>{meta.name}</h1>
       <div className='flex space-x-8'>
-        <a href={meta.github} target='_blank' rel='noopener noreferrer'>
-          <GitHubLogoIcon className='size-4' />
-          <div className='sr-only'>Github</div>
-        </a>
-        <a href={meta.linkedin} target='_blank' rel='noopener noreferrer'>
-          <LinkedInLogoIcon className='size-4' />
-          <div className='sr-only'>LinkedIn</div>
-        </a>
+        <GithubIcon className='size-6' />
+        <LinkedInIcon className='size-6' />
       </div>
     </Yin>
+  )
+}
+
+export function MobileHero(): ReactElement {
+  return (
+    <div className='fixed top-4 left-4 flex w-fit items-center gap-4 rounded-sm bg-yin p-2 text-yang sm:hidden'>
+      <h1 className='tracking-widest'>{meta.hanzi}</h1>
+      <h1 className='text-xs tracking-widest'>{meta.name}</h1>
+      <GithubIcon className='size-4' />
+      <LinkedInIcon className='size-4' />
+    </div>
   )
 }
