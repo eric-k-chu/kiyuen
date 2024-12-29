@@ -1,10 +1,13 @@
 {
+  "name": "Eric Chu",
+  "hanzi": "朱麒源",
   "github": "https://github.com/eric-k-chu",
   "linkedin": "https://www.linkedin.com/in/eric-k-chu/",
+  "title": "Full Stack Developer",
   "experience": [
     {
       "company": "Terros",
-      "title": "Software Eng",
+      "title": "Software Engineer",
       "start": "2024-04-08",
       "stack": ["SST", "TypeScript", "AWS", "Elasticsearch", "React Native"]
     },
