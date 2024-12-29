@@ -13,10 +13,12 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .scroller {
     height: 100dvh;
     overflow-y: scroll;
@@ -28,10 +30,5 @@
     scroll-snap-align: center;
     scroll-snap-stop: always;
     height: 100dvh;
-  }
-
-  .inverted {
-    filter: invert(1);
-    mix-blend-mode: difference;
   }
 }

@@ -39,7 +39,7 @@ function SectionDisplay(s: Section): ReactElement {
       </h4>
       <div className='mb-2 text-sm'>{s.subtitle}</div>
       <div className='text-sm text-yin/50'>{s.date}</div>
-      <ul className='list-disc text-sm'>
+      <ul className='!mt-2 list-disc text-sm'>
         {s.items.map((item) => (
           <li key={item.link ?? item.name}>
             {item.link ? (
