@@ -1,16 +1,18 @@
-import { Menubar, Profile } from '@/components'
-import { CarouselProvider } from '@/providers'
-import type { ReactElement } from 'react'
-import { ResumeCard } from './card'
+import { SnapSection } from '@/components'
+import type { ReactNode } from 'react'
+import Education from './education'
+import Experience from './experience'
+import { NavSection } from './nav'
 
-export default function Home(): ReactElement {
+export default function Home(): ReactNode {
   return (
-    <CarouselProvider>
-      <section className='flex h-[26rem] justify-center gap-x-3'>
-        <Profile />
-        <ResumeCard />
-        <Menubar />
-      </section>
-    </CarouselProvider>
+    <>
+      <NavSection />
+      <SnapSection id='snap-1'>
+        <h1 className='text-center font-semibold'>Full Stack Software Developer</h1>
+      </SnapSection>
+      <Experience />
+      <Education />
+    </>
   )
 }

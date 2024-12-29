@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import type { PropsWithChildren, ReactElement } from 'react'
 import './globals.css'
+import { Hero } from './hero'
 
 const jetbrainsMono = JetBrains_Mono({
-  variable: '--font-jetbrains-mono',
   subsets: ['latin'],
 })
 
@@ -19,10 +19,13 @@ export default function RootLayout({ children }: PropsWithChildren): ReactElemen
     <html lang='en'>
       <body
         className={cn(
-          `${jetbrainsMono.variable} flex min-h-screen flex-col items-center justify-center p-4 antialiased`
+          `${jetbrainsMono.className} bg-gradient-to-r from-50% from-[#1e1e1e] to-50% to-[#eeeeee]`
         )}
       >
-        {children}
+        <main>
+          <Hero />
+          {children}
+        </main>
       </body>
     </html>
   )

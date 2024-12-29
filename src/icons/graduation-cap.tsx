@@ -15,6 +15,8 @@ export function GraduationCapIcon({
       strokeLinecap='round'
       strokeLinejoin='round'
       strokeWidth='1.5'
+      stroke='black'
+      fill='transparent'
       className={cn('size-6', className)}
       {...props}
     >

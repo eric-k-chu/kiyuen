@@ -60,21 +60,15 @@
   }
 }
 
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    background: linear-gradient(to bottom right, #1e1e1e 50%, #eeeeee 50%);
-    background-size: 100% 100%;
-  }
+main {
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
-
-
-/* pre > div {
-  background-color: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-} */
+main > section {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  height: 100dvh;
+}
