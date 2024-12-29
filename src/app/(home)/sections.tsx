@@ -1,68 +1,28 @@
 'use client'
 
-import { BriefcaseIcon, GraduationCapIcon } from '@/icons'
-import { type ReactElement, type ReactNode, useState } from 'react'
-import { useInView } from 'react-intersection-observer'
+import { Yang } from '@/components'
+import type { ReactElement } from 'react'
 import { NavSection } from './nav'
 import { SnapSection } from './snap-section'
-import { SECTIONS, type Section } from './util'
+import { useSnapView } from './use-snap-view'
+import { SECTIONS } from './util'
 
-export function SnapSections(): ReactNode {
-  const { ref } = useInView({ threshold: 0.2 })
-  const [current, setCurrent] = useState(SECTIONS[0].id)
-
-  const setInView = (inView: boolean, entry: IntersectionObserverEntry): void => {
-    const section = entry.target.getAttribute('id')
-    if (inView && section) {
-      setCurrent(section)
-    }
-  }
+export function SnapSections(): ReactElement {
+  const { ref, id, handler } = useSnapView({ threshold: 0.2, initialId: SECTIONS[0].id })
 
   return (
-    <div ref={ref} className='scroller no-scrollbar basis-1/2 bg-yang text-yin'>
-      <NavSection current={current} />
+    <Yang ref={ref} className='scroller no-scrollbar'>
+      <NavSection current={id} />
       {SECTIONS.map((section) => (
         <SnapSection
           key={section.id}
           id={section.id}
-          onViewEnter={setInView}
+          onViewEnter={handler}
           data-kind={section.type}
           className='data-[kind=content]:prose grid place-content-center'
-        >
-          <SectionDisplay {...section} />
-        </SnapSection>
+          section={section}
+        />
       ))}
-    </div>
-  )
-}
-
-function SectionDisplay(s: Section): ReactElement {
-  if (s.type === 'cover') {
-    return <h1 className='text-center font-semibold'>{s.title}</h1>
-  }
-
-  const Icon = s.kind === 'experience' ? BriefcaseIcon : GraduationCapIcon
-  return (
-    <>
-      <h4 className='flex items-center gap-2'>
-        <Icon className='inline-block size-4' />
-        {s.title}
-      </h4>
-      <div className='mb-2 text-sm'>{s.subtitle}</div>
-      <div className='text-sm text-yin/50'>{s.date}</div>
-      <ul className='list-disc text-sm'>
-        {s.items.map((item) => (
-          <li key={item.link ?? item.name}>
-            {item.link ? (
-              <a href={item.link} target='_blank' rel='noreferrer'>
-                {item.name}
-              </a>
-            ) : (
-              item.name
-            )}
-          </li>
-        ))}
-      </ul>
-    </>
+    </Yang>
   )
 }

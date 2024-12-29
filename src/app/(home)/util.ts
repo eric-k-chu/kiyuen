@@ -20,28 +20,28 @@ export type Section =
       }[]
     }
 
+const experienceToSection = (e: (typeof meta.experience)[number]): Section => ({
+  type: 'content',
+  kind: 'experience',
+  id: e.title,
+  title: e.title,
+  subtitle: e.company,
+  date: formatDateRange(e.start, e.end),
+  items: e.stack.map((name) => ({ name })),
+})
+
+const educationToSection = (e: (typeof meta.education)[number]): Section => ({
+  type: 'content',
+  kind: 'education',
+  id: e.cert,
+  title: e.cert,
+  subtitle: e.school,
+  date: formatDateRange(e.start, e.end),
+  items: e.projects,
+})
+
 export const SECTIONS: Section[] = [
-  {
-    type: 'cover',
-    id: 'home',
-    title: 'Full Stack Developer',
-  },
-  ...meta.experience.map<Section>((e) => ({
-    type: 'content',
-    kind: 'experience',
-    id: e.title,
-    title: e.title,
-    subtitle: e.company,
-    date: formatDateRange(e.start, e.end),
-    items: e.stack.map((name) => ({ name })),
-  })),
-  ...meta.education.map<Section>((e) => ({
-    type: 'content',
-    kind: 'education',
-    id: e.cert,
-    title: e.cert,
-    subtitle: e.school,
-    date: formatDateRange(e.start, e.end),
-    items: e.projects,
-  })),
+  { type: 'cover', id: 'home', title: meta.title },
+  ...meta.experience.map(experienceToSection),
+  ...meta.education.map(educationToSection),
 ]
