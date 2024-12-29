@@ -9,8 +9,30 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'kiyuen',
-  description: 'Eric Chu Portfolio',
+  metadataBase: new URL('https://kiyuen.dev'),
+  openGraph: {
+    siteName: 'kiyuen | Software Engineer',
+    type: 'website',
+    locale: 'en_US',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+    'max-video-preview': -1,
+    googleBot: 'index, follow',
+  },
+  applicationName: 'kiyuen | Software Engineer',
+  appleWebApp: {
+    title: 'kiyuen | Software Engineer',
+    statusBarStyle: 'black-translucent',
+    capable: true,
+  },
+  icons: {
+    icon: [{ url: '/favicon.ico', type: 'image/x-icon' }],
+    shortcut: [{ url: '/favicon.ico', type: 'image/x-icon' }],
+  },
 }
 
 export default function RootLayout({ children }: PropsWithChildren): ReactElement {

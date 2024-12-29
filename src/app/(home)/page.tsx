@@ -5,7 +5,29 @@ import { SnapSections } from './sections'
 
 export const metadata: Metadata = {
   title: 'kiyuen',
-  description: 'Eric Chu Portfolio',
+  description: 'Learn about my career as a software engineer.',
+  keywords: [
+    'software engineer',
+    'full stack developer',
+    'programming',
+    'coding',
+    'portfolio',
+    'coding',
+  ],
+  openGraph: {
+    url: 'https://kiyuen.dev',
+    type: 'website',
+    title: 'kiyuen',
+    description: 'Learn about my career as a software engineer.',
+    images: [
+      {
+        url: 'https://kiyuen.dev/images/thumb/home.png',
+        width: 1920,
+        height: 900,
+        alt: 'kiyuen - home',
+      },
+    ],
+  },
 }
 
 export default function Home(): ReactNode {
