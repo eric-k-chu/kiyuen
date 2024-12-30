@@ -1,38 +1,23 @@
-import { Jimp, intToRGBA } from 'jimp' // Ensure you install Jimp: `npm install jimp`
+import { existsSync } from 'node:fs'
 import { writeFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+import { ascii, requireParam } from './ascii.util'
 
-const ASCII_CHARS = 'chu. '
+const path = process.argv[2]
+const width = Number(process.argv[3])
+const factor = process.argv[4] ? Number(process.argv[4]) : 0.55
 
-async function imageToAscii(path: string, width: number): Promise<string | undefined> {
-  try {
-    const image = await Jimp.read(path)
+requireParam(path, 'Invalid path', (path) => existsSync(path))
+requireParam(width, 'Invalid width', (width) => width > 0)
+requireParam(factor, 'Invalid factor', (factor) => factor >= 0.4 && factor <= 0.6)
 
-    const aspectRatio = image.bitmap.height / image.bitmap.width
-    const newHeight = Math.floor(width * aspectRatio * 0.55)
+console.log('Path:', path)
+console.log('Width:', width)
+console.log('Factor:', factor)
+console.log('Generating ASCII art...')
 
-    image.resize({ w: width, h: newHeight })
-    image.greyscale()
+const asciiArt = await ascii(resolve(path), width, factor, 'chu. ')
 
-    let asciiArt = ''
-    for (let y = 0; y < image.bitmap.height; y++) {
-      for (let x = 0; x < image.bitmap.width; x++) {
-        const pixel = intToRGBA(image.getPixelColor(x, y)).r
+requireParam(asciiArt, 'Error generating ASCII art')
 
-        const charIndex = Math.floor((pixel / 255) * (ASCII_CHARS.length - 1))
-        asciiArt += ASCII_CHARS[charIndex]
-      }
-      asciiArt += '\n'
-    }
-
-    return asciiArt
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-const imagePath = './scripts/sample.png'
-const width = 100
-const asciiArt = await imageToAscii(imagePath, width)
-if (asciiArt) {
-  await writeFile('./scripts/ascii.txt', asciiArt)
-}
+await writeFile('./ascii.txt', asciiArt)
