@@ -1,47 +1,81 @@
-import { formatDateRange } from '@/lib'
-import meta from '~meta'
-
-export type Section =
-  | {
-      type: 'cover'
-      id: string
-      title: string
-    }
-  | {
-      type: 'content'
-      kind: 'experience' | 'education'
-      id: string
-      title: string
-      subtitle: string
-      date: string
-      items: {
-        name: string
-        link?: string
-      }[]
-    }
-
-const experienceToSection = (e: (typeof meta.experience)[number]): Section => ({
-  type: 'content',
-  kind: 'experience',
-  id: e.title,
-  title: e.title,
-  subtitle: e.company,
-  date: formatDateRange(e.start, e.end),
-  items: e.stack.map((name) => ({ name })),
-})
-
-const educationToSection = (e: (typeof meta.education)[number]): Section => ({
-  type: 'content',
-  kind: 'education',
-  id: e.cert,
-  title: e.cert,
-  subtitle: e.school,
-  date: formatDateRange(e.start, e.end),
-  items: e.projects,
-})
-
-export const SECTIONS: Section[] = [
-  { type: 'cover', id: 'home', title: meta.title },
-  ...meta.experience.map(experienceToSection),
-  ...meta.education.map(educationToSection),
-]
+export const asciiLg = `
+                                                                                                     
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                           ccccchu                                                  
+                                           ucccccccu                                                
+                                            cccccccu                                                
+                                            hcccccc                                                 
+                                            ucccccu                                                 
+                                             ccccc                                                  
+                                             ccccc                                                  
+                             ccchu           ccccc                                                  
+                             hccccccu        ccccc                                                  
+                             uccccch         cccch    uuhhccchu                                     
+                             ccccch          ccccccccccccccccch                                     
+                            ucccch      uuhhccccccccccccccchu                                       
+                            cccccuhhccccccccccccccccchhuu                                           
+                           ccccchcccccccccccccccch                                                  
+                          cccc               ccccu                                                  
+                         hccu                ccccu                                                  
+                        cch                  ccccu             uuhhhhhu                             
+                       ch                    ccccu    uuhhcccccccccccccccu                          
+                      u                     uccccccccccccccccccccccccccccc                          
+                                    uuhhcccccccccccccccccccchhhhuuuu                                
+                         uuuhhhccccccccccccccccccuu                                                 
+                uhhcccccccccccccccccchhhccccccccc                                                   
+                 hcccccccccccchhuu     ccccchcccch                                                  
+                    uhhhhuu          uccccch cccccchu                                               
+                                    ucccccu  cccc ucccu                                             
+                                   hccccc    cccc   hccch                                           
+                                  ccccch     cccc    ucccchu                                        
+                                ucccccu      cccc      ucccccu                                      
+                               cccccc        cccc        hccccch                                    
+                             hccccch         cccc         ucccccchu                                 
+                           uccccch           cccc           hccccccch                               
+                          hcccccu            cccc             hcccccccch                            
+                        hcccchu             ucccc              ucccccccccchu                        
+                      ucccch                ucccc                uccccccccccccchu                   
+                    ucccch                  ucccc                  hcccccccccccccccchhuu            
+                  uccccu                    hcccc                    hccccccccccccccchhu            
+                uccchu                      ccccc                       uuhhhuuuu                   
+              ucchu                        uccccc                                                   
+            uhu                            hccccc                                                   
+                                           ccccch                                                   
+                                           ccccch                                                   
+                                           hccccu                                                   
+                                            cccc                                                    
+                                            ucch                                                    
+                                             uh                                                     
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+`
+export const asciiSm = `
+                     ucccu                        
+                      cccu                        
+                      hcc                         
+              uhu     hcc                         
+              uccc    ucc  uuhu                   
+              hcc   uuccccccchu                   
+             ucchccccccccu                        
+            ucu       uch                         
+           uu         uch uuuhhcccccu             
+                 uuhhccccccchhhhuuuu              
+        uhhccccccchhcccch                         
+         uuhuu     cchhcchu                       
+                 uccu hcu hcu                     
+                hccu  hcu  ucch                   
+              ucch    hcu    ucccu                
+            ucch      hcu      hccchu             
+           hch        hcu       ucccccchhu        
+         hcu          ccu         uhcccchhuu      
+       hh             ccu                         
+                     uccu                         
+                     ucc                          
+                      hh                          
+`

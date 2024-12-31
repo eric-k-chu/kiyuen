@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { Hero } from '../hero'
-import { SnapSections } from './sections'
+import { Left } from './left'
+import { Right } from './right'
+import { asciiSm } from './util'
 
 export const metadata: Metadata = {
   title: 'kiyuen',
@@ -32,9 +33,31 @@ export const metadata: Metadata = {
 
 export default function Home(): ReactNode {
   return (
-    <main className='flex items-center justify-center'>
-      <Hero className='hidden sm:grid' />
-      <SnapSections />
+    <main className='flex h-dvh w-dvw flex-col items-center gap-4 p-4 sm:flex-row'>
+      <Left>
+        <pre>{'>'} neofetch</pre>
+        <pre className='grid grid-cols-2'>
+          <pre className='text-sapphire'>{asciiSm}</pre>
+          <pre className='space-y-2'>
+            <pre>
+              <span className='text-sapphire'>Framework:</span> Next.js
+            </pre>
+            <pre>
+              <span className='text-sapphire'>Host:</span> kiyuen
+            </pre>
+            <pre>
+              <span className='text-sapphire'>Shell:</span> bash 5.1.8
+            </pre>
+            <pre>
+              <span className='text-sapphire'>Terminal:</span> Ghostty
+            </pre>
+          </pre>
+        </pre>
+      </Left>
+      <div className='grid size-full basis-full grid-rows-2 gap-4 sm:basis-1/2'>
+        <Right />
+        <Right />
+      </div>
     </main>
   )
 }

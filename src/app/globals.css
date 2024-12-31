@@ -6,6 +6,19 @@
   :root {
     --yin: 0 0 12%;
     --yang: 0 0 93%;
+    --flamingo: 0 59% 88%;
+    --sapphire: 199 76% 69%;
+  }
+
+  body {
+    background: url("/images/bg.png");
+    background-size: cover;
+    background-position: center;
+    letter-spacing: 0.1em;
+  }
+
+  main section {
+    @apply border-2 border-flamingo/50 hover:border-flamingo bg-black/60;
   }
 }
 

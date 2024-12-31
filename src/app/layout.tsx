@@ -6,6 +6,7 @@ import './globals.css'
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
 })
 
 export const metadata: Metadata = {
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren): ReactElement {
   return (
     <html lang='en'>
-      <body className={cn(jetbrainsMono.className)}>{children}</body>
+      <body className={cn(jetbrainsMono.variable, 'bg-yin text-yang')}>{children}</body>
     </html>
   )
 }
