@@ -16,7 +16,7 @@ console.log('Width:', width)
 console.log('Factor:', factor)
 console.log('Generating ASCII art...')
 
-const asciiArt = await ascii(resolve(path), width, factor, 'chu. ')
+const asciiArt = await ascii(resolve(path), width, factor, 'zhuqianyin  ')
 
 requireParam(asciiArt, 'Error generating ASCII art')
 

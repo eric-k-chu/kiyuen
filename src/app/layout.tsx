@@ -2,7 +2,11 @@ import { cn } from '@/lib'
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import type { PropsWithChildren, ReactElement } from 'react'
+import { Footer } from './footer'
 import './globals.css'
+import { Nav } from './nav'
+import { Section } from './section'
+import { Socials } from './socials'
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -39,7 +43,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren): ReactElement {
   return (
     <html lang='en'>
-      <body className={cn(jetbrainsMono.variable, 'bg-yin text-yang')}>{children}</body>
+      <body className={cn(jetbrainsMono.variable, jetbrainsMono.className, 'bg-yin text-yang')}>
+        <Nav />
+        <Section />
+        {children}
+        <Socials />
+        <Footer />
+      </body>
     </html>
   )
 }

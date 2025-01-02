@@ -1,8 +1,7 @@
+import { CornerBottomRightIcon, CornerTopLeftIcon } from '@radix-ui/react-icons'
 import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
-import { Left } from './left'
-import { Right } from './right'
-import { asciiSm } from './util'
+import type { ReactElement } from 'react'
+import meta from '~meta'
 
 export const metadata: Metadata = {
   title: 'kiyuen',
@@ -31,33 +30,20 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Home(): ReactNode {
+export default function Home(): ReactElement {
   return (
-    <main className='flex h-dvh w-dvw flex-col items-center gap-4 p-4 sm:flex-row'>
-      <Left>
-        <pre>{'>'} neofetch</pre>
-        <pre className='grid grid-cols-2'>
-          <pre className='text-sapphire'>{asciiSm}</pre>
-          <pre className='space-y-2'>
-            <pre>
-              <span className='text-sapphire'>Framework:</span> Next.js
-            </pre>
-            <pre>
-              <span className='text-sapphire'>Host:</span> kiyuen
-            </pre>
-            <pre>
-              <span className='text-sapphire'>Shell:</span> bash 5.1.8
-            </pre>
-            <pre>
-              <span className='text-sapphire'>Terminal:</span> Ghostty
-            </pre>
-          </pre>
-        </pre>
-      </Left>
-      <div className='grid size-full basis-full grid-rows-2 gap-4 sm:basis-1/2'>
-        <Right />
-        <Right />
+    <main className='mx-auto flex h-dvh items-center justify-center gap-4'>
+      <h1 className='basis-1/2 text-end text-lg text-yang/50 uppercase tracking-widest sm:text-2xl'>
+        Eric Chu
+      </h1>
+      <div className='relative p-4 [text-orientation:upright] [writing-mode:vertical-lr]'>
+        <CornerTopLeftIcon className='absolute top-0 left-0 size-4 sm:size-6' />
+        <h1 className='select-none text-3xl sm:text-6xl'>{meta.hanzi}</h1>
+        <CornerBottomRightIcon className='absolute right-0 bottom-0 size-4 sm:size-6' />
       </div>
+      <h1 className='basis-1/2 text-lg text-yang/50 uppercase tracking-widest sm:text-2xl'>
+        Developer
+      </h1>
     </main>
   )
 }
