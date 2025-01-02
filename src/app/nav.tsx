@@ -7,9 +7,6 @@ export function Nav(): ReactElement {
       <Link href='/' className='text-yang/50 transition-colors hover:text-yang'>
         home
       </Link>
-      <Link href='/blog' className='text-yang/50 transition-colors hover:text-yang'>
-        blog
-      </Link>
     </div>
   )
 }

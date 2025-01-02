@@ -2,6 +2,7 @@ import { cn } from '@/lib'
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import type { PropsWithChildren, ReactElement } from 'react'
+import { Footer } from './footer'
 import './globals.css'
 import { Nav } from './nav'
 import { Socials } from './socials'
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: PropsWithChildren): ReactElemen
         <Nav />
         <Socials />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
