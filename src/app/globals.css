@@ -6,6 +6,9 @@
   :root {
     --yin: 0 0 12%;
     --yang: 0 0 93%;
+    --flamingo: 0 59% 88%;
+    --sapphire: 199 76% 69%;
+    --base: 240deg 21% 15%;
   }
 }
 
@@ -21,12 +24,14 @@
 
   .scroller {
     height: 100dvh;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
   }
 
-  .scroller > section {
+  .scroller-section {
     scroll-snap-align: center;
     scroll-snap-stop: always;
     height: 100dvh;

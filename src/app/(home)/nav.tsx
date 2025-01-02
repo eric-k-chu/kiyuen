@@ -1,23 +1,23 @@
+'use client'
+
+import { useSnap } from '@/hooks'
+import { SNAPS } from '@/lib'
 import type { ReactElement } from 'react'
-import { SECTIONS } from './util'
 
-type Props = {
-  current: string
-}
-
-export function NavSection({ current }: Props): ReactElement {
+export function SnapNav(): ReactElement {
+  const { current } = useSnap()
   return (
-    <nav className='absolute right-4 z-10 grid h-full place-content-center gap-4'>
-      {SECTIONS.map(({ id }) => (
+    <section className='fixed top-0 left-2 flex h-dvh flex-col justify-center gap-2 p-4'>
+      {SNAPS.map((s) => (
         <a
-          href={`#${id}`}
-          key={id}
-          data-status={current === id ? 'active' : 'inactive'}
-          className='size-2 rounded-full bg-yin/50 transition-all data-[status=active]:bg-yin'
+          data-state={current === s.id ? 'active' : 'inactive'}
+          className='h-4 w-0.5 bg-yang/50 transition-all data-[state=active]:h-8 data-[state=active]:bg-yang'
+          href={`#${s.id}`}
+          key={s.id}
         >
-          <span className='sr-only'>{id}</span>
+          <span className='sr-only'>{s.id}</span>
         </a>
       ))}
-    </nav>
+    </section>
   )
 }

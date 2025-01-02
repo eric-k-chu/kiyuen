@@ -8,6 +8,11 @@ const config: Config = {
       colors: {
         yin: 'hsl(var(--yin))',
         yang: 'hsl(var(--yang))',
+        flamingo: 'hsl(var(--flamingo))',
+        sapphire: 'hsl(var(--sapphire))',
+      },
+      fontFamily: {
+        mono: ['var(--font-jetbrains-mono)'],
       },
       typography: {
         DEFAULT: {

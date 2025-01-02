@@ -1,7 +1,9 @@
+import { SNAPS } from '@/lib'
+import { SnapProvider } from '@/providers'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { Hero } from '../hero'
-import { SnapSections } from './sections'
+import { SnapElements } from './elements'
+import { SnapNav } from './nav'
 
 export const metadata: Metadata = {
   title: 'kiyuen',
@@ -32,9 +34,9 @@ export const metadata: Metadata = {
 
 export default function Home(): ReactNode {
   return (
-    <main className='flex items-center justify-center'>
-      <Hero className='hidden sm:grid' />
-      <SnapSections />
-    </main>
+    <SnapProvider snaps={SNAPS}>
+      <SnapElements />
+      <SnapNav />
+    </SnapProvider>
   )
 }
