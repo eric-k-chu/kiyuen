@@ -2,16 +2,18 @@
 
 import { createContext, useContext } from 'react'
 
+export type SnapHandler = (inView: boolean, entry: IntersectionObserverEntry) => void
+
 type SnapContext = {
   ref: (node?: Element | null) => void
-  id: string
-  handler: (inView: boolean, entry: IntersectionObserverEntry) => void
+  current: string
+  handler: SnapHandler
 }
 
 export const SnapContext = createContext<SnapContext>({
-  ref: (node?: Element | null): void => undefined,
-  id: '',
-  handler: (inView: boolean, entry: IntersectionObserverEntry): void => undefined,
+  ref: (): void => undefined,
+  current: '',
+  handler: (): void => undefined,
 })
 
 export function useSnap(): SnapContext {

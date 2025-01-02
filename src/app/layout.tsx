@@ -2,10 +2,8 @@ import { cn } from '@/lib'
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import type { PropsWithChildren, ReactElement } from 'react'
-import { Content } from './content'
 import './globals.css'
 import { Nav } from './nav'
-import { Section } from './section'
 import { Socials } from './socials'
 
 const jetbrainsMono = JetBrains_Mono({
@@ -45,12 +43,8 @@ export default function RootLayout({ children }: PropsWithChildren): ReactElemen
     <html lang='en'>
       <body className={cn(jetbrainsMono.variable, jetbrainsMono.className, 'bg-yin text-yang')}>
         <Nav />
-        <Section />
-        <main className='scroller'>
-          {children}
-          <Content />
-        </main>
         <Socials />
+        <main>{children}</main>
       </body>
     </html>
   )

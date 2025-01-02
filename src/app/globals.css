@@ -28,19 +28,12 @@
     padding-bottom: 10rem;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
-  }
-
-  .scroller-section-start {
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-    height: 100dvh;
+    scroll-behavior: smooth;
   }
 
   .scroller-section {
     scroll-snap-align: center;
     scroll-snap-stop: always;
     height: 100dvh;
-    display: flex;
-    align-items: center;
   }
 }
