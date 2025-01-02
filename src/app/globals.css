@@ -24,14 +24,23 @@
 
   .scroller {
     height: 100dvh;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
   }
 
-  .scroller > section {
+  .scroller-section-start {
     scroll-snap-align: center;
     scroll-snap-stop: always;
     height: 100dvh;
+  }
+
+  .scroller-section {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
   }
 }

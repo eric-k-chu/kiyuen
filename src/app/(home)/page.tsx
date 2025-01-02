@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function Home(): ReactElement {
   return (
-    <main className='mx-auto flex h-dvh items-center justify-center gap-4'>
+    <section className='scroller-section gap-4'>
       <h1 className='basis-1/2 text-end text-lg text-yang/50 uppercase tracking-widest sm:text-2xl'>
         Eric Chu
       </h1>
@@ -44,6 +44,6 @@ export default function Home(): ReactElement {
       <h1 className='basis-1/2 text-lg text-yang/50 uppercase tracking-widest sm:text-2xl'>
         Developer
       </h1>
-    </main>
+    </section>
   )
 }

@@ -2,7 +2,7 @@ import { cn } from '@/lib'
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import type { PropsWithChildren, ReactElement } from 'react'
-import { Footer } from './footer'
+import { Content } from './content'
 import './globals.css'
 import { Nav } from './nav'
 import { Section } from './section'
@@ -46,9 +46,11 @@ export default function RootLayout({ children }: PropsWithChildren): ReactElemen
       <body className={cn(jetbrainsMono.variable, jetbrainsMono.className, 'bg-yin text-yang')}>
         <Nav />
         <Section />
-        {children}
+        <main className='scroller'>
+          {children}
+          <Content />
+        </main>
         <Socials />
-        <Footer />
       </body>
     </html>
   )
