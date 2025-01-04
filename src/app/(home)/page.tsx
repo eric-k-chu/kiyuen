@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     url: 'https://kiyuen.dev',
+    siteName: 'kiyuen',
     type: 'website',
     title: 'kiyuen',
     description: 'Learn about my career as a software engineer.',
