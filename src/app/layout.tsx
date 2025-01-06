@@ -42,7 +42,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren): ReactElement {
   return (
     <html lang='en'>
-      <body className={cn(jetbrainsMono.variable, jetbrainsMono.className, 'bg-yin text-yang')}>
+      <body
+        className={cn(jetbrainsMono.variable, jetbrainsMono.className, 'bg-ctp-base text-ctp-text')}
+      >
         <Nav />
         <Socials />
         <main>{children}</main>

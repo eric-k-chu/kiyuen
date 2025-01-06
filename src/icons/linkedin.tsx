@@ -7,7 +7,7 @@ import type { IconProps } from './model'
 export function LinkedInIcon({ className }: IconProps): ReactElement {
   return (
     <a href={meta.linkedin} target='_blank' rel='noopener noreferrer'>
-      <LinkedInLogoIcon className={cn('size-4 text-yang', className)} />
+      <LinkedInLogoIcon className={cn('size-4 text-ctp-text', className)} />
       <div className='sr-only'>LinkedIn</div>
     </a>
   )

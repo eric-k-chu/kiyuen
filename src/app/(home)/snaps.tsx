@@ -36,13 +36,13 @@ function Home({ handler, id, title, hanzi, name }: Props & SnapHome): ReactEleme
           className='scroller-section flex items-center justify-center gap-4'
           ref={ref}
         >
-          <h1 className='basis-1/2 text-end text-lg text-yang/50 uppercase tracking-widest sm:text-2xl'>
+          <h1 className='basis-1/2 text-end text-ctp-subtext0 text-lg uppercase tracking-widest sm:text-2xl'>
             {name}
           </h1>
           <Corners as='div' className='[text-orientation:upright] [writing-mode:vertical-lr]'>
             <h1 className='select-none text-3xl tracking-[1rem] sm:text-6xl'>{hanzi}</h1>
           </Corners>
-          <h1 className='basis-1/2 text-lg text-yang/50 uppercase tracking-widest sm:text-2xl'>
+          <h1 className='basis-1/2 text-ctp-subtext0 text-lg uppercase tracking-widest sm:text-2xl'>
             {title}
           </h1>
         </section>
@@ -61,12 +61,14 @@ function Experience(p: Props & (typeof meta.experience)[number]): ReactElement {
           id={p.title}
         >
           <div className='space-y-2 px-16'>
-            <h2 className='text-lg uppercase tracking-widest sm:text-2xl'>{p.company}</h2>
-            <h3 className='text-base text-yang/50 uppercase tracking-widest sm:text-lg'>
+            <h2 className='text-ctp-subtext1 text-lg uppercase tracking-widest sm:text-2xl'>
+              {p.company}
+            </h2>
+            <h3 className='text-base text-ctp-subtext0 uppercase tracking-widest sm:text-lg'>
               {formatDateRange(p.start, p.end)}
             </h3>
             <h1 className='text-3xl uppercase tracking-widest sm:text-6xl'>{p.title}</h1>
-            <ul className='flex flex-wrap gap-4 text-xs sm:text-base'>
+            <ul className='flex flex-wrap gap-4 text-ctp-subtext0 text-xs sm:text-base'>
               {p.stack.map((s) => (
                 <li key={s}>{s}</li>
               ))}
@@ -88,12 +90,14 @@ function Education(p: Props & (typeof meta.education)[number]): ReactElement {
           id={p.cert}
         >
           <div className='space-y-2 px-16'>
-            <h2 className='text-lg uppercase tracking-widest sm:text-2xl'>{p.school}</h2>
-            <h3 className='text-base text-yang/50 uppercase tracking-widest sm:text-lg'>
+            <h2 className='text-ctp-subtext1 text-lg uppercase tracking-widest sm:text-2xl'>
+              {p.school}
+            </h2>
+            <h3 className='text-base text-ctp-subtext0 uppercase tracking-widest sm:text-lg'>
               {formatDateRange(p.start, p.end)}
             </h3>
             <h1 className='text-3xl uppercase tracking-widest sm:text-6xl'>{p.cert}</h1>
-            <ul className='flex flex-wrap gap-4 text-xs sm:text-base'>
+            <ul className='flex flex-wrap gap-4 text-ctp-subtext0 text-xs sm:text-base'>
               {p.projects.map((p) => (
                 <li key={p.link}>
                   <a href={p.link} target='_blank' rel='noopener noreferrer' className='underline'>
