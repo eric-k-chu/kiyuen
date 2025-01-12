@@ -1,4 +1,6 @@
 export * from './cn'
 export * from './date'
 export * from './model'
+export * from './parser'
+export * from './parser.model'
 export * from './snaps'
