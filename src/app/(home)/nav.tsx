@@ -10,8 +10,8 @@ export function SnapNav(): ReactElement {
     <section className='fixed top-0 left-2 flex h-dvh flex-col justify-center gap-2 p-2'>
       {SNAPS.map((s) => (
         <a
-          data-state={current === s.id ? 'active' : 'inactive'}
-          className='h-4 w-0.5 bg-ctp-overlay0 transition-all data-[state=active]:h-8 data-[state=active]:bg-ctp-overlay2'
+          data-active={current === s.id}
+          className='h-4 w-0.5 bg-ctp-overlay0 transition-all data-[active=true]:h-8 data-[active=false]:bg-ctp-overlay2'
           href={`#${s.id}`}
           key={s.id}
         >
