@@ -1,4 +1,4 @@
-import { readBlogs } from '@/lib'
+import { readBlogs } from '@/slib'
 import type { ReactElement } from 'react'
 
 export default async function Blogs(): Promise<ReactElement> {
