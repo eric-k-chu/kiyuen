@@ -47,7 +47,7 @@ export default function RootLayout({ children }: PropsWithChildren): ReactElemen
       >
         <Nav />
         <Socials />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
