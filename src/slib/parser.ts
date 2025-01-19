@@ -29,10 +29,18 @@ export async function readBlog(id: string): Promise<Blog> {
   }
 }
 
-export async function readBlogs(): Promise<BlogMetadata[]> {
+export async function readBlogs(): Promise<(BlogMetadata & { content: string; id: string })[]> {
   const filenames = await readdir(BLOGS_DIR)
   const paths = filenames.map((filename) => path.join(BLOGS_DIR, filename))
-  return Promise.all(paths.map(readBlogMetadata))
+  return Promise.all(
+    paths.map((p) => {
+      const meta = readBlogMetadata(p)
+      return {
+        ...meta,
+        id: p,
+      } satisfies BlogMetadata & { content: string; id: string }
+    })
+  )
 }
 
 function readBlogMetadata(path: string): BlogMetadata & { content: string } {
@@ -44,4 +52,8 @@ function readBlogMetadata(path: string): BlogMetadata & { content: string } {
     date: meta.date,
     content: matter.content,
   }
+}
+
+function sortBlogsByDate<T extends { date: Date }>(blogs: T[]): T[] {
+  return blogs.sort((a, b) => b.date.getMilliseconds() - a.date.getMilliseconds())
 }

@@ -8,14 +8,7 @@ import { SnapNav } from './nav'
 export const metadata: Metadata = {
   title: 'kiyuen',
   description: 'Learn about my career as a software engineer.',
-  keywords: [
-    'software engineer',
-    'full stack developer',
-    'programming',
-    'coding',
-    'portfolio',
-    'coding',
-  ],
+  keywords: ['software engineer', 'full stack developer', 'programming', 'coding', 'portfolio'],
   openGraph: {
     url: 'https://kiyuen.dev',
     siteName: 'kiyuen',
