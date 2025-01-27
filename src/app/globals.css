@@ -1,30 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
 
-@layer utilities {
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
+@theme {
+  --color-ctp-rosewater: hsl(10, 56%, 91%);
+  --color-ctp-flamingo: hsl(0, 59%, 88%);
+  --color-ctp-pink: hsl(316, 72%, 86%);
+  --color-ctp-mauve: hsl(267, 84%, 81%);
+  --color-ctp-red: hsl(343, 81%, 75%);
+  --color-ctp-maroon: hsl(350, 65%, 77%);
+  --color-ctp-peach: hsl(23, 92%, 75%);
+  --color-ctp-yellow: hsl(41, 86%, 83%);
+  --color-ctp-green: hsl(115, 54%, 76%);
+  --color-ctp-teal: hsl(170, 57%, 73%);
+  --color-ctp-sky: hsl(189, 71%, 73%);
+  --color-ctp-sapphire: hsl(199, 76%, 69%);
+  --color-ctp-blue: hsl(217, 92%, 76%);
+  --color-ctp-lavender: hsl(232, 97%, 85%);
+  --color-ctp-text: hsl(226, 64%, 88%);
+  --color-ctp-subtext1: hsl(227, 35%, 80%);
+  --color-ctp-subtext0: hsl(228, 24%, 72%);
+  --color-ctp-overlay2: hsl(228, 17%, 64%);
+  --color-ctp-overlay1: hsl(230, 13%, 55%);
+  --color-ctp-overlay0: hsl(231, 11%, 47%);
+  --color-ctp-surface2: hsl(233, 12%, 39%);
+  --color-ctp-surface1: hsl(234, 13%, 31%);
+  --color-ctp-surface0: hsl(237, 16%, 23%);
+  --color-ctp-base: hsl(240, 21%, 15%);
+  --color-ctp-mantle: hsl(240, 21%, 12%);
+  --color-ctp-crust: hsl(240, 23%, 9%);
+}
 
-  .no-scrollbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
-  .scroller {
-    height: 100dvh;
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-  }
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
-  .scroller-section {
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-    height: 100dvh;
-  }
+.scroller {
+  height: 100dvh;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.scroller-section {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  height: 100dvh;
 }
