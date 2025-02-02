@@ -7,18 +7,19 @@ export interface BlogMetadata {
 }
 
 export interface Blog extends BlogMetadata {
-  id: string
+  filename: string
+  /** .md document parsed into HTML */
   html: string
 }
 
-const md = type({
+const blogSchema = type({
   title: 'string',
   description: 'string',
   date: 'Date >= 0',
 })
 
 export function extractBlogMetadata(data: Record<string, unknown>): BlogMetadata {
-  const res = md(data)
+  const res = blogSchema(data)
   if (res instanceof type.errors) throw new Error(res.summary)
   return res
 }
