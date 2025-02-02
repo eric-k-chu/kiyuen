@@ -1,14 +1,14 @@
 import rhShiki from '@shikijs/rehype'
-import { read } from 'gray-matter'
+import matter, { read } from 'gray-matter'
 import { readdir } from 'node:fs/promises'
-import path from 'node:path'
+import np from 'node:path'
 import rhStringify from 'rehype-stringify'
 import rmkParse from 'remark-parse'
 import rmkRehype from 'remark-rehype'
 import { unified } from 'unified'
-import { type Blog, type BlogMetadata, extractBlogMetadata } from './parser.model'
+import { type Blog, extractBlogMetadata } from './parser.model'
 
-const BLOGS_DIR = path.join(process.cwd(), 'blogs')
+const BLOGS_DIR = np.join(process.cwd(), 'blogs')
 
 const parser = unified()
   .use(rmkParse)
@@ -16,44 +16,24 @@ const parser = unified()
   .use(rhShiki, { theme: 'catppuccin-mocha' })
   .use(rhStringify)
 
-export async function readBlog(id: string): Promise<Blog> {
-  const filepath = path.join(BLOGS_DIR, `${id}.md`)
-  const meta = readBlogMetadata(filepath)
-  const html = await parser.process(meta.content)
-  return {
-    id,
-    title: meta.title,
-    description: meta.description,
-    date: meta.date,
-    html: html.toString(),
-  }
+export async function readBlog(filename: string): Promise<Blog> {
+  const filepath = np.join(BLOGS_DIR, `${filename}.md`)
+  return readBlogMetadata(filepath)
 }
 
-export async function readBlogs(): Promise<(BlogMetadata & { content: string; id: string })[]> {
+export async function readBlogs(): Promise<Blog[]> {
   const filenames = await readdir(BLOGS_DIR)
-  const paths = filenames.map((filename) => path.join(BLOGS_DIR, filename))
-  return Promise.all(
-    paths.map((p) => {
-      const meta = readBlogMetadata(p)
-      return {
-        ...meta,
-        id: p,
-      } satisfies BlogMetadata & { content: string; id: string }
-    })
-  )
+  const paths = filenames.map((f) => np.join(BLOGS_DIR, f))
+  return Promise.all(paths.map(readBlogMetadata))
 }
 
-function readBlogMetadata(path: string): BlogMetadata & { content: string } {
-  const matter = read(path)
-  const meta = extractBlogMetadata(matter.data)
+async function readBlogMetadata(filepath: string): Promise<Blog> {
+  const txt = read(filepath)
+  const output = matter(txt)
+  const document = await parser.process(output.content)
   return {
-    title: meta.title,
-    description: meta.description,
-    date: meta.date,
-    content: matter.content,
+    ...extractBlogMetadata(output.data),
+    filename: np.basename(filepath, '.md'),
+    html: document.toString(),
   }
-}
-
-function sortBlogsByDate<T extends { date: Date }>(blogs: T[]): T[] {
-  return blogs.sort((a, b) => b.date.getMilliseconds() - a.date.getMilliseconds())
 }
