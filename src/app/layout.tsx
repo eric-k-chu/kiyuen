@@ -44,14 +44,14 @@ export default function RootLayout({ children }: PropsWithChildren): ReactElemen
         className={cn(
           jetbrainsMono.variable,
           jetbrainsMono.className,
-          'mx-auto max-w-screen-lg bg-ctp-mantle text-ctp-text'
+          'mx-auto max-w-screen-lg bg-ctp-base text-ctp-text'
         )}
       >
         <nav className='top-0 bottom-0 shrink-0 md:fixed md:w-60'>
           <Profile />
         </nav>
-        <main className='grow flex-col md:ml-60 md:flex md:h-dvh md:p-4'>
-          <div className='h-full rounded-md bg-ctp-base p-4'>{children}</div>
+        <main className='h-dvh grow p-4 md:ml-60'>
+          <div className='rounded-md bg-ctp-mantle'>{children}</div>
         </main>
       </body>
     </html>

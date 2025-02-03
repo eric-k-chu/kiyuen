@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
+import { SNAP_ELEMENTS } from './snaps'
 
 export const metadata: Metadata = {
   title: 'kiyuen',
@@ -23,5 +24,5 @@ export const metadata: Metadata = {
 }
 
 export default function Home(): ReactNode {
-  return <main>Foo Bar</main>
+  return <div className='scroller'>{SNAP_ELEMENTS}</div>
 }

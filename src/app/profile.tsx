@@ -1,65 +1,65 @@
 import { Profile as AvatarProfile } from '@/components'
+import { cn } from '@/lib'
 import { GitHubLogoIcon, HomeIcon, LinkedInLogoIcon, ReaderIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
-import type { ElementType, PropsWithChildren, ReactElement } from 'react'
+import type { ComponentProps, ElementType, ReactElement } from 'react'
 import meta from '~meta'
 
 export function Profile(): ReactElement {
   return (
     <div className='flex gap-4 p-4 text-sm md:flex-col md:py-8'>
-      <Group>
+      <div className='flex items-center gap-2'>
         <AvatarProfile />
-        <h1 className='ml-2 font-black text-ctp-flamingo'>kiyuen</h1>
-      </Group>
-      <Group icon={HomeIcon}>
-        <Link href='/' className='hover:underline'>
-          home
-        </Link>
-      </Group>
-      <Group icon={ReaderIcon}>
-        <Link href='/blogs' className='hover:underline'>
-          blogs
-        </Link>
-      </Group>
-      <Social icon={GitHubLogoIcon} href={meta.github} prefix='gh' />
-      <Social icon={LinkedInLogoIcon} href={meta.linkedin} prefix='in' />
+        <div className='ml-2'>
+          <h1 className='font-black text-base'>kiyuen</h1>
+          <h2 className='text-ctp-overlay2 text-xs'>eric chu</h2>
+        </div>
+      </div>
+      <NavLink as={Link} icon={HomeIcon} name='home' href='/' />
+      <NavLink as={Link} icon={ReaderIcon} name='blogs' href='/blogs' />
+      <NavLink
+        as='a'
+        name='gh/eric-k-chu'
+        icon={GitHubLogoIcon}
+        href={meta.github}
+        target='_blank'
+        rel='noopener noreferrer'
+      />
+      <NavLink
+        as='a'
+        name='in/eric-k-chu'
+        icon={LinkedInLogoIcon}
+        href={meta.linkedin}
+        target='_blank'
+        rel='noopener noreferrer'
+      />
     </div>
   )
 }
 
-type SocialProps = {
-  icon?: ElementType
-  href: string
-  prefix: string
+type NavLinkProps<T extends ElementType> = ComponentProps<T> & {
+  as: T
+  icon: ElementType
+  name: string
 }
 
-function Social({ icon: Icon, href, prefix }: SocialProps): ReactElement {
+function NavLink<T extends ElementType>({
+  as: As,
+  icon: Icon,
+  name,
+  className,
+  ...props
+}: NavLinkProps<T>): ReactElement {
   return (
-    <a
-      href={href}
-      target='_blank'
-      rel='noopener noreferrer'
-      className='flex items-center gap-2 hover:underline'
+    <As
+      className={cn(
+        'flex translate-x-0 items-center gap-2 py-2 text-ctp-overlay2 transition-all hover:translate-x-2 hover:text-ctp-text',
+        className
+      )}
+      {...props}
     >
-      {Icon && <Icon className='size-4 text-ctp-subtext0' />}
-      <span className='hidden md:block'>{`${prefix}/${href.split('/').pop()}`}</span>
-    </a>
-  )
-}
-
-function NavLink(): ReactElement {
-  return (
-    <Link href='/blogs' className='flex items-center gap-2 hover:underline'>
-      <span></span>
-    </Link>
-  )
-}
-
-function Group({ children, icon: Icon }: PropsWithChildren<{ icon?: ElementType }>): ReactElement {
-  return (
-    <div className='flex items-center gap-2'>
-      {Icon && <Icon className='size-4 text-ctp-subtext0' />}
-      {children}
-    </div>
+      <Icon className='size-4' />
+      <span className='hidden md:block'>{name}</span>
+    </As>
   )
 }
