@@ -9,7 +9,7 @@ export function Profile(): ReactElement {
     <div className='flex gap-4 p-4 text-sm md:flex-col md:py-8'>
       <Group>
         <AvatarProfile />
-        <h1 className='ml-2 font-bold'>kiyuen</h1>
+        <h1 className='ml-2 font-black text-ctp-flamingo'>kiyuen</h1>
       </Group>
       <Group icon={HomeIcon}>
         <Link href='/' className='hover:underline'>
@@ -35,18 +35,30 @@ type SocialProps = {
 
 function Social({ icon: Icon, href, prefix }: SocialProps): ReactElement {
   return (
-    <Group icon={Icon}>
-      <a href={href} target='_blank' rel='noopener noreferrer' className='hover:underline'>
-        {`${prefix}/${href.split('/').pop()}`}
-      </a>
-    </Group>
+    <a
+      href={href}
+      target='_blank'
+      rel='noopener noreferrer'
+      className='flex items-center gap-2 hover:underline'
+    >
+      {Icon && <Icon className='size-4 text-ctp-subtext0' />}
+      <span className='hidden md:block'>{`${prefix}/${href.split('/').pop()}`}</span>
+    </a>
+  )
+}
+
+function NavLink(): ReactElement {
+  return (
+    <Link href='/blogs' className='flex items-center gap-2 hover:underline'>
+      <span></span>
+    </Link>
   )
 }
 
 function Group({ children, icon: Icon }: PropsWithChildren<{ icon?: ElementType }>): ReactElement {
   return (
     <div className='flex items-center gap-2'>
-      {Icon && <Icon className='size-4 text-ctp-text' />}
+      {Icon && <Icon className='size-4 text-ctp-subtext0' />}
       {children}
     </div>
   )
