@@ -35,5 +35,10 @@ export default async function Page({ params }: Props): Promise<ReactElement> {
   const filename = (await params).id
   const blog = await readBlog(filename)
 
-  return <div dangerouslySetInnerHTML={{ __html: blog.html }} />
+  return (
+    <>
+      <h1>{blog.title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: blog.html }} />
+    </>
+  )
 }

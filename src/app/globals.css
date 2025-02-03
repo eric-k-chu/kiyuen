@@ -54,3 +54,17 @@
   scroll-snap-stop: always;
   height: 100dvh;
 }
+
+/* copy button on code blocks */
+pre {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+}
+
+pre button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}

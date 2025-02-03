@@ -1,3 +1,4 @@
+import { transformerCopyButton } from '@rehype-pretty/transformers'
 import rhShiki from '@shikijs/rehype'
 import matter, { read } from 'gray-matter'
 import { readdir } from 'node:fs/promises'
@@ -13,7 +14,15 @@ const BLOGS_DIR = np.join(process.cwd(), 'blogs')
 const parser = unified()
   .use(rmkParse)
   .use(rmkRehype)
-  .use(rhShiki, { theme: 'catppuccin-mocha' })
+  .use(rhShiki, {
+    theme: 'catppuccin-macchiato',
+    transformers: [
+      transformerCopyButton({
+        visibility: 'always',
+        feedbackDuration: 3_000,
+      }),
+    ],
+  })
   .use(rhStringify)
 
 export async function readBlog(filename: string): Promise<Blog> {
