@@ -6,8 +6,9 @@ import type { ComponentProps, ElementType, ReactElement } from 'react'
 import meta from '~meta'
 
 export function Profile(): ReactElement {
+  const year = new Date().getFullYear()
   return (
-    <div className='flex gap-4 p-4 text-sm md:flex-col md:py-8'>
+    <div className='flex h-full gap-4 p-4 text-sm md:flex-col md:py-8'>
       <div className='flex items-center gap-2'>
         <AvatarProfile />
         <div className='ml-2'>
@@ -33,6 +34,9 @@ export function Profile(): ReactElement {
         target='_blank'
         rel='noopener noreferrer'
       />
+      <div className='mt-auto text-ctp-overlay2 text-xs'>
+        &copy; <time dateTime={year.toString()}>{year}</time> {meta.name}
+      </div>
     </div>
   )
 }
