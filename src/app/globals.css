@@ -41,18 +41,20 @@
 }
 
 .scroller {
-  height: 100dvh;
+  height: 95dvh;
   padding-top: 10rem;
   padding-bottom: 10rem;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ctp-overlay2) transparent;
 }
 
 .scroller-section {
   scroll-snap-align: center;
   scroll-snap-stop: always;
-  height: 100dvh;
+  height: 90dvh;
 }
 
 /* copy button on code blocks */
