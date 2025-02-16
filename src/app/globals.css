@@ -42,8 +42,8 @@
 
 .scroller {
   height: 95dvh;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -54,7 +54,7 @@
 .scroller-section {
   scroll-snap-align: center;
   scroll-snap-stop: always;
-  height: 90dvh;
+  height: 95dvh;
 }
 
 /* copy button on code blocks */
