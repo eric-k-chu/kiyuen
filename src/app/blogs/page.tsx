@@ -34,11 +34,19 @@ export const metadata: Metadata = {
 export default async function Blogs(): Promise<ReactElement> {
   const blogs = await readCachedBlogs()
   return (
-    <div className='flex h-[95dvh] flex-col gap-y-4 p-8'>
+    <div className='flex flex-col gap-y-4'>
       {blogs.map((b) => (
-        <Link key={b.filename} href={`/blogs/${b.filename}`}>
-          <h1 className='font-bold text-lg'>{b.title}</h1>
-          <p className='text-ctp-overlay2 text-sm'>{b.description}</p>
+        <Link
+          key={b.filename}
+          href={`/blogs/${b.filename}`}
+          className='flex translate-x-0 items-center justify-between transition-transform hover:translate-x-1'
+        >
+          <h1 className='font-bold text-lg'>
+            {b.title}
+            <br />
+            <span className='text-ctp-overlay2 text-sm'>{b.description}</span>
+          </h1>
+          <p className='text-ctp-overlay2 text-sm'>{b.date.toLocaleDateString()}</p>
         </Link>
       ))}
     </div>

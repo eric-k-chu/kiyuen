@@ -36,10 +36,10 @@ export default async function Page({ params }: Props): Promise<ReactElement> {
   const blog = await readCachedBlog(filename)
 
   return (
-    <>
-      <h2>{blog.title}</h2>
+    <div className='prose-sm prose-invert prose-pre:w-full'>
+      <h1>{blog.title}</h1>
       <p>{blog.date.toLocaleDateString()}</p>
-      <div dangerouslySetInnerHTML={{ __html: blog.html }} />
-    </>
+      <article dangerouslySetInnerHTML={{ __html: blog.html }} className='!overflow-x-visible' />
+    </div>
   )
 }

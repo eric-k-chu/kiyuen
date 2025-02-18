@@ -7,6 +7,7 @@ import {
   type SnapHome,
   formatDateRange,
 } from '@/lib'
+import Link from 'next/link'
 import type { ReactElement } from 'react'
 
 type Props = {
@@ -28,14 +29,20 @@ function SnapElement({ props }: Props): ReactElement {
 
 function Home({ id, title, hanzi, name }: SnapHome): ReactElement {
   return (
-    <section id={id} className='scroller-section flex items-center justify-center gap-4'>
-      <h1 className='basis-1/2 text-end text-base text-ctp-overlay2 uppercase md:text-lg'>
-        {name}
-      </h1>
-      <Corners as='div' className='[text-orientation:upright] [writing-mode:vertical-lr]'>
-        <h1 className='select-none text-2xl md:text-4xl'>{hanzi}</h1>
-      </Corners>
-      <h1 className='basis-1/2 text-base text-ctp-overlay2 uppercase md:text-lg'>{title}</h1>
+    <section id={id} className='scroller-section flex flex-col items-center justify-center gap-4'>
+      <div className='flex w-full items-center justify-center gap-4'>
+        <h1 className='basis-1/2 text-end text-base text-ctp-overlay2 uppercase md:text-lg'>
+          {name}
+        </h1>
+        <Corners as='div' className='[text-orientation:upright] [writing-mode:vertical-lr]'>
+          <h1 className='select-none text-2xl md:text-4xl'>{hanzi}</h1>
+        </Corners>
+        <h1 className='basis-1/2 text-base text-ctp-overlay2 uppercase md:text-lg'>{title}</h1>
+      </div>
+      <nav className='space-x-4 text-ctp-overlay2 underline'>
+        <Link href='/blogs'>blogs</Link>
+        <Link href='/terminal'>terminal</Link>
+      </nav>
     </section>
   )
 }

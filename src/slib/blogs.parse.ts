@@ -10,7 +10,7 @@ const parser = unified()
   .use(remarkParse)
   .use(remarkRehype)
   .use(rehypeShiki, {
-    theme: 'catppuccin-macchiato',
+    theme: 'catppuccin-mocha',
     transformers: [
       transformerCopyButton({
         visibility: 'always',
