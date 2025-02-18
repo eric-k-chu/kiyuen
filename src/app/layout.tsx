@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import type { PropsWithChildren, ReactElement } from 'react'
 import './globals.css'
-import { Profile } from './profile'
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -41,18 +40,9 @@ export default function RootLayout({ children }: PropsWithChildren): ReactElemen
   return (
     <html lang='en'>
       <body
-        className={cn(
-          jetbrainsMono.variable,
-          jetbrainsMono.className,
-          'mx-auto max-w-screen-lg bg-ctp-base text-ctp-text'
-        )}
+        className={cn(jetbrainsMono.variable, jetbrainsMono.className, 'bg-ctp-base text-ctp-text')}
       >
-        <nav className='top-0 bottom-0 shrink-0 md:fixed md:w-60'>
-          <Profile />
-        </nav>
-        <main className='h-dvh grow p-4 md:ml-60'>
-          <div className='rounded-md bg-ctp-mantle'>{children}</div>
-        </main>
+        {children}
       </body>
     </html>
   )

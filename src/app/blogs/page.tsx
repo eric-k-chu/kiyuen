@@ -1,4 +1,4 @@
-import { readBlogs } from '@/slib'
+import { readCachedBlogs } from '@/slib'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import type { ReactElement } from 'react'
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Blogs(): Promise<ReactElement> {
-  const blogs = await readBlogs()
+  const blogs = await readCachedBlogs()
   return (
     <div className='flex h-[95dvh] flex-col gap-y-4 p-8'>
       {blogs.map((b) => (

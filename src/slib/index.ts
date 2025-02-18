@@ -1,2 +1,2 @@
-export * from './parser'
-export * from './parser.model'
+export * from './blogs.api'
+export * from './blogs.model'
