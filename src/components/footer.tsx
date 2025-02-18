@@ -8,7 +8,7 @@ type Props = {
 export function Footer({ className }: Props): ReactElement {
   const year = new Date().getFullYear()
   return (
-    <footer className={cn('rounded-md bg-ctp-mantle p-2 text-ctp-subtext0 text-xs', className)}>
+    <footer className={cn('p-2 text-ctp-subtext0 text-xs', className)}>
       <p>
         &copy; <time dateTime={year.toString()}>{year}</time> Eric Chu
       </p>
