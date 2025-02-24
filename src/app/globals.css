@@ -2,7 +2,36 @@
 
 @plugin "@tailwindcss/typography";
 
-@theme {
+:root {
+  --color-ctp-rosewater: hsl(11, 59%, 67%);
+  --color-ctp-flamingo: hsl(0, 60%, 67%);
+  --color-ctp-pink: hsl(316, 73%, 69%);
+  --color-ctp-mauve: hsl(266, 85%, 58%);
+  --color-ctp-red: hsl(347, 87%, 44%);
+  --color-ctp-maroon: hsl(355, 76%, 59%);
+  --color-ctp-peach: hsl(22, 99%, 52%);
+  --color-ctp-yellow: hsl(35, 77%, 49%);
+  --color-ctp-green: hsl(109, 58%, 40%);
+  --color-ctp-teal: hsl(183, 74%, 35%);
+  --color-ctp-sky: hsl(197, 97%, 46%);
+  --color-ctp-sapphire: hsl(189, 70%, 42%);
+  --color-ctp-blue: hsl(220, 91%, 54%);
+  --color-ctp-lavender: hsl(231, 97%, 72%);
+  --color-ctp-text: hsl(234, 16%, 35%);
+  --color-ctp-subtext1: hsl(233, 13%, 41%);
+  --color-ctp-subtext0: hsl(233, 10%, 47%);
+  --color-ctp-overlay2: hsl(232, 10%, 53%);
+  --color-ctp-overlay1: hsl(231, 10%, 59%);
+  --color-ctp-overlay0: hsl(228, 11%, 65%);
+  --color-ctp-surface2: hsl(227, 12%, 71%);
+  --color-ctp-surface1: hsl(225, 14%, 77%);
+  --color-ctp-surface0: hsl(223, 16%, 83%);
+  --color-ctp-base: hsl(220, 23%, 95%);
+  --color-ctp-mantle: hsl(220, 22%, 92%);
+  --color-ctp-crust: hsl(220, 21%, 89%);
+}
+
+.dark {
   --color-ctp-rosewater: hsl(10, 56%, 91%);
   --color-ctp-flamingo: hsl(0, 59%, 88%);
   --color-ctp-pink: hsl(316, 72%, 86%);
@@ -31,26 +60,64 @@
   --color-ctp-crust: hsl(240, 23%, 9%);
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+@theme inline {
+  --color-ctp-rosewater: var(--color-ctp-rosewater);
+  --color-ctp-flamingo: var(--color-ctp-flamingo);
+  --color-ctp-pink: var(--color-ctp-pink);
+  --color-ctp-mauve: var(--color-ctp-mauve);
+  --color-ctp-red: var(--color-ctp-red);
+  --color-ctp-maroon: var(--color-ctp-maroon);
+  --color-ctp-peach: var(--color-ctp-peach);
+  --color-ctp-yellow: var(--color-ctp-yellow);
+  --color-ctp-green: var(--color-ctp-green);
+  --color-ctp-teal: var(--color-ctp-teal);
+  --color-ctp-sky: var(--color-ctp-sky);
+  --color-ctp-sapphire: var(--color-ctp-sapphire);
+  --color-ctp-blue: var(--color-ctp-blue);
+  --color-ctp-lavender: var(--color-ctp-lavender);
+  --color-ctp-text: var(--color-ctp-text);
+  --color-ctp-subtext1: var(--color-ctp-subtext1);
+  --color-ctp-subtext0: var(--color-ctp-subtext0);
+  --color-ctp-overlay2: var(--color-ctp-overlay2);
+  --color-ctp-overlay1: var(--color-ctp-overlay1);
+  --color-ctp-overlay0: var(--color-ctp-overlay0);
+  --color-ctp-surface2: var(--color-ctp-surface2);
+  --color-ctp-surface1: var(--color-ctp-surface1);
+  --color-ctp-surface0: var(--color-ctp-surface0);
+  --color-ctp-base: var(--color-ctp-base);
+  --color-ctp-mantle: var(--color-ctp-mantle);
+  --color-ctp-crust: var(--color-ctp-crust);
 }
 
 .scroller {
-  height: 100dvh;
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  height: 95dvh;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ctp-overlay2) transparent;
 }
 
 .scroller-section {
   scroll-snap-align: center;
   scroll-snap-stop: always;
-  height: 100dvh;
+  height: 95dvh;
+}
+
+/* copy button on code blocks */
+pre {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-size: 1.1em;
+  background-color: var(--color-ctp-mantle) !important;
+}
+
+pre button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
 }

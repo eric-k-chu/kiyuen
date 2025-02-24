@@ -1,21 +1,11 @@
-import { SNAPS } from '@/lib'
-import { SnapProvider } from '@/providers'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { SnapElements } from './elements'
-import { SnapNav } from './nav'
+import { SNAP_ELEMENTS } from './snaps'
 
 export const metadata: Metadata = {
   title: 'kiyuen',
   description: 'Learn about my career as a software engineer.',
-  keywords: [
-    'software engineer',
-    'full stack developer',
-    'programming',
-    'coding',
-    'portfolio',
-    'coding',
-  ],
+  keywords: ['software engineer', 'full stack developer', 'programming', 'coding', 'portfolio'],
   openGraph: {
     url: 'https://kiyuen.dev',
     siteName: 'kiyuen',
@@ -34,10 +24,5 @@ export const metadata: Metadata = {
 }
 
 export default function Home(): ReactNode {
-  return (
-    <SnapProvider snaps={SNAPS}>
-      <SnapElements />
-      <SnapNav />
-    </SnapProvider>
-  )
+  return <div className='scroller'>{SNAP_ELEMENTS}</div>
 }

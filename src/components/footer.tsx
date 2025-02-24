@@ -1,9 +1,14 @@
+import { cn } from '@/lib'
 import type { ReactElement } from 'react'
 
-export function Footer(): ReactElement {
+type Props = {
+  className?: string
+}
+
+export function Footer({ className }: Props): ReactElement {
   const year = new Date().getFullYear()
   return (
-    <footer className='fixed bottom-2 left-2 rounded-md bg-ctp-mantle p-2 text-ctp-subtext0 text-xs'>
+    <footer className={cn('p-2 text-ctp-subtext0 text-xs', className)}>
       <p>
         &copy; <time dateTime={year.toString()}>{year}</time> Eric Chu
       </p>
