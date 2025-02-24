@@ -1,5 +1,0 @@
-export * from './briefcase'
-export * from './github'
-export * from './graduation-cap'
-export * from './linkedin'
-export * from './shadcn'
