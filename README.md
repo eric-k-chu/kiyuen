@@ -10,3 +10,5 @@ bun dev
 ```sh
 bun make
 ```
+
+- [ ] astro
