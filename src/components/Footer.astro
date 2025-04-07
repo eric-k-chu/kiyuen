@@ -1,0 +1,11 @@
+---
+import { meta } from '../meta'
+const year = new Date().getFullYear()
+---
+
+<footer class='text-gb-fg4 text-xs text-center'>
+  <p>
+    &copy; <time datetime={year.toString()}>{year}</time>
+    {meta.name}
+  </p>
+</footer>
