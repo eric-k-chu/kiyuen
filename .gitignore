@@ -21,6 +21,8 @@
 /build
 /dist
 
+.astro
+
 # ascii
 *.txt
 

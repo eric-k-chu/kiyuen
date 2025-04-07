@@ -1,0 +1,92 @@
+---
+import Header from '../components/Header.astro'
+import '@fontsource-variable/mona-sans'
+import '../styles/global.css'
+import { meta } from '../meta'
+import Footer from '../components/Footer.astro'
+import Theme from '../components/Theme.astro'
+import Nav from '../components/Nav.astro'
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <Header
+      title='kiyuen'
+      description='My career as a software engineer.'
+      keywords='software engineer, full stack developer, programming, coding, portfolio'
+    />
+  </head>
+  <body>
+    <main>
+      <section
+        id='cover'
+        class='flex flex-col items-center justify-center gap-4'
+      >
+        <div class='flex w-full items-center justify-center gap-4'>
+          <h1 class='basis-1/2 text-end uppercase md:text-lg font-semibold'>
+            {meta.name}
+          </h1>
+          <h1
+            class='py-4 text-gb-blue [text-orientation:upright] [writing-mode:vertical-lr] select-none text-2xl md:text-4xl tracking-widest font-semibold'
+          >
+            {meta.hanzi}
+          </h1>
+          <h1 class='basis-1/2 uppercase md:text-lg font-semibold'>
+            {meta.title}
+          </h1>
+        </div>
+        <Nav />
+      </section>
+      {
+        meta.career.map((c) => (
+          <section
+            class='scroller-section flex items-center justify-center'
+            id={c.id}
+          >
+            <div class='space-y-2 px-16'>
+              <h2 class='text-gb-fg0 uppercase md:text-lg'>{c.institution}</h2>
+              <h3 class='text-gb-fg4 uppercase md:text-lg'>
+                {`${c.start} - ${c.end}`}
+              </h3>
+              <h1 class='text-2xl text-gb-blue uppercase md:text-4xl font-semibold'>
+                {c.description}
+              </h1>
+              <ul class='flex flex-wrap gap-4 text-gb-green text-xs md:text-sm'>
+                {c.tech.map((t) => (
+                  <li>
+                    <a href={t.link} target='_blank' rel='noopener noreferrer'>
+                      {t.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ))
+      }
+    </main>
+    <Footer />
+    <div class='fixed bottom-4 right-4'>
+      <Theme />
+    </div>
+  </body>
+</html>
+
+<style>
+  main {
+    height: 95dvh;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+  }
+
+  section {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    height: 95dvh;
+  }
+</style>

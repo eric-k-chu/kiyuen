@@ -1,0 +1,23 @@
+{
+  "rules": {
+    "no-unused-vars": "off",
+    "no-undef": "off",
+    "no-console": "warn",
+    "no-debugger": "error"
+  },
+  "categories": {
+    "suspicious": "error",
+    "style": "off",
+    "correctness": "error",
+    "nursery": "warn",
+    "perf": "error",
+    "restriction": "warn",
+    "pedantic": "off"
+  },
+  "plugins": [
+    "typescript",
+    "oxc",
+    "prettier",
+    "astro"
+  ]
+}

@@ -1,13 +1,14 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "always",
-    "source.organizeImports.biome": "always",
+    // "source.fixAll.biome": "always",
+    // "source.organizeImports.biome": "always",
     "source.removeUnusedImports": "always",
     "source.addMissingImports.ts": "always",
-    "quickFix.biome": "always",
-    "source.sortImports": "always"
+    // "quickFix.biome": "always",
+    "source.sortImports": "always",
+    "source.fixAll.oxc": "always"
   },
-  "editor.defaultFormatter": "biomejs.biome",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -17,5 +18,9 @@
     "**/Thumbs.db": true,
     "**/out/**": true,
     "**/.next/**": true,
+    "**/.astro/**": true,
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
   }
 }
