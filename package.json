@@ -11,17 +11,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.2.6",
+    "@astrojs/mdx": "^4.3.0",
     "@astrojs/sitemap": "^3.4.0",
     "@fontsource-variable/mona-sans": "^5.2.5",
-    "@tailwindcss/vite": "^4.1.7",
-    "astro": "^5.7.13",
-    "tailwindcss": "^4.1.7"
+    "@tailwindcss/vite": "^4.1.8",
+    "astro": "^5.8.1",
+    "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
-    "oxlint": "^0.16.11",
+    "oxlint": "^0.17.0",
     "prettier": "3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "typescript": "^5.8.3"
   },
   "sideEffects": false
