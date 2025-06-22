@@ -14,13 +14,13 @@
     "@astrojs/sitemap": "^3.4.1",
     "@fontsource-variable/mona-sans": "^5.2.6",
     "@tailwindcss/vite": "^4.1.10",
-    "astro": "^5.9.3",
+    "astro": "^5.10.0",
     "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
-    "oxlint": "^1.1.0",
+    "oxlint": "^1.2.0",
     "prettier": "3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.12",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "typescript": "^5.8.3"
   },
   "sideEffects": false
